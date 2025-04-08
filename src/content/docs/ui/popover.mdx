@@ -1,0 +1,36 @@
+---
+title: Popover
+description: An accessible popup anchored to a button.
+---
+
+<ComponentPreview name="examples/popover-demo" />
+
+## Manual Installation
+
+<ComponentSource name="ui/popover" />
+
+## Anatomy
+
+```tsx
+import {
+  Popover,
+  PopoverDescription,
+  PopoverPopup,
+  PopoverTitle,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+```
+
+```tsx
+<Popover>
+	<PopoverTrigger />
+	<PopoverPopup>
+    <PopoverTitle />
+    <PopoverDescription />
+	</PopoverPopup>
+</Popover>
+```
+
+## API reference
+
+- [Base UI's Popover](https://base-ui.com/react/components/popover#api-reference)

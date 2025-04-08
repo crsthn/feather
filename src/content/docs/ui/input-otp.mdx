@@ -1,0 +1,34 @@
+---
+title: Input OTP
+description: A component for entering OTP codes.
+---
+
+<ComponentPreview name="examples/input-otp-demo" />
+
+## Manual Installation
+
+```shell
+npm install input-otp
+```
+
+<ComponentSource name="ui/input-otp" />
+
+## Anatomy
+
+```tsx
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp";
+```
+
+```tsx
+<InputOTP>
+  <InputOTPGroup>
+    <InputOTPSlot />
+  </InputOTPGroup>
+  <InputOTPSeparator />
+</InputOTP>
+```

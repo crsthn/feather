@@ -1,0 +1,44 @@
+---
+title: Select
+description: A common form component for choosing a predefined value in a dropdown menu.
+---
+
+<ComponentPreview name="examples/select-demo" />
+
+## Manual Installation
+
+<ComponentSource name="ui/select" />
+
+## Anatomy
+
+```tsx
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectPopup,
+  SelectItem,
+  SelectSeparator,
+  SelectGroup,
+  SelectGroupLabel,
+} from "@/components/ui/select";
+```
+
+```tsx
+<Select>
+  <SelectTrigger>
+    <SelectValue />
+  </SelectTrigger>
+  <SelectPopup>
+    <SelectGroup>
+      <SelectGroupLabel />
+      <SelectItem />
+    </SelectGroup>
+    <SelectSeparator />
+  </SelectPopup>
+</Select>
+```
+
+## API reference
+
+- [Base UI's Select](https://base-ui.com/react/components/select#api-reference)

@@ -1,0 +1,40 @@
+---
+title: Toast
+description: Displays a message to the user in a toast.
+---
+
+<ComponentPreview name="examples/toast/toast-demo" />
+
+## Manual Installation
+
+```shell
+npx jsrepo add
+```
+
+<ComponentSource name="ui/toast" />
+
+```tsx title="app/layout.tsx"
+<html>
+  <body>
+    <ThemeProvider>
+      {children}
+      <Toast expand />
+    </ThemeProvider>
+  </body>
+</html>
+```
+
+## Anatomy
+
+```tsx
+import { toast } from "sonner";
+```
+
+```tsx
+toast("Hello world!")
+```
+
+## Examples
+
+### Colors
+<ComponentPreview name="examples/toast/toast-colors" />

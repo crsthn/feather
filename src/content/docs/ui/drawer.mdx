@@ -1,0 +1,47 @@
+---
+title: Drawer
+description: A popup that opens on top of the entire page.
+---
+
+<ComponentPreview name="examples/drawer-demo" />
+
+## Manual Installation
+
+<ComponentSource name="ui/drawer" />
+
+## Anatomy
+
+```tsx
+import {
+  Drawer,
+  DrawerClose,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerMain,
+  DrawerPopup,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+```
+
+```tsx
+<Drawer>
+  <DrawerTrigger />
+  <DrawerPopup>
+    <DrawerHeader>
+      <DrawerTitle />
+    <DrawerHeader />
+    <DrawerMain>
+      <DrawerDescription />
+    <DrawerMain />
+    <DrawerFooter>
+      <DrawerClose />
+    <DrawerFooter />
+  </DrawerPopup>
+</Drawer>
+```
+
+## API reference
+
+- [Base UI's Dialog](https://base-ui.com/react/components/dialog#api-reference)

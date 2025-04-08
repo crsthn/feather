@@ -1,0 +1,44 @@
+---
+title: Alert Dialog
+description: A dialog that requires user response to proceed.
+---
+
+<ComponentPreview name="examples/alert-dialog-demo" />
+
+## Manual installation
+
+<ComponentSource name="ui/alert-dialog" />
+
+## Anatomy
+
+```tsx
+import {
+  AlertDialog,
+  AlertDialogClose,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogPopup,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger />
+    <AlertDialogPopup>
+      <AlertDialogHeader>
+        <AlertDialogTitle />
+        <AlertDialogDescription />
+      </AlertDialogHeader>
+      <AlertDialogFooter>
+        <AlertDialogClose />
+      </AlertDialogFooter>
+    </AlertDialogPopup>
+</AlertDialog>
+```
+
+## API reference
+
+- [Base UI's Alert Dialog](https://base-ui.com/react/components/alert-dialog#api-reference).

@@ -1,0 +1,14 @@
+{
+  "title": "UI",
+  "description": "Create the structure of the website",
+  "icon": "Puzzle",
+  "root": true,
+  "pages": [
+    "---Getting Started---",
+    "index",
+    "dark-mode",
+    "theming",
+    "---Components---",
+    "..."
+  ]
+}

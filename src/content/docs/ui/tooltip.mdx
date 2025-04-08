@@ -1,0 +1,34 @@
+---
+title: Tooltip
+description: A popup that appears when an element is hovered or focused, showing a hint for sighted users.
+---
+
+<ComponentPreview name="examples/tooltip-demo" />
+
+## Manual Installation
+
+<ComponentSource name="ui/tooltip" />
+
+## Anatomy
+
+```tsx
+import {
+  Tooltip,
+  TooltipPopup,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+```
+
+```tsx
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger />
+    <TooltipPopup />
+  </Tooltip>
+</TooltipProvider>
+```
+
+## API reference
+
+- [Base UI's Tooltip](https://base-ui.com/react/components/tooltip#api-reference)

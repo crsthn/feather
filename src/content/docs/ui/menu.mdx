@@ -1,0 +1,66 @@
+---
+title: Menu
+description: A list of actions in a dropdown, enhanced with keyboard navigation.
+---
+
+<ComponentPreview name="examples/menu/menu-demo" />
+
+## Manual installation
+
+<ComponentSource name="ui/menu" />
+
+## Anatomy
+
+```tsx
+import {
+  Menu,
+  MenuTrigger,
+  MenuPopup,
+  MenuItem,
+  MenuSeparator,
+  MenuCheckboxItem,
+  MenuRadioGroup,
+  MenuRadioItem,
+  MenuGroup,
+  MenuGroupLabel,
+  MenuSubmenuTrigger,
+} from "@/components/ui/dropdown"
+```
+
+```tsx
+<Menu>
+  <MenuTrigger />
+  <MenuPopup>
+    <MenuGroup>
+      <MenuGroupLabel />
+      <MenuItem />
+    </MenuGroup>
+    <MenuSeparator />
+    <MenuCheckboxItem />
+    <MenuRadioGroup>
+      <MenuRadioItem />
+    </MenuRadioGroup>
+    <Menu>
+      <MenuSubmenuTrigger />
+      <MenuPopup>
+        <MenuItem />
+      </MenuPopup>
+    </Menu>
+  </MenuPopup>
+</Menu>
+```
+
+## Examples
+
+### Checkbox
+<ComponentPreview name="examples/menu/menu-checkbox" />
+
+### Radio
+<ComponentPreview name="examples/menu/menu-radio" />
+
+### Nested
+<ComponentPreview name="examples/menu/menu-nested" />
+
+## API reference
+
+- [Base UI's Menu](https://base-ui.com/react/components/menu#api-reference)

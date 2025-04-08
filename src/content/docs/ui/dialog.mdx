@@ -1,0 +1,47 @@
+---
+title: Dialog
+description: A popup that opens on top of the entire page.
+---
+
+<ComponentPreview name="examples/dialog-demo" />
+
+## Manual Installation
+
+<ComponentSource name="ui/dialog" />
+
+## Anatomy
+
+```tsx
+import {
+  Dialog,
+  DialogClose,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogMain,
+  DialogPopup,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+```
+
+```tsx
+<Dialog>
+  <DialogTrigger />
+  <DialogPopup>
+    <DialogHeader>
+      <DialogTitle />
+    <DialogHeader />
+    <DialogMain>
+      <DialogDescription />
+    <DialogMain />
+    <DialogFooter>
+      <DialogClose />
+    <DialogFooter />
+  </DialogPopup>
+</Dialog>
+```
+
+## API reference
+
+- [Base UI's Dialog](https://base-ui.com/react/components/dialog#api-reference)

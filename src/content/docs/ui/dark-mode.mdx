@@ -1,0 +1,128 @@
+---
+title: Dark Mode
+description: Add dark mode support to your applications using Next Themes
+icon: Moon
+---
+
+## Installation
+
+```bash
+npm install next-themes
+```
+
+## Setup
+
+### 1. ThemeProvider
+
+Add the `ThemeProvider` to your root layout to enable theme switching throughout your application. Wrap your application with the `ThemeProvider` component in your `layout.tsx` file:
+
+```tsx
+import { ThemeProvider } from "@/components/theme/theme-provider";
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+The `ThemeProvider` accepts the following props:
+
+- `attribute="class"`: Sets the attribute to apply to the document element. Using "class" is recommended for Tailwind CSS.
+- `defaultTheme="system"`: Sets the default theme (options: "light", "dark", or "system").
+- `enableSystem={true}`: Enables system theme detection.
+- `disableTransitionOnChange`: Prevents transition flashing when changing themes.
+
+> **Important**: Add `suppressHydrationWarning` to the HTML tag to prevent hydration warnings when using server-side rendering with Next.js.
+
+### 2. Create the Theme Provider Component
+
+Create a file called `theme-provider.tsx` in your components directory:
+
+```tsx
+"use client";
+
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import type { ComponentProps } from "react";
+
+export function ThemeProvider({
+  children,
+  ...props
+}: ComponentProps<typeof NextThemesProvider>) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+}
+```
+
+### 3. Create a Theme Toggle Component
+
+Create a toggle component to allow users to switch between themes:
+
+```tsx
+"use client";
+
+import { Skeleton } from "@/components/ui/skeleton";
+import { cx } from "@/lib/utils";
+import { Radio } from "@base-ui-components/react/radio";
+import { RadioGroup } from "@base-ui-components/react/radio-group";
+import { Monitor, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { type ComponentProps, useEffect, useState } from "react";
+
+const themes = [
+  { value: "dark", icon: Moon },
+  { value: "light", icon: Sun },
+  { value: "system", icon: Monitor },
+] as const;
+
+export function ThemeToggle({
+  className,
+  ...props
+}: ComponentProps<typeof RadioGroup>) {
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <Skeleton className={cx("h-8 w-20 rounded-full bg-muted", className)} />
+    );
+  }
+
+  return (
+    <RadioGroup
+      value={theme}
+      onValueChange={(value) => setTheme(value as string)}
+      className={cx("inline-flex rounded-full bg-muted p-1", className)}
+      {...props}
+    >
+      {themes.map(({ value, icon: Icon }) => (
+        <Radio.Root
+          key={value}
+          value={value}
+          className="flex size-6 cursor-pointer items-center justify-center rounded-full text-text-2 focus-visible:outline-2 focus-visible:outline-primary data-checked:bg-surface data-checked:text-text"
+        >
+          <Icon size={14} />
+        </Radio.Root>
+      ))}
+    </RadioGroup>
+  );
+}
+```

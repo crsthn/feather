@@ -1,0 +1,196 @@
+---
+title: Instalation
+description: A quick guide to getting started with Feather UI.
+icon: Package
+---
+
+## Manual Installation
+
+### 1. Install Dependencies
+
+```bash
+npm install @base-ui-components/react clsx tailwind-merge tailwind-variants
+```
+
+### 2. Set Up CSS Variables
+
+Add these CSS variables to your main CSS file:
+
+```css title="app/globals.css"
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --bg: oklch(0.9761 0 0);
+  --bg-inverse: oklch(0 0 0);
+
+  --surface: oklch(1 0 0);
+
+  --muted: oklch(0.5999 0 0 / 0.15);
+
+  --overlay: oklch(0 0 0 / 0.4);
+
+  --modal: oklch(1 0 0);
+
+  --popover: oklch(1 0 0 / 0.8);
+
+  --primary: oklch(0.6028 0.2177 257.42);
+  --primary-muted: oklch(0.6028 0.2177 257.42 / 0.1);
+
+  --secondary: oklch(0.5999 0 0 / 0.1);
+
+  --danger: oklch(0.577 0.245 27.325);
+  --danger-muted: oklch(0.577 0.245 27.325 / 0.1);
+
+  --text: oklch(0 0 0);
+  --text-2: oklch(0 0 0 / 0.5);
+  --text-3: oklch(0 0 0 / 0.3);
+  --text-inverse: oklch(1 0 0);
+
+  --border: oklch(0 0 0 / 0.15);
+
+  --on-primary: oklch(1 0 0);
+  --on-danger: oklch(1 0 0);
+
+  --scrollbar: #d9d9d9;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-inverse: var(--bg-inverse);
+
+  --color-surface: var(--surface);
+
+  --color-muted: var(--muted);
+
+  --color-overlay: var(--overlay);
+
+  --color-modal: var(--modal);
+
+  --color-popover: var(--popover);
+
+  --color-primary: var(--primary);
+  --color-primary-muted: var(--primary-muted);
+
+  --color-secondary: var(--secondary);
+
+  --color-danger: var(--danger);
+  --color-danger-muted: var(--danger-muted);
+
+  --color-text: var(--text);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+  --color-text-inverse: var(--text-inverse);
+
+  --color-border: var(--border);
+
+  --color-on-primary: var(--on-primary);
+  --color-on-danger: var(--on-danger);
+
+  --radius-lg: 0.75rem;
+  --radius-xs: calc(var(--radius-lg) * 0.25);
+  --radius-sm: calc(var(--radius-lg) * 0.5);
+  --radius-md: calc(var(--radius-lg) * 0.75);
+  --radius-xl: calc(var(--radius-lg) * 1.5);
+  --radius-2xl: calc(var(--radius-lg) * 2);
+  --radius-3xl: calc(var(--radius-lg) * 3);
+
+  --default-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  --ease-in: cubic-bezier(0.42, 0, 1.0, 1.0);
+  --ease-out: cubic-bezier(0.0, 0, 0.58, 1.0);
+  --ease-in-out: cubic-bezier(0.42, 0, 0.58, 1.0);
+
+  --font-sans: "Geist";
+  --font-mono: "Geist Mono";
+}
+
+.dark {
+  --bg: oklch(0.1591 0 0);
+  --bg-inverse: oklch(1 0 0);
+
+  --surface: oklch(0 0 0);
+
+  --muted: oklch(0.5999 0 0 / 0.3);
+
+  --overlay: oklch(0 0 0 / 0.5);
+
+  --modal: oklch(0.2046 0 0);
+
+  --popover: oklch(0.2686 0 0 / 0.8);
+
+  --primary: oklch(0.6243 0.20557 255.48);
+  --primary-muted: oklch(0.6243 0.20557 255.48 / 0.15);
+
+  --secondary: oklch(0.5999 0 0 / 0.15);
+
+  --danger: oklch(0.637 0.237 25.331);
+  --danger-muted: oklch(0.637 0.237 25.331 / 0.2);
+
+  --text: oklch(1 0 0);
+  --text-2: oklch(1 0 0 / 0.6);
+  --text-3: oklch(1 0 0 / 0.4);
+  --text-inverse: oklch(0 0 0);
+
+  --border: oklch(1 0 0 / 0.15);
+
+  --on-primary: oklch(1 0 0);
+  --on-danger: oklch(1 0 0);
+
+  --scrollbar: #262626;
+}
+
+@layer base {
+  * {
+    scrollbar-color: var(--scrollbar) transparent;
+    scrollbar-width: thin;
+    border-color: var(--color-border);
+    outline-color: var(--color-primary) / 50;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+  }
+}
+```
+
+### 3. Add Utility Functions
+
+Create a `utils.ts` file in your project (e.g., in a `src/lib` folder) with the following code:
+
+```typescript title="lib/utils.ts"
+import clsx, { type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cx(...args: ClassValue[]) {
+  return twMerge(clsx(...args));
+}
+
+export const focusInput = [
+  "focus:ring-3 outline-none",
+  "focus:ring-primary/20 focus:dark:ring-primary/30",
+  "focus:border-primary",
+  "transition-all duration-150 ease-initial",
+];
+
+export const focusInteractive = [
+  "focus-visible:ring-3 outline-none",
+  "focus-visible:ring-primary/20 focus-visible:dark:ring-primary/30",
+  "focus-visible:border-primary",
+  "transition-all duration-150 ease-initial",
+];
+
+export const focusRing = [
+  "outline-offset-2 outline-0 focus-visible:outline-2",
+  "outline-primary/50",
+];
+```
+
+
+### 4. Copy Components
+
+Now you're all set to use Feather UI in your project!
+
+You can start adding components, for example a [Button](/docs/ui/button).
