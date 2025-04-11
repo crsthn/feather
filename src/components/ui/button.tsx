@@ -4,7 +4,7 @@ import { type VariantProps, tv } from "tailwind-variants";
 
 const buttonStyles = tv({
   base: [
-    "inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-lg transition-colors disabled:pointer-events-none disabled:opacity-50 font-medium [&_svg]:pointer-events-none [&_svg]:shrink-0",
+    "inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-lg transition-colors disabled:pointer-events-none disabled:opacity-50 font-medium [&_svg]:pointer-events-none [&_svg]:shrink-0 select-none",
     focusRing,
   ],
   variants: {
