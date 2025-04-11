@@ -19,7 +19,7 @@ function AlertDialogPopup({
       <BaseAlertDialog.Backdrop className="fixed inset-0 z-50 overflow-y-auto bg-overlay backdrop-blur-xs transition-opacity ease-out data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200" />
       <BaseAlertDialog.Popup
         className={cx(
-          "-translate-x-1/2 -translate-y-1/2 fixed top-[calc(50%-1.25rem*var(--nested-dialogs))] left-1/2 z-50 w-md max-w-[calc(100vw-3rem)] scale-[calc(1-0.1*var(--nested-dialogs))] overflow-y-auto rounded-xl bg-bg text-text outline-0 transition-all ease-out data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200",
+          "-translate-x-1/2 -translate-y-1/2 fixed top-[calc(50%-1.25rem*var(--nested-dialogs))] left-1/2 z-50 w-md max-w-[calc(100vw-3rem)] scale-[calc(1-0.1*var(--nested-dialogs))] overflow-y-auto rounded-xl bg-modal text-text outline-0 transition-all ease-out data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200",
           className
         )}
         {...props}

@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --bg: oklch(0.9761 0 0);
+  --bg: oklch(0.9851 0 0);
   --bg-inverse: oklch(0 0 0);
 
   --surface: oklch(1 0 0);
@@ -14,7 +14,7 @@
 
   --overlay: oklch(0 0 0 / 0.2);
 
-  --modal: oklch(1 0 0);
+  --modal: oklch(0.9702 0 0);
 
   --popover: oklch(1 0 0 / 0.8);
 
@@ -89,7 +89,7 @@
 }
 
 .dark {
-  --bg: oklch(0.1591 0 0);
+  --bg: oklch(0.1448 0 0);
   --bg-inverse: oklch(1 0 0);
 
   --surface: oklch(0 0 0);
@@ -98,7 +98,7 @@
 
   --overlay: oklch(0 0 0 / 0.5);
 
-  --modal: oklch(0.1913 0 0);
+  --modal: oklch(0.2046 0 0);
 
   --popover: oklch(0.2686 0 0 / 0.8);
 

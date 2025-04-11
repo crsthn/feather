@@ -18,7 +18,7 @@ function DrawerPopup({
       <BaseDialog.Backdrop className="fixed inset-0 z-50 overflow-y-auto bg-overlay backdrop-blur-xs transition-opacity duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] data-ending-style:opacity-0 data-starting-style:opacity-0" />
       <BaseDialog.Popup
         className={cx(
-          "fixed bottom-2 z-50 flex flex-1 flex-col overflow-y-auto rounded-xl bg-bg text-text outline-0 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] max-sm:inset-x-2 max-sm:h-fit max-sm:max-h-4/5 max-sm:data-ending-style:translate-y-full max-sm:data-starting-style:translate-y-full sm:inset-y-2 sm:right-2 sm:max-w-md sm:data-ending-style:translate-x-full sm:data-starting-style:translate-x-full",
+          "fixed bottom-2 z-50 flex flex-1 flex-col overflow-y-auto rounded-xl bg-modal text-text outline-0 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] max-sm:inset-x-2 max-sm:h-fit max-sm:max-h-4/5 max-sm:data-ending-style:translate-y-full max-sm:data-starting-style:translate-y-full sm:inset-y-2 sm:right-2 sm:max-w-md sm:data-ending-style:translate-x-full sm:data-starting-style:translate-x-full",
           className
         )}
         {...props}
@@ -35,7 +35,7 @@ function DrawerHeader({
   return (
     <div
       className={cx(
-        "sticky top-0 flex justify-between gap-4 bg-bg py-4 pr-4 pl-6",
+        "sticky top-0 flex justify-between gap-4 bg-modal py-4 pr-4 pl-6",
         className
       )}
       {...props}
@@ -71,7 +71,7 @@ function DrawerFooter({ className, ...props }: ComponentProps<"div">) {
   return (
     <div
       className={cx(
-        "sticky bottom-0 mt-auto flex flex-col gap-4 bg-bg px-6 py-4",
+        "sticky bottom-0 mt-auto flex flex-col gap-4 bg-modal px-6 py-4",
         className
       )}
       {...props}
