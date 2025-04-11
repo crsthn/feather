@@ -123,7 +123,8 @@ export default function Blocks() {
               </DialogMain>
 
               <DialogFooter>
-                <DialogClose color="danger">Delete project</DialogClose>
+              <DialogClose color="secondary">Cancel</DialogClose><DialogClose color="danger">Delete project</DialogClose>
+                
               </DialogFooter>
             </DialogPopup>
           </Dialog>

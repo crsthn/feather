@@ -59,7 +59,7 @@ function DrawerMain({ className, ...props }: ComponentProps<"div">) {
   return (
     <div
       className={cx(
-        "mx-1 flex flex-1 flex-col gap-6 rounded-xl bg-surface p-5",
+        "mx-px flex flex-1 flex-col gap-6 rounded-xl bg-surface p-6",
         className
       )}
       {...props}
