@@ -129,6 +129,10 @@
     scrollbar-width: thin;
     border-color: var(--color-border);
     outline-color: var(--color-primary) / 50;
+    ::selection {
+      background-color: var(--color-primary-muted);
+      color: var(--color-primary);
+    }
   }
 
   body {
