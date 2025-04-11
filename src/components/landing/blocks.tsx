@@ -203,98 +203,102 @@ export default function Blocks() {
               <DrawerHeader>
                 <DrawerTitle>Checkout</DrawerTitle>
               </DrawerHeader>
-              <DrawerMain className="gap-4">
+              <DrawerMain className="gap-0 p-0">
                 {/* Worker Advanced Plan */}
-                <div className="flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-lg bg-secondary">
-                    <Cloud size={24} />
+                <div className="flex flex-col gap-4 border-b p-5">
+                  <div className="flex items-center gap-4">
+                    <div className="flex size-12 items-center justify-center rounded-lg bg-secondary">
+                      <Cloud size={24} />
+                    </div>
+                    <div className="flex flex-1 flex-col">
+                      <h3 className="font-medium">Worker Advanced Plan</h3>
+                      <p className="text-text-2">Serverless Application</p>
+                    </div>
+                    <div className="flex flex-col text-right">
+                      <p className="font-medium">$99</p>
+                      <p className="text-text-2">×1</p>
+                    </div>
                   </div>
-                  <div className="flex flex-1 flex-col">
-                    <h3 className="font-medium">Worker Advanced Plan</h3>
-                    <p className="text-text-2">Serverless Application</p>
-                  </div>
-                  <div className="flex flex-col text-right">
-                    <p className="font-medium">$99</p>
-                    <p className="text-text-2">×1</p>
-                  </div>
-                </div>
 
-                {/* Addons - Jumper */}
-                <div className="flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-lg bg-secondary">
-                    <CreditCard size={24} />
+                  {/* Addons - Jumper */}
+                  <div className="flex items-center gap-4">
+                    <div className="flex size-12 items-center justify-center rounded-lg bg-secondary">
+                      <CreditCard size={24} />
+                    </div>
+                    <div className="flex flex-1 flex-col">
+                      <h3 className="font-medium">Addons - Jumper</h3>
+                      <p className="text-text-2">Reverse Proxy</p>
+                    </div>
+                    <div className="flex flex-col text-right">
+                      <p className="font-medium">$19</p>
+                      <p className="text-text-2">×1</p>
+                    </div>
                   </div>
-                  <div className="flex flex-1 flex-col">
-                    <h3 className="font-medium">Addons - Jumper</h3>
-                    <p className="text-text-2">Reverse Proxy</p>
-                  </div>
-                  <div className="flex flex-col text-right">
-                    <p className="font-medium">$19</p>
-                    <p className="text-text-2">×1</p>
-                  </div>
-                </div>
 
-                {/* Addons - Shield */}
-                <div className="flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-lg bg-secondary">
-                    <Shield size={24} />
+                  {/* Addons - Shield */}
+                  <div className="flex items-center gap-4">
+                    <div className="flex size-12 items-center justify-center rounded-lg bg-secondary">
+                      <Shield size={24} />
+                    </div>
+                    <div className="flex flex-1 flex-col">
+                      <h3 className="font-medium">Addons - Shield</h3>
+                      <p className="text-text-2">WAF</p>
+                    </div>
+                    <div className="flex flex-col text-right">
+                      <p className="font-medium">$39</p>
+                      <p className="text-text-2">×1</p>
+                    </div>
                   </div>
-                  <div className="flex flex-1 flex-col">
-                    <h3 className="font-medium">Addons - Shield</h3>
-                    <p className="text-text-2">WAF</p>
-                  </div>
-                  <div className="flex flex-col text-right">
-                    <p className="font-medium">$39</p>
-                    <p className="text-text-2">×1</p>
-                  </div>
-                </div>
 
-                {/* Advanced Technical Support */}
-                <div className="flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-lg bg-secondary">
-                    <Headphones size={24} />
-                  </div>
-                  <div className="flex flex-1 flex-col">
-                    <h3 className="font-medium">Advanced Technical Support</h3>
-                    <p className="text-text-2">7×24 Rapid Response</p>
-                  </div>
-                  <div className="flex flex-col text-right">
-                    <p className="font-medium">$59</p>
-                    <p className="text-text-2">×1</p>
+                  {/* Advanced Technical Support */}
+                  <div className="flex items-center gap-4">
+                    <div className="flex size-12 items-center justify-center rounded-lg bg-secondary">
+                      <Headphones size={24} />
+                    </div>
+                    <div className="flex flex-1 flex-col">
+                      <h3 className="font-medium">
+                        Advanced Technical Support
+                      </h3>
+                      <p className="text-text-2">7×24 Rapid Response</p>
+                    </div>
+                    <div className="flex flex-col text-right">
+                      <p className="font-medium">$59</p>
+                      <p className="text-text-2">×1</p>
+                    </div>
                   </div>
                 </div>
-              </DrawerMain>
-              <DrawerMain className="gap-4 border-t">
-                <div className="flex justify-between">
-                  <span className="text-text-2">Subtotal</span>
-                  <span>$216</span>
-                </div>
+                <div className="flex flex-col gap-4 border-b p-5">
+                  <div className="flex justify-between">
+                    <span className="text-text-2">Subtotal</span>
+                    <span>$216</span>
+                  </div>
 
-                <div className="flex justify-between">
-                  <span className="text-text-2">Tax (5%)</span>
-                  <span>$10.8</span>
-                </div>
+                  <div className="flex justify-between">
+                    <span className="text-text-2">Tax (5%)</span>
+                    <span>$10.8</span>
+                  </div>
 
-                <div className="flex justify-between">
-                  <span className="text-text-2">Discount</span>
-                  <div className="flex items-center gap-2">
-                    <Badge color="secondary">EARLY ACCESS 20% OFF</Badge>
-                    <span>-$43.2</span>
+                  <div className="flex justify-between">
+                    <span className="text-text-2">Discount</span>
+                    <div className="flex items-center gap-2">
+                      <Badge color="secondary">EARLY ACCESS 20% OFF</Badge>
+                      <span>-$43.2</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-between font-medium text-xl">
+                    <span>Total</span>
+                    <span>$183.6</span>
                   </div>
                 </div>
-                <div className="flex justify-between font-medium text-xl">
-                  <span>Total</span>
-                  <span>$183.6</span>
+                <div className="flex flex-col p-5">
+                  <p className="text-text-2">
+                    Before proceeding with your payment, please visit the{" "}
+                    <Link href="#" className="text-primary hover:underline">
+                      compliance documents
+                    </Link>{" "}
+                    section to review all necessary information.
+                  </p>
                 </div>
-              </DrawerMain>
-              <DrawerMain className="border-t">
-                <p className="text-text-2">
-                  Before proceeding with your payment, please visit the{" "}
-                  <Link href="#" className="text-primary hover:underline">
-                    compliance documents
-                  </Link>{" "}
-                  section to review all necessary information.
-                </p>
               </DrawerMain>
 
               <DrawerFooter>

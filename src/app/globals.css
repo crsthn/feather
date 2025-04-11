@@ -12,7 +12,7 @@
 
   --muted: oklch(0.5999 0 0 / 0.15);
 
-  --overlay: oklch(0 0 0 / 0.4);
+  --overlay: oklch(0 0 0 / 0.2);
 
   --modal: oklch(1 0 0);
 
@@ -31,7 +31,7 @@
   --text-3: oklch(0 0 0 / 0.3);
   --text-inverse: oklch(1 0 0);
 
-  --border: oklch(0 0 0 / 0.15);
+  --border: oklch(0 0 0 / 0.12);
 
   --on-primary: oklch(1 0 0);
   --on-danger: oklch(1 0 0);
@@ -115,7 +115,7 @@
   --text-3: oklch(1 0 0 / 0.4);
   --text-inverse: oklch(0 0 0);
 
-  --border: oklch(1 0 0 / 0.15);
+  --border: oklch(1 0 0 / 0.14);
 
   --on-primary: oklch(1 0 0);
   --on-danger: oklch(1 0 0);

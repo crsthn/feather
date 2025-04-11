@@ -16,10 +16,10 @@ function AlertDialogPopup({
 }: ComponentProps<typeof BaseAlertDialog.Popup>) {
   return (
     <BaseAlertDialog.Portal>
-      <BaseAlertDialog.Backdrop className="fixed inset-0 z-50 overflow-y-auto bg-overlay backdrop-blur-xs transition-all ease-out data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200" />
+      <BaseAlertDialog.Backdrop className="fixed inset-0 z-50 overflow-y-auto bg-overlay backdrop-blur-xs transition-opacity ease-out data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200" />
       <BaseAlertDialog.Popup
         className={cx(
-          "-translate-x-1/2 -translate-y-1/2 fixed top-[calc(50%-1.25rem*var(--nested-dialogs))] left-1/2 z-50 w-md max-w-[calc(100vw-3rem)] scale-[calc(1-0.1*var(--nested-dialogs))] overflow-y-auto rounded-xl bg-modal text-text transition-all ease-out data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200",
+          "-translate-x-1/2 -translate-y-1/2 fixed top-[calc(50%-1.25rem*var(--nested-dialogs))] left-1/2 z-50 w-md max-w-[calc(100vw-3rem)] scale-[calc(1-0.1*var(--nested-dialogs))] overflow-y-auto rounded-xl bg-bg text-text outline-0 transition-all ease-out data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200",
           className
         )}
         {...props}
@@ -30,14 +30,20 @@ function AlertDialogPopup({
 
 function AlertDialogHeader({ className, ...props }: ComponentProps<"div">) {
   return (
-    <div className={cx("flex flex-col gap-1 p-6", className)} {...props} />
+    <div
+      className={cx(
+        "mx-1 mt-1 flex flex-col gap-1 rounded-xl bg-surface p-5",
+        className
+      )}
+      {...props}
+    />
   );
 }
 
 function AlertDialogFooter({ className, ...props }: ComponentProps<"div">) {
   return (
     <div
-      className={cx("flex justify-between gap-4 border-t px-6 py-4", className)}
+      className={cx("flex justify-between gap-4 px-6 py-4", className)}
       {...props}
     />
   );

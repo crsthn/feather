@@ -15,10 +15,10 @@ function DialogPopup({
 }: ComponentProps<typeof BaseDialog.Popup>) {
   return (
     <BaseDialog.Portal>
-      <BaseDialog.Backdrop className="fixed inset-0 z-50 overflow-y-auto bg-overlay backdrop-blur-xs transition-all ease-out data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200" />
+      <BaseDialog.Backdrop className="fixed inset-0 z-50 overflow-y-auto bg-overlay backdrop-blur-xs transition-opacity ease-out data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200" />
       <BaseDialog.Popup
         className={cx(
-          "-translate-x-1/2 -translate-y-1/2 fixed top-[calc(50%-1.25rem*var(--nested-dialogs))] left-1/2 z-50 w-lg max-w-[calc(100vw-2rem)] scale-[calc(1-0.1*var(--nested-dialogs))] overflow-y-auto rounded-xl bg-modal text-text transition-all ease-out data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200",
+          "-translate-x-1/2 -translate-y-1/2 fixed top-[calc(50%-1.25rem*var(--nested-dialogs))] left-1/2 z-50 w-lg max-w-[calc(100vw-2rem)] scale-[calc(1-0.1*var(--nested-dialogs))] overflow-y-auto rounded-xl bg-bg text-text outline-0 transition-all ease-out data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200",
           className
         )}
         {...props}
@@ -55,7 +55,10 @@ function DialogHeader({
 function DialogMain({ className, ...props }: ComponentProps<"div">) {
   return (
     <div
-      className={cx("flex flex-col gap-6 border-t p-6", className)}
+      className={cx(
+        "mx-1 flex flex-col gap-6 rounded-xl bg-surface p-5",
+        className
+      )}
       {...props}
     />
   );
@@ -64,7 +67,7 @@ function DialogMain({ className, ...props }: ComponentProps<"div">) {
 function DialogFooter({ className, ...props }: ComponentProps<"div">) {
   return (
     <div
-      className={cx("flex justify-between gap-4 border-t px-6 py-4", className)}
+      className={cx("flex justify-between gap-4 px-6 py-4", className)}
       {...props}
     />
   );
