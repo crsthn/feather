@@ -32,7 +32,7 @@ function AlertDialogHeader({ className, ...props }: ComponentProps<"div">) {
   return (
     <div
       className={cx(
-        "mx-px mt-px flex flex-col gap-1 rounded-xl bg-surface p-6",
+        "mx-1 mt-1 flex flex-col gap-1 rounded-xl bg-surface p-5",
         className
       )}
       {...props}
