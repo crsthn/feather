@@ -1,6 +1,6 @@
 import { constructMetadata } from "@/lib/metadata";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Toast } from "@/components/ui/toast";
 
