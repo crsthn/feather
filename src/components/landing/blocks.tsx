@@ -210,7 +210,7 @@ export default function Blocks() {
               </DrawerHeader>
               <DrawerMain className="gap-0 p-0">
                 {/* Worker Advanced Plan */}
-                <div className="flex flex-col gap-4 border-b p-5">
+                <div className="flex flex-col gap-4 border-b px-5.5 py-6">
                   <div className="flex items-center gap-4">
                     <div className="flex size-12 items-center justify-center rounded-lg bg-secondary">
                       <Cloud size={24} />
@@ -272,7 +272,7 @@ export default function Blocks() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col gap-4 border-b p-5">
+                <div className="flex flex-col gap-4 border-b px-5.5 py-6">
                   <div className="flex justify-between">
                     <span className="text-text-2">Subtotal</span>
                     <span>$216</span>
@@ -295,7 +295,7 @@ export default function Blocks() {
                     <span>$183.6</span>
                   </div>
                 </div>
-                <div className="flex flex-col p-5">
+                <div className="flex flex-col px-5.5 py-6">
                   <p className="text-text-2">
                     Before proceeding with your payment, please visit the{" "}
                     <Link href="#" className="text-primary hover:underline">

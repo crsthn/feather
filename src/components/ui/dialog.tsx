@@ -56,7 +56,7 @@ function DialogMain({ className, ...props }: ComponentProps<"div">) {
   return (
     <div
       className={cx(
-        "mx-1 flex flex-col gap-5 rounded-xl bg-surface p-5",
+        "mx-0.5 flex flex-col gap-6 rounded-xl bg-surface px-5.5 py-6",
         className
       )}
       {...props}
