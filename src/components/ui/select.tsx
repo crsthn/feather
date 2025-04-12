@@ -1,7 +1,7 @@
 "use client";
 import { cx, focusInteractive } from "@/lib/utils";
 import { Select as BaseSelect } from "@base-ui-components/react";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { ChevronsUpDown } from "lucide-react";
 import type { ComponentProps } from "react";
 
 function Select(props: ComponentProps<typeof BaseSelect.Root>) {
@@ -65,8 +65,8 @@ function SelectItem({
       {...props}
     >
       <BaseSelect.ItemText>{children}</BaseSelect.ItemText>
-      <BaseSelect.ItemIndicator className="text-primary data-disabled:opacity-50">
-        <Check size={16} strokeWidth={3} />
+      <BaseSelect.ItemIndicator className="flex size-4 items-center justify-center">
+        <span className="size-2 rounded-full bg-primary data-disabled:opacity-50" />
       </BaseSelect.ItemIndicator>
     </BaseSelect.Item>
   );
