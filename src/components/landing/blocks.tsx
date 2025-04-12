@@ -123,8 +123,8 @@ export default function Blocks() {
               </DialogMain>
 
               <DialogFooter>
-              <DialogClose color="secondary">Cancel</DialogClose><DialogClose color="danger">Delete project</DialogClose>
-                
+                <DialogClose color="secondary">Cancel</DialogClose>
+                <DialogClose color="danger">Delete project</DialogClose>
               </DialogFooter>
             </DialogPopup>
           </Dialog>
@@ -150,7 +150,11 @@ export default function Blocks() {
               <span className="text-sm">Uploading files...</span>
               <span className="text-sm text-text-2">84%</span>
             </div>
-            <Progress value={84} className="w-full" />
+            <Progress
+              value={84}
+              className="w-full"
+              aria-label="Progress of file upload"
+            />
             <div className="flex gap-2">
               <Badge color="secondary" className="w-fit">
                 3 files

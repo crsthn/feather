@@ -42,6 +42,7 @@ export function ThemeToggle({
         <Radio.Root
           key={value}
           value={value}
+          aria-label={value}
           className="flex size-6 cursor-pointer items-center justify-center rounded-full text-text-2 focus-visible:outline-2 focus-visible:outline-primary data-checked:bg-surface data-checked:text-text"
         >
           <Icon size={14} />

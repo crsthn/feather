@@ -11,7 +11,7 @@ import {
 export default function Component() {
   return (
     <Select>
-      <SelectTrigger className="w-44">
+      <SelectTrigger className="w-44" aria-label="Select workspace">
         <SelectValue placeholder="Select workspace" />
       </SelectTrigger>
 

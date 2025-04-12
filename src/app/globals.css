@@ -6,14 +6,9 @@
 
 :root {
   --bg: var(--color-neutral-50);
-  --bg-inverse: var(--color-black);
-
   --surface: var(--color-white);
 
-  --muted: --alpha(var(--color-neutral-500) / 12%);
-
   --overlay: --alpha(var(--color-black) / 20%);
-
   --modal: var(--color-neutral-100);
 
   --popover: --alpha(var(--color-white) / 80%);
@@ -22,6 +17,7 @@
   --primary-muted: --alpha(var(--color-blue-600) / 10%);
 
   --secondary: --alpha(var(--color-neutral-500) / 8%);
+  --muted: --alpha(var(--color-neutral-500) / 12%);
 
   --danger: var(--color-red-600);
   --danger-muted: --alpha(var(--color-red-600) / 10%);
@@ -29,7 +25,6 @@
   --text: var(--color-black);
   --text-2: --alpha(var(--color-black) / 50%);
   --text-3: --alpha(var(--color-black) / 30%);
-  --text-inverse: var(--color-white);
 
   --border: --alpha(var(--color-black) / 12%);
 
@@ -41,14 +36,9 @@
 
 @theme inline {
   --color-bg: var(--bg);
-  --color-bg-inverse: var(--bg-inverse);
-
   --color-surface: var(--surface);
 
-  --color-muted: var(--muted);
-
   --color-overlay: var(--overlay);
-
   --color-modal: var(--modal);
 
   --color-popover: var(--popover);
@@ -57,6 +47,7 @@
   --color-primary-muted: var(--primary-muted);
 
   --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
 
   --color-danger: var(--danger);
   --color-danger-muted: var(--danger-muted);
@@ -64,7 +55,6 @@
   --color-text: var(--text);
   --color-text-2: var(--text-2);
   --color-text-3: var(--text-3);
-  --color-text-inverse: var(--text-inverse);
 
   --color-border: var(--border);
 
@@ -90,14 +80,9 @@
 
 .dark {
   --bg: var(--color-neutral-950);
-  --bg-inverse: var(--color-white);
-
   --surface: var(--color-black);
 
-  --muted: --alpha(var(--color-neutral-500) / 24%);
-
   --overlay: --alpha(var(--color-black) / 50%);
-
   --modal: var(--color-neutral-900);
 
   --popover: --alpha(var(--color-neutral-800) / 80%);
@@ -106,6 +91,7 @@
   --primary-muted: --alpha(var(--color-blue-500) / 15%);
 
   --secondary: --alpha(var(--color-neutral-500) / 18%);
+  --muted: --alpha(var(--color-neutral-500) / 24%);
 
   --danger: var(--color-red-500);
   --danger-muted: --alpha(var(--color-red-500) / 15%);
@@ -113,7 +99,6 @@
   --text: var(--color-white);
   --text-2: --alpha(var(--color-white) / 60%);
   --text-3: --alpha(var(--color-white) / 40%);
-  --text-inverse: var(--color-black);
 
   --border: --alpha(var(--color-white) / 14%);
 
