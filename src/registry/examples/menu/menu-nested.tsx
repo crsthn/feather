@@ -7,21 +7,13 @@ import {
   MenuSubmenuTrigger,
   MenuTrigger,
 } from "@/components/ui/menu";
-import {
-  ChevronDown,
-  Copy,
-  FileText,
-  Mail,
-  MessageSquare,
-  Plus,
-  Send,
-} from "lucide-react";
+import { Copy, FileText, Mail, MessageSquare, Plus, Send } from "lucide-react";
 
 export default function Component() {
   return (
     <Menu>
       <MenuTrigger className={buttonStyles({ color: "secondary" })}>
-        Actions <ChevronDown />
+        Actions
       </MenuTrigger>
       <MenuPopup>
         <MenuItem>

@@ -16,7 +16,7 @@ function MenuPopup({
       <BaseMenu.Positioner className="z-50" sideOffset={8}>
         <BaseMenu.Popup
           className={cx(
-            "min-w-40 origin-[var(--transform-origin)] rounded-lg bg-popover p-1 text-text shadow-[0_8px_30px_rgba(0,0,0,0.08),0_4px_15px_rgba(0,0,0,0.06)] outline-none backdrop-blur-2xl transition-all ease-out data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200",
+            "min-w-40 origin-[var(--transform-origin)] rounded-lg bg-popover p-1 text-text shadow-[0_8px_30px_rgba(0,0,0,0.08),0_4px_15px_rgba(0,0,0,0.06)] outline-none backdrop-blur-2xl transition-all ease-out data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200",
             className
           )}
           {...props}
@@ -90,9 +90,9 @@ function MenuRadioItem({
       {...props}
     >
       {children}
-      <BaseMenu.RadioItemIndicator className="text-primary data-disabled:opacity-50">
-        <Check size={16} strokeWidth={3} />
-      </BaseMenu.RadioItemIndicator>
+      <span className="flex size-4 items-center justify-center">
+        <BaseMenu.RadioItemIndicator className="size-2 rounded-full bg-primary data-disabled:opacity-50" />
+      </span>
     </BaseMenu.RadioItem>
   );
 }

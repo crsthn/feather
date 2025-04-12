@@ -34,7 +34,7 @@ function CollapsiblePanel({
   return (
     <BaseCollapsible.Panel
       keepMounted
-      className="h-[var(--collapsible-panel-height)] transition-[height] duration-200 ease-in-out data-ending-style:h-0 data-starting-style:h-0"
+      className="h-[var(--collapsible-panel-height)] transition-all duration-200 ease-in-out data-ending-style:h-0 data-starting-style:h-0 data-ending-style:opacity-0 data-starting-style:opacity-0"
     >
       <div className={cx("overflow-hidden", className)} {...props}>
         {children}

@@ -44,7 +44,7 @@ function AccordionTrigger({
 
 function AccordionPanel({ className, ...props }: ComponentProps<"div">) {
   return (
-    <BaseAccordion.Panel className="h-[var(--accordion-panel-height)] transform-gpu transition-[height] duration-200 ease-in-out data-ending-style:h-0 data-starting-style:h-0">
+    <BaseAccordion.Panel className="h-[var(--accordion-panel-height)] transform-gpu transition-all duration-200 ease-in-out data-ending-style:h-0 data-starting-style:h-0 data-ending-style:opacity-0 data-starting-style:opacity-0">
       <div
         className={cx("overflow-hidden pb-3 text-text-2", className)}
         {...props}

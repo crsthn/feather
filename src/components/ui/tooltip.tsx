@@ -15,7 +15,7 @@ function TooltipPopup({
       <BaseTooltip.Positioner sideOffset={8}>
         <BaseTooltip.Popup
           className={cx(
-            "flex origin-[var(--transform-origin)] flex-col rounded-md bg-text px-2 py-1 text-surface transition-all ease-out data-[ending-style]:scale-90 data-[starting-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 data-[instant]:duration-0",
+            "flex origin-[var(--transform-origin)] flex-col rounded-md bg-text px-2 py-1 text-surface transition-all ease-out data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 data-[instant]:duration-0",
             className
           )}
           {...props}
