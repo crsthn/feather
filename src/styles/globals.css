@@ -115,8 +115,8 @@
     border-color: var(--color-border);
     outline-color: var(--color-primary) / 50;
     ::selection {
-      background-color: var(--color-primary-muted);
-      color: var(--color-primary);
+      background-color: var(--color-primary);
+      color: var(--color-on-primary);
     }
   }
 

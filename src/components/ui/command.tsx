@@ -1,5 +1,4 @@
 "use client";
-
 import { Command as CommandPrimitive } from "cmdk";
 import { SearchIcon } from "lucide-react";
 
@@ -44,7 +43,7 @@ function CommandInput({
   ...props
 }: ComponentProps<typeof CommandPrimitive.Input>) {
   return (
-    <div className="flex items-center gap-2 px-4">
+    <div className="flex items-center gap-2 px-4.5">
       <SearchIcon className="size-4 shrink-0 text-text-2" />
       <CommandPrimitive.Input
         className={cx(
@@ -64,7 +63,7 @@ function CommandList({
   return (
     <CommandPrimitive.List
       className={cx(
-        "max-h-80 overflow-y-auto overflow-x-hidden border-t",
+        "mx-0.5 mb-0.5 max-h-80 overflow-y-auto overflow-x-hidden rounded-xl bg-surface p-2",
         className
       )}
       {...props}
@@ -79,10 +78,9 @@ function CommandEmpty({
 }
 
 function CommandGroup({
-  className,
   ...props
 }: ComponentProps<typeof CommandPrimitive.Group>) {
-  return <CommandPrimitive.Group className={cx("p-2", className)} {...props} />;
+  return <CommandPrimitive.Group {...props} />;
 }
 
 function CommandSeparator({
