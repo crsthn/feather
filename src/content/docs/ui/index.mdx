@@ -21,50 +21,40 @@ Add these CSS variables to your main CSS file:
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --bg: oklch(0.9761 0 0);
-  --bg-inverse: oklch(0 0 0);
+  --bg: var(--color-neutral-50);
+  --surface: var(--color-white);
 
-  --surface: oklch(1 0 0);
+  --overlay: --alpha(var(--color-black) / 20%);
+  --modal: var(--color-neutral-100);
 
-  --muted: oklch(0.5999 0 0 / 0.15);
+  --popover: --alpha(var(--color-white) / 80%);
 
-  --overlay: oklch(0 0 0 / 0.4);
+  --primary: var(--color-blue-600);
+  --primary-muted: --alpha(var(--color-blue-600) / 10%);
 
-  --modal: oklch(1 0 0);
+  --secondary: --alpha(var(--color-neutral-500) / 8%);
+  --muted: --alpha(var(--color-neutral-500) / 12%);
 
-  --popover: oklch(1 0 0 / 0.8);
+  --danger: var(--color-red-600);
+  --danger-muted: --alpha(var(--color-red-600) / 10%);
 
-  --primary: oklch(0.6028 0.2177 257.42);
-  --primary-muted: oklch(0.6028 0.2177 257.42 / 0.1);
+  --text: var(--color-black);
+  --text-2: --alpha(var(--color-black) / 50%);
+  --text-3: --alpha(var(--color-black) / 30%);
 
-  --secondary: oklch(0.5999 0 0 / 0.1);
+  --border: --alpha(var(--color-black) / 12%);
 
-  --danger: oklch(0.577 0.245 27.325);
-  --danger-muted: oklch(0.577 0.245 27.325 / 0.1);
-
-  --text: oklch(0 0 0);
-  --text-2: oklch(0 0 0 / 0.5);
-  --text-3: oklch(0 0 0 / 0.3);
-  --text-inverse: oklch(1 0 0);
-
-  --border: oklch(0 0 0 / 0.15);
-
-  --on-primary: oklch(1 0 0);
-  --on-danger: oklch(1 0 0);
+  --on-primary: var(--color-white);
+  --on-danger: var(--color-white);
 
   --scrollbar: #d9d9d9;
 }
 
 @theme inline {
   --color-bg: var(--bg);
-  --color-bg-inverse: var(--bg-inverse);
-
   --color-surface: var(--surface);
 
-  --color-muted: var(--muted);
-
   --color-overlay: var(--overlay);
-
   --color-modal: var(--modal);
 
   --color-popover: var(--popover);
@@ -73,6 +63,7 @@ Add these CSS variables to your main CSS file:
   --color-primary-muted: var(--primary-muted);
 
   --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
 
   --color-danger: var(--danger);
   --color-danger-muted: var(--danger-muted);
@@ -80,7 +71,6 @@ Add these CSS variables to your main CSS file:
   --color-text: var(--text);
   --color-text-2: var(--text-2);
   --color-text-3: var(--text-3);
-  --color-text-inverse: var(--text-inverse);
 
   --color-border: var(--border);
 
@@ -105,36 +95,31 @@ Add these CSS variables to your main CSS file:
 }
 
 .dark {
-  --bg: oklch(0.1591 0 0);
-  --bg-inverse: oklch(1 0 0);
+  --bg: var(--color-neutral-950);
+  --surface: var(--color-black);
 
-  --surface: oklch(0 0 0);
+  --overlay: --alpha(var(--color-black) / 50%);
+  --modal: var(--color-neutral-900);
 
-  --muted: oklch(0.5999 0 0 / 0.3);
+  --popover: --alpha(var(--color-neutral-800) / 80%);
 
-  --overlay: oklch(0 0 0 / 0.5);
+  --primary: var(--color-blue-500);
+  --primary-muted: --alpha(var(--color-blue-500) / 15%);
 
-  --modal: oklch(0.2046 0 0);
+  --secondary: --alpha(var(--color-neutral-500) / 18%);
+  --muted: --alpha(var(--color-neutral-500) / 24%);
 
-  --popover: oklch(0.2686 0 0 / 0.8);
+  --danger: var(--color-red-500);
+  --danger-muted: --alpha(var(--color-red-500) / 15%);
 
-  --primary: oklch(0.6243 0.20557 255.48);
-  --primary-muted: oklch(0.6243 0.20557 255.48 / 0.15);
+  --text: var(--color-white);
+  --text-2: --alpha(var(--color-white) / 60%);
+  --text-3: --alpha(var(--color-white) / 40%);
 
-  --secondary: oklch(0.5999 0 0 / 0.15);
+  --border: --alpha(var(--color-white) / 14%);
 
-  --danger: oklch(0.637 0.237 25.331);
-  --danger-muted: oklch(0.637 0.237 25.331 / 0.2);
-
-  --text: oklch(1 0 0);
-  --text-2: oklch(1 0 0 / 0.6);
-  --text-3: oklch(1 0 0 / 0.4);
-  --text-inverse: oklch(0 0 0);
-
-  --border: oklch(1 0 0 / 0.15);
-
-  --on-primary: oklch(1 0 0);
-  --on-danger: oklch(1 0 0);
+  --on-primary: var(--color-white);
+  --on-danger: var(--color-white);
 
   --scrollbar: #262626;
 }
@@ -145,6 +130,10 @@ Add these CSS variables to your main CSS file:
     scrollbar-width: thin;
     border-color: var(--color-border);
     outline-color: var(--color-primary) / 50;
+    ::selection {
+      background-color: var(--color-primary);
+      color: var(--color-on-primary);
+    }
   }
 
   body {
