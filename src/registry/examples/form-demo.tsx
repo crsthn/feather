@@ -3,11 +3,12 @@
 import { ActionButton } from '@/components/shared/action-button';
 import { Field, FieldError, FieldLabel, Form } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import * as React from 'react';
+import { useState } from 'react';
 
 export default function Component() {
-  const [errors, setErrors] = React.useState({});
-  const [isLoading, setLoading] = React.useState(false);
+  const [errors, setErrors] = useState({});
+  const [isLoading, setLoading] = useState(false);
+  const [url, setUrl] = useState('https://example.com');
 
   return (
     <Form
@@ -34,7 +35,8 @@ export default function Component() {
         <Input
           type="url"
           required
-          defaultValue="https://example.com"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
           placeholder="https://example.com"
           pattern="https?://.*"
         />
