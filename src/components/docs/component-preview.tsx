@@ -1,14 +1,14 @@
-import fs from "node:fs/promises";
-import path from "node:path";
-import { Pre } from "@/components/docs/codeblock";
-import CopyButton from "@/components/shared/copy-button";
-import { Spinner } from "@/components/ui/spinner";
-import { Tabs, TabsList, TabsPanel, TabsTrigger } from "@/components/ui/tabs";
-import { tryCatch } from "@/lib/try-catch";
-import { highlight } from "fumadocs-core/highlight";
-import { Code2, Eye } from "lucide-react";
-import dynamic from "next/dynamic";
-import type { ComponentProps } from "react";
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { Pre } from '@/components/docs/codeblock';
+import CopyButton from '@/components/shared/copy-button';
+import { Spinner } from '@/components/ui/spinner';
+import { Tabs, TabsList, TabsPanel, TabsTrigger } from '@/components/ui/tabs';
+import { tryCatch } from '@/lib/try-catch';
+import { highlight } from 'fumadocs-core/highlight';
+import { Code2, Eye } from 'lucide-react';
+import dynamic from 'next/dynamic';
+import type { ComponentProps } from 'react';
 
 type ComponentPreviewProps = ComponentProps<typeof Tabs> & {
   name: string;
@@ -24,9 +24,9 @@ export default async function ComponentPreview({
 
   const { data, error } = await tryCatch(
     fs.readFile(
-      path.join(process.cwd(), "src", "registry", `${name}.tsx`),
-      "utf-8"
-    )
+      path.join(process.cwd(), 'src', 'registry', `${name}.tsx`),
+      'utf-8',
+    ),
   );
 
   if (error) {
@@ -38,7 +38,7 @@ export default async function ComponentPreview({
   }
 
   const rendered = await highlight(data, {
-    lang: "tsx",
+    lang: 'tsx',
     components: {
       pre: Pre,
     },
@@ -66,7 +66,7 @@ export default async function ComponentPreview({
       </TabsList>
 
       <TabsPanel
-        className="flex items-center justify-center p-6"
+        className="flex items-center justify-center p-6 text-text"
         value="preview"
       >
         <DemoComponent />

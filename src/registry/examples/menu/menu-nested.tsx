@@ -1,4 +1,4 @@
-import { buttonStyles } from "@/components/ui/button";
+import { buttonStyles } from '@/components/ui/button';
 import {
   Menu,
   MenuItem,
@@ -6,38 +6,36 @@ import {
   MenuSeparator,
   MenuSubmenuTrigger,
   MenuTrigger,
-} from "@/components/ui/menu";
-import { Copy, FileText, Mail, MessageSquare, Plus, Send } from "lucide-react";
+} from '@/components/ui/menu';
+import { Copy, FileText, Mail, MessageSquare, Plus, Send } from 'lucide-react';
 
 export default function Component() {
   return (
     <Menu>
-      <MenuTrigger className={buttonStyles({ color: "secondary" })}>
+      <MenuTrigger className={buttonStyles({ color: 'secondary' })}>
         Actions
       </MenuTrigger>
       <MenuPopup>
         <MenuItem>
-          <Plus size={16} /> New Task
+          <Plus /> New Task
         </MenuItem>
         <MenuItem>
-          <Copy size={16} /> Copy Link
+          <Copy /> Copy Link
         </MenuItem>
         <MenuSeparator />
         <Menu>
           <MenuSubmenuTrigger>
-            <span className="flex items-center gap-2">
-              <Mail size={16} /> Share
-            </span>
+            <Mail /> Share
           </MenuSubmenuTrigger>
           <MenuPopup>
             <MenuItem>
-              <MessageSquare size={16} /> Message
+              <MessageSquare /> Message
             </MenuItem>
             <MenuItem>
-              <Send size={16} /> Email
+              <Send /> Email
             </MenuItem>
             <MenuItem disabled>
-              <FileText size={16} /> Notes
+              <FileText /> Notes
             </MenuItem>
           </MenuPopup>
         </Menu>

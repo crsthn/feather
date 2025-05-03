@@ -1,6 +1,6 @@
-"use client";
-import { Command as CommandPrimitive } from "cmdk";
-import { SearchIcon } from "lucide-react";
+'use client';
+import { Command as CommandPrimitive } from 'cmdk';
+import { SearchIcon } from 'lucide-react';
 
 import {
   Dialog,
@@ -8,15 +8,15 @@ import {
   DialogHeader,
   DialogPopup,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { cx } from "@/lib/utils";
-import type { ComponentProps } from "react";
+} from '@/components/ui/dialog';
+import { cx } from '@/lib/utils';
+import type { ComponentProps } from 'react';
 
 const Command = CommandPrimitive;
 
 function CommandDialog({
-  title = "Command Palette",
-  description = "Search for a command to run...",
+  title = 'Command Palette',
+  description = 'Search for a command to run...',
   children,
   ...props
 }: ComponentProps<typeof Dialog> & {
@@ -47,8 +47,8 @@ function CommandInput({
       <SearchIcon className="size-4 shrink-0 text-text-2" />
       <CommandPrimitive.Input
         className={cx(
-          "h-14 w-full outline-hidden placeholder:text-text-2 disabled:pointer-events-none disabled:opacity-50",
-          className
+          'h-14 w-full outline-hidden placeholder:text-text-2 disabled:pointer-events-none disabled:opacity-50',
+          className,
         )}
         {...props}
       />
@@ -63,8 +63,8 @@ function CommandList({
   return (
     <CommandPrimitive.List
       className={cx(
-        "mx-0.5 mb-0.5 max-h-80 overflow-y-auto overflow-x-hidden rounded-xl bg-surface p-2",
-        className
+        'max-h-80 overflow-y-auto overflow-x-hidden rounded-b-xl border-t bg-surface p-2',
+        className,
       )}
       {...props}
     />
@@ -89,7 +89,7 @@ function CommandSeparator({
 }: ComponentProps<typeof CommandPrimitive.Separator>) {
   return (
     <CommandPrimitive.Separator
-      className={cx("h-px bg-border", className)}
+      className={cx('h-px bg-border', className)}
       {...props}
     />
   );
@@ -102,20 +102,20 @@ function CommandItem({
   return (
     <CommandPrimitive.Item
       className={cx(
-        "flex h-10 cursor-pointer select-none items-center gap-2 rounded-lg px-2 outline-hidden data-[disabled=true]:pointer-events-none data-[selected=true]:bg-secondary data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        className
+        'flex h-10 cursor-pointer select-none items-center gap-2 rounded-lg px-2 outline-hidden data-[disabled=true]:pointer-events-none data-[selected=true]:bg-secondary data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0',
+        className,
       )}
       {...props}
     />
   );
 }
 
-function CommandShortcut({ className, ...props }: ComponentProps<"span">) {
+function CommandShortcut({ className, ...props }: ComponentProps<'span'>) {
   return (
     <span
       className={cx(
-        "ml-auto text-muted-foreground text-xs tracking-widest",
-        className
+        'ml-auto text-muted-foreground text-xs tracking-widest',
+        className,
       )}
       {...props}
     />

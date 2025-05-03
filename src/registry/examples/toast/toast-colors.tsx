@@ -1,7 +1,7 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { CheckCircle2, CircleX, Info } from "lucide-react";
-import { toast } from "sonner";
+'use client';
+import { Button } from '@/components/ui/button';
+import { toast } from '@/components/ui/toast';
+import { CheckCircle2, CircleX, Info } from 'lucide-react';
 
 export default function Component() {
   return (
@@ -11,8 +11,9 @@ export default function Component() {
         color="danger"
         aria-label="Show error toast"
         onClick={() =>
-          toast.error(" Something went wrong", {
-            description: "We couldn’t process your request.",
+          toast.add({
+            title: 'Something went wrong',
+            type: 'error',
           })
         }
       >
@@ -23,8 +24,9 @@ export default function Component() {
         color="primary"
         aria-label="Show success toast"
         onClick={() =>
-          toast.success("Done!", {
-            description: "Your action was completed successfully.",
+          toast.add({
+            title: 'Done!',
+            type: 'success',
           })
         }
       >
@@ -35,8 +37,10 @@ export default function Component() {
         color="secondary"
         aria-label="Show info toast"
         onClick={() =>
-          toast("Heads up!", {
-            description: "Remember to save your changes before leaving.",
+          toast.add({
+            type: 'info',
+            title: 'Heads up!',
+            description: 'Remember to save your change.',
           })
         }
       >

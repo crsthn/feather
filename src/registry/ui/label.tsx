@@ -1,11 +1,11 @@
-import type { ComponentProps } from "react";
-import { tv } from "tailwind-variants";
+import type { ComponentProps } from 'react';
+import { tv } from 'tailwind-variants';
 
 const labelStyles = tv({
-  base: "inline-flex items-center gap-2 text-text font-medium data-disabled:text-text-3",
+  base: 'inline-flex items-center gap-2 font-medium text-text data-disabled:text-text-3',
 });
 
-function Label({ className, ...props }: ComponentProps<"label">) {
+function Label({ className, ...props }: ComponentProps<'label'>) {
   return (
     // biome-ignore lint/a11y/noLabelWithoutControl: <explanation>
     <label

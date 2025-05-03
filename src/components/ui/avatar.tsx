@@ -1,19 +1,19 @@
-import { cx } from "@/lib/utils";
-import { Avatar as BaseAvatar } from "@base-ui-components/react/avatar";
-import type { ComponentProps } from "react";
-import { type VariantProps, tv } from "tailwind-variants";
+import { cx } from '@/lib/utils';
+import { Avatar as BaseAvatar } from '@base-ui-components/react/avatar';
+import type { ComponentProps } from 'react';
+import { type VariantProps, tv } from 'tailwind-variants';
 
 const avatarStyles = tv({
-  base: "inline-flex shrink-0 select-none items-center justify-center overflow-hidden rounded-full align-middle relative",
+  base: 'relative inline-flex shrink-0 select-none items-center justify-center overflow-hidden rounded-full align-middle',
   variants: {
     size: {
-      sm: "size-8 text-sm",
-      md: "size-10 text-base",
-      lg: "size-12 text-lg",
+      sm: 'size-8 text-sm',
+      md: 'size-10 text-base',
+      lg: 'size-12 text-lg',
     },
   },
   defaultVariants: {
-    size: "md",
+    size: 'md',
   },
 });
 
@@ -36,7 +36,7 @@ function AvatarImage({
 }: ComponentProps<typeof BaseAvatar.Image>) {
   return (
     <BaseAvatar.Image
-      className={cx("size-full object-cover", className)}
+      className={cx('size-full object-cover', className)}
       {...props}
     />
   );
@@ -49,8 +49,8 @@ function AvatarFallback({
   return (
     <BaseAvatar.Fallback
       className={cx(
-        "flex size-full items-center justify-center bg-muted font-medium text-primary uppercase",
-        className
+        'flex size-full items-center justify-center bg-muted font-medium text-primary uppercase',
+        className,
       )}
       {...props}
     />

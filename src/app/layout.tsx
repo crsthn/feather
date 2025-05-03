@@ -1,17 +1,17 @@
-import { constructMetadata } from "@/lib/metadata";
-import { Geist, Geist_Mono } from "next/font/google";
-import "@/styles/globals.css";
-import { ThemeProvider } from "@/components/theme/theme-provider";
-import { Toast } from "@/components/ui/toast";
+import { constructMetadata } from '@/lib/metadata';
+import { Geist, Geist_Mono } from 'next/font/google';
+import '@/styles/globals.css';
+import { ThemeProvider } from '@/components/theme/theme-provider';
+import { Toast } from '@/components/ui/toast';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata = constructMetadata();
@@ -30,8 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <Toast expand />
+          <Toast>{children}</Toast>
         </ThemeProvider>
       </body>
     </html>

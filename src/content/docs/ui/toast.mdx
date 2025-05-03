@@ -7,18 +7,13 @@ description: Displays a message to the user in a toast.
 
 ## Manual Installation
 
-```shell
-npx jsrepo add
-```
-
 <ComponentSource name="ui/toast" />
 
 ```tsx title="app/layout.tsx"
 <html>
   <body>
     <ThemeProvider>
-      {children}
-      <Toast expand />
+      <Toast>{children}</Toast>
     </ThemeProvider>
   </body>
 </html>
@@ -27,11 +22,11 @@ npx jsrepo add
 ## Anatomy
 
 ```tsx
-import { toast } from "sonner";
+import { toast } from '@/components/ui/toast';
 ```
 
 ```tsx
-toast("Hello world!")
+toast.add({title: 'Hello!'})
 ```
 
 ## Examples

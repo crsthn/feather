@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { ActionButton } from "@/components/shared/action-button";
-import { Field, FieldError, FieldLabel, Form } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import * as React from "react";
+import { ActionButton } from '@/components/shared/action-button';
+import { Field, FieldError, FieldLabel, Form } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import * as React from 'react';
 
 export default function Component() {
   const [errors, setErrors] = React.useState({});
-  const [loading, setLoading] = React.useState(false);
+  const [isLoading, setLoading] = React.useState(false);
 
   return (
     <Form
@@ -17,7 +17,7 @@ export default function Component() {
       onSubmit={async (event) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-        const value = formData.get("url") as string;
+        const value = formData.get('url') as string;
 
         setLoading(true);
         const response = await submitForm(value);
@@ -40,7 +40,7 @@ export default function Component() {
         />
         <FieldError />
       </Field>
-      <ActionButton type="submit" loading={loading}>
+      <ActionButton type="submit" isLoading={isLoading}>
         Submit
       </ActionButton>
     </Form>
@@ -56,11 +56,11 @@ async function submitForm(value: string) {
   try {
     const url = new URL(value);
 
-    if (url.hostname.endsWith("example.com")) {
-      return { error: "The example domain is not allowed" };
+    if (url.hostname.endsWith('example.com')) {
+      return { error: 'The example domain is not allowed' };
     }
   } catch {
-    return { error: "This is not a valid URL" };
+    return { error: 'This is not a valid URL' };
   }
 
   return { success: true };

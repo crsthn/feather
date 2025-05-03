@@ -1,17 +1,17 @@
-import { Separator as BaseSeparator } from "@base-ui-components/react/separator";
-import type { ComponentProps } from "react";
-import { tv } from "tailwind-variants";
+import { Separator as BaseSeparator } from '@base-ui-components/react/separator';
+import type { ComponentProps } from 'react';
+import { tv } from 'tailwind-variants';
 
 const separatorStyles = tv({
-  base: "bg-border",
+  base: 'bg-border',
   variants: {
     orientation: {
-      horizontal: "h-px w-full",
-      vertical: "w-px",
+      horizontal: 'h-px w-full',
+      vertical: 'w-px',
     },
   },
   defaultVariants: {
-    orientation: "horizontal",
+    orientation: 'horizontal',
   },
 });
 

@@ -1,9 +1,14 @@
-import { cx } from "@/lib/utils";
-import { Accordion as BaseAccordion } from "@base-ui-components/react/accordion";
-import { ChevronDown } from "lucide-react";
-import type { ComponentProps } from "react";
+import { cx, focusRing } from '@/lib/utils';
+import { Accordion as BaseAccordion } from '@base-ui-components/react/accordion';
+import { ChevronDown } from 'lucide-react';
+import type { ComponentProps } from 'react';
 
-const Accordion = BaseAccordion.Root;
+function Accordion({
+  className,
+  ...props
+}: ComponentProps<typeof BaseAccordion.Root>) {
+  return <BaseAccordion.Root className={cx('w-full', className)} {...props} />;
+}
 
 function AccordionItem({
   className,
@@ -11,7 +16,7 @@ function AccordionItem({
 }: ComponentProps<typeof BaseAccordion.Item>) {
   return (
     <BaseAccordion.Item
-      className={cx("overflow-hidden border-b", className)}
+      className={cx('not-last:border-b', className)}
       {...props}
     />
   );
@@ -26,15 +31,16 @@ function AccordionTrigger({
     <BaseAccordion.Header>
       <BaseAccordion.Trigger
         className={cx(
-          "group flex w-full flex-1 cursor-pointer items-center justify-between py-3 text-left font-medium text-text focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset data-disabled:pointer-events-none data-disabled:text-text-3",
-          className
+          focusRing,
+          'group flex w-full cursor-pointer items-center justify-between rounded-lg py-3 text-left font-medium data-disabled:pointer-events-none data-disabled:text-text-3',
+          className,
         )}
         {...props}
       >
         {children}
         <ChevronDown
           size={16}
-          className="shrink-0 text-text-2 transition-transform duration-200 ease-in-out group-data-panel-open:rotate-180 group-data-disabled:text-text-3"
+          className="shrink-0 text-text-2 transition-transform duration-200 ease-out-cubic group-data-panel-open:rotate-180 group-data-disabled:text-text-3"
           aria-hidden="true"
         />
       </BaseAccordion.Trigger>
@@ -42,13 +48,10 @@ function AccordionTrigger({
   );
 }
 
-function AccordionPanel({ className, ...props }: ComponentProps<"div">) {
+function AccordionPanel({ className, ...props }: ComponentProps<'div'>) {
   return (
-    <BaseAccordion.Panel className="h-[var(--accordion-panel-height)] transform-gpu transition-all duration-200 ease-in-out data-ending-style:h-0 data-starting-style:h-0 data-ending-style:opacity-0 data-starting-style:opacity-0">
-      <div
-        className={cx("overflow-hidden pb-3 text-text-2", className)}
-        {...props}
-      />
+    <BaseAccordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden transition-all duration-200 ease-out-cubic data-ending-style:h-0 data-starting-style:h-0 data-ending-style:opacity-0 data-starting-style:opacity-0">
+      <div className={cx('pb-3 text-text-2', className)} {...props} />
     </BaseAccordion.Panel>
   );
 }

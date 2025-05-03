@@ -9,9 +9,6 @@
   --surface: var(--color-white);
 
   --overlay: --alpha(var(--color-black) / 20%);
-  --modal: var(--color-neutral-100);
-
-  --popover: --alpha(var(--color-white) / 80%);
 
   --primary: var(--color-blue-600);
   --primary-muted: --alpha(var(--color-blue-600) / 10%);
@@ -26,7 +23,8 @@
   --text-2: --alpha(var(--color-black) / 50%);
   --text-3: --alpha(var(--color-black) / 30%);
 
-  --border: --alpha(var(--color-black) / 12%);
+  --input: --alpha(var(--color-black) / 10%);
+  --border: --alpha(var(--color-black) / 7%);
 
   --on-primary: var(--color-white);
   --on-danger: var(--color-white);
@@ -39,9 +37,6 @@
   --color-surface: var(--surface);
 
   --color-overlay: var(--overlay);
-  --color-modal: var(--modal);
-
-  --color-popover: var(--popover);
 
   --color-primary: var(--primary);
   --color-primary-muted: var(--primary-muted);
@@ -56,6 +51,7 @@
   --color-text-2: var(--text-2);
   --color-text-3: var(--text-3);
 
+  --color-input: var(--input);
   --color-border: var(--border);
 
   --color-on-primary: var(--on-primary);
@@ -74,6 +70,27 @@
   --ease-out: cubic-bezier(0.0, 0, 0.58, 1.0);
   --ease-in-out: cubic-bezier(0.42, 0, 0.58, 1.0);
 
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
   --font-sans: "Geist";
   --font-mono: "Geist Mono";
 }
@@ -83,14 +100,11 @@
   --surface: var(--color-black);
 
   --overlay: --alpha(var(--color-black) / 50%);
-  --modal: var(--color-neutral-900);
-
-  --popover: --alpha(var(--color-neutral-800) / 80%);
 
   --primary: var(--color-blue-500);
   --primary-muted: --alpha(var(--color-blue-500) / 15%);
 
-  --secondary: --alpha(var(--color-neutral-500) / 18%);
+  --secondary: --alpha(var(--color-neutral-500) / 16%);
   --muted: --alpha(var(--color-neutral-500) / 24%);
 
   --danger: var(--color-red-500);
@@ -100,7 +114,8 @@
   --text-2: --alpha(var(--color-white) / 60%);
   --text-3: --alpha(var(--color-white) / 40%);
 
-  --border: --alpha(var(--color-white) / 14%);
+  --input: --alpha(var(--color-white) / 12%);
+  --border: --alpha(var(--color-white) / 8%);
 
   --on-primary: var(--color-white);
   --on-danger: var(--color-white);

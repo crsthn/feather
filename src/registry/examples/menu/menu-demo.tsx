@@ -1,4 +1,4 @@
-import { buttonStyles } from "@/components/ui/button";
+import { buttonStyles } from '@/components/ui/button';
 import {
   Menu,
   MenuGroup,
@@ -7,19 +7,19 @@ import {
   MenuPopup,
   MenuSeparator,
   MenuTrigger,
-} from "@/components/ui/menu";
+} from '@/components/ui/menu';
 import {
   ArrowRightLeft,
   CreditCard,
   LogOut,
   Settings,
   User,
-} from "lucide-react";
+} from 'lucide-react';
 
 export default function Component() {
   return (
     <Menu>
-      <MenuTrigger className={buttonStyles({ color: "secondary" })}>
+      <MenuTrigger className={buttonStyles({ color: 'secondary' })}>
         Open Menu
       </MenuTrigger>
       <MenuPopup>
@@ -27,25 +27,25 @@ export default function Component() {
           <MenuGroupLabel>Cristhian R.</MenuGroupLabel>
           <MenuSeparator />
           <MenuItem>
-            <User size={16} />
+            <User />
             Profile
           </MenuItem>
           <MenuItem>
-            <CreditCard size={16} />
+            <CreditCard />
             Billings
           </MenuItem>
           <MenuItem>
-            <Settings size={16} />
+            <Settings />
             Preferences
           </MenuItem>
         </MenuGroup>
         <MenuSeparator />
         <MenuItem>
-          <ArrowRightLeft size={16} />
+          <ArrowRightLeft />
           Switch account
         </MenuItem>
         <MenuItem className="text-danger">
-          <LogOut size={16} />
+          <LogOut />
           Sign out
         </MenuItem>
       </MenuPopup>

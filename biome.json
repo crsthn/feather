@@ -1,34 +1,23 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "vcs": {
-    "enabled": false,
+    "enabled": true,
     "clientKind": "git",
-    "useIgnoreFile": false
+    "defaultBranch": "main",
+    "useIgnoreFile": true
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": [
-      "node_modules",
-      ".next",
-      "dist",
-      "build",
-      "out",
-      ".vercel",
-      "coverage",
-      "public",
-      "**/*.generated.*",
-      "pnpm-lock.yaml",
-      "package-lock.json",
-      "yarn.lock",
-      "bun.lockb"
-    ]
+    "ignore": ["node_modules", ".next", "public", ".vercel", "bun.lock"]
   },
   "formatter": {
     "enabled": true,
+    "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
+    "lineEnding": "lf",
     "lineWidth": 80,
-    "formatWithErrors": false
+    "attributePosition": "auto"
   },
   "organizeImports": {
     "enabled": true
@@ -37,40 +26,94 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "a11y": {
+        "useHtmlLang": "warn",
+        "noHeaderScope": "warn",
+        "useValidAriaRole": {
+          "level": "warn",
+          "options": {
+            "ignoreNonDom": false,
+            "allowInvalidRoles": ["none", "text"]
+          }
+        },
+        "useSemanticElements": "off",
+        "noSvgWithoutTitle": "off",
+        "useMediaCaption": "off",
+        "noAutofocus": "off",
+        "noBlankTarget": "off",
+        "useFocusableInteractive": "off",
+        "useAriaPropsForRole": "off",
+        "useKeyWithClickEvents": "off"
+      },
+      "complexity": {
+        "noUselessStringConcat": "warn",
+        "noForEach": "off",
+        "noUselessSwitchCase": "off",
+        "noUselessThisAlias": "off"
+      },
       "correctness": {
-        "noUnusedVariables": "error",
-        "noUnusedImports": "error",
-        "useExhaustiveDependencies": "warn"
-      },
-      "suspicious": {
-        "noExplicitAny": "warn",
-        "noConsole": "warn"
-      },
-      "style": {
-        "noNonNullAssertion": "warn"
+        "noUnusedImports": "warn",
+        "useArrayLiterals": "warn",
+        "noNewSymbol": "warn",
+        "useJsxKeyInIterable": "off",
+        "useExhaustiveDependencies": "off",
+        "noUnnecessaryContinue": "off"
       },
       "security": {
-        "noDangerouslySetInnerHtml": "error"
+        "noDangerouslySetInnerHtml": "off"
       },
-      "a11y": {
-        "noSvgWithoutTitle": "off"
+      "style": {
+        "useFragmentSyntax": "warn",
+        "noYodaExpression": "warn",
+        "useDefaultParameterLast": "warn",
+        "useExponentiationOperator": "off",
+        "noUnusedTemplateLiteral": "off",
+        "noUselessElse": "off",
+        "noNonNullAssertion": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "warn"
       },
       "nursery": {
+        "noStaticElementInteractions": "warn",
+        "noHeadImportInDocument": "warn",
+        "noDocumentImportInPage": "warn",
+        "noDuplicateElseIf": "warn",
+        "noIrregularWhitespace": "warn",
+        "useValidAutocomplete": "warn",
         "useSortedClasses": {
-          "level": "error",
+          "level": "warn",
           "fix": "safe",
           "options": {
             "attributes": ["classList"],
-            "functions": ["clsx", "cva", "tw", "tw.*", "cx"]
+            "functions": ["clsx", "tv", "cx"]
           }
         }
       }
     }
   },
   "javascript": {
+    "jsxRuntime": "reactClassic",
     "formatter": {
-      "quoteStyle": "double",
-      "trailingCommas": "es5"
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
+    }
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "trailingCommas": "none"
+    },
+    "parser": {
+      "allowComments": true,
+      "allowTrailingCommas": false
     }
   }
 }

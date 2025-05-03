@@ -1,8 +1,8 @@
-"use client";
-import { cx } from "@/lib/utils";
-import { Menu as BaseMenu } from "@base-ui-components/react/menu";
-import { Check, ChevronRight } from "lucide-react";
-import type { ComponentProps } from "react";
+'use client';
+import { cx } from '@/lib/utils';
+import { Menu as BaseMenu } from '@base-ui-components/react/menu';
+import { Check, ChevronRight } from 'lucide-react';
+import type { ComponentProps } from 'react';
 
 const Menu = BaseMenu.Root;
 const MenuTrigger = BaseMenu.Trigger;
@@ -16,8 +16,8 @@ function MenuPopup({
       <BaseMenu.Positioner className="z-50" sideOffset={8}>
         <BaseMenu.Popup
           className={cx(
-            "min-w-40 origin-[var(--transform-origin)] rounded-lg bg-popover p-1 text-text shadow-[0_8px_30px_rgba(0,0,0,0.08),0_4px_15px_rgba(0,0,0,0.06)] outline-none backdrop-blur-2xl transition-all ease-out data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200",
-            className
+            'min-w-40 origin-[var(--transform-origin)] rounded-lg border bg-bg p-1 shadow-[0_24px_32px_-8px_rgba(0,0,0,0.06),0_8px_16px_-4px_rgba(0,0,0,0.04)] outline-none transition-all ease-out-cubic data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0',
+            className,
           )}
           {...props}
         />
@@ -33,8 +33,8 @@ function MenuItem({
   return (
     <BaseMenu.Item
       className={cx(
-        "flex h-8 cursor-pointer select-none items-center gap-2 rounded-md px-2 outline-none data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3",
-        className
+        'flex h-8 cursor-pointer select-none items-center gap-2 rounded-md px-2 outline-none transition-colors data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3 [&_svg]:size-4 [&_svg]:shrink-0',
+        className,
       )}
       {...props}
     />
@@ -47,7 +47,7 @@ function MenuSeparator({
 }: ComponentProps<typeof BaseMenu.Separator>) {
   return (
     <BaseMenu.Separator
-      className={cx("-mx-1 my-1 h-px bg-border", className)}
+      className={cx('-mx-1 my-1 h-px bg-border', className)}
       {...props}
     />
   );
@@ -61,8 +61,8 @@ function MenuCheckboxItem({
   return (
     <BaseMenu.CheckboxItem
       className={cx(
-        "grid h-8 cursor-pointer select-none grid-cols-[1fr_1rem] items-center gap-4 rounded-md px-2 outline-none data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3",
-        className
+        'grid h-8 cursor-pointer select-none grid-cols-[1fr_1rem] items-center gap-2 rounded-md px-2 outline-none transition-colors data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3',
+        className,
       )}
       {...props}
     >
@@ -84,8 +84,8 @@ function MenuRadioItem({
   return (
     <BaseMenu.RadioItem
       className={cx(
-        "grid h-8 cursor-pointer select-none grid-cols-[1fr_1rem] items-center gap-4 rounded-md px-2 outline-none data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3",
-        className
+        'grid h-8 cursor-pointer select-none grid-cols-[1fr_1rem] items-center gap-2 rounded-md px-2 outline-none transition-colors data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3',
+        className,
       )}
       {...props}
     >
@@ -106,8 +106,8 @@ function MenuGroupLabel({
   return (
     <BaseMenu.GroupLabel
       className={cx(
-        "flex h-8 items-center px-2 text-text-2 text-xs",
-        className
+        'flex h-8 items-center px-2 text-text-2 text-xs',
+        className,
       )}
       {...props}
     />
@@ -121,14 +121,18 @@ function MenuSubmenuTrigger({
 }: ComponentProps<typeof BaseMenu.SubmenuTrigger>) {
   return (
     <BaseMenu.SubmenuTrigger
-      className={cx(
-        "flex h-8 cursor-pointer select-none items-center justify-between gap-4 rounded-md px-2 outline-none data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3",
-        className
-      )}
+      className="flex h-8 cursor-pointer select-none items-center justify-between gap-2 rounded-md px-2 outline-none transition-color data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3"
       {...props}
     >
-      {children}
-      <ChevronRight size={16} />
+      <span
+        className={cx(
+          'flex items-center gap-2 [&_svg]:size-4 [&_svg]:shrink-0',
+          className,
+        )}
+      >
+        {children}
+      </span>
+      <ChevronRight size={16} className="text-text-2" />
     </BaseMenu.SubmenuTrigger>
   );
 }

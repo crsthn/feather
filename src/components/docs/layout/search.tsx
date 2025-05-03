@@ -1,5 +1,5 @@
-"use client";
-import { Badge } from "@/components/ui/badge";
+'use client';
+import { Badge } from '@/components/ui/badge';
 import {
   Command,
   CommandEmpty,
@@ -7,13 +7,13 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command";
-import { Dialog, DialogPopup, DialogTrigger } from "@/components/ui/dialog";
-import { cx, focusInteractive } from "@/lib/utils";
-import type { PageTree } from "fumadocs-core/server";
-import { Circle, SearchIcon } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+} from '@/components/ui/command';
+import { Dialog, DialogPopup, DialogTrigger } from '@/components/ui/dialog';
+import { cx, focusInteractive } from '@/lib/utils';
+import type { PageTree } from 'fumadocs-core/server';
+import { Circle, SearchIcon } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useCallback, useEffect, useState } from 'react';
 
 type NavbarProps = {
   items: PageTree.Node[];
@@ -25,27 +25,27 @@ export default function Search({ items, rootItems }: NavbarProps) {
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
       }
     };
-    document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
+    document.addEventListener('keydown', down);
+    return () => document.removeEventListener('keydown', down);
   }, []);
 
   const path = usePathname();
 
   const activeRoot = rootItems.find((item) =>
-    path.startsWith(item.index?.url as string)
+    path.startsWith(item.index?.url as string),
   );
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger
         className={cx(
-          "inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg text-text-2 transition-colors hover:text-text lg:w-md lg:justify-between lg:border lg:bg-surface lg:px-3 lg:shadow-xs",
-          focusInteractive
+          'inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border-input text-text-2 transition-colors hover:text-text lg:w-md lg:justify-between lg:border lg:bg-surface lg:px-3 lg:shadow-xs',
+          focusInteractive,
         )}
       >
         <div className="flex items-center gap-2">
@@ -97,14 +97,14 @@ function SearchNode({
       onNavigate?.();
       command();
     },
-    [onNavigate]
+    [onNavigate],
   );
 
-  if (node.type === "separator") {
+  if (node.type === 'separator') {
     return;
   }
 
-  if (node.type === "folder") {
+  if (node.type === 'folder') {
     return (
       <>
         {node.children.map((child) => (
@@ -114,7 +114,7 @@ function SearchNode({
     );
   }
 
-  if (node.type === "page") {
+  if (node.type === 'page') {
     return (
       <CommandItem
         onSelect={() => {

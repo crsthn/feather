@@ -1,26 +1,42 @@
-import { cx, focusRing } from "@/lib/utils";
-import { Toggle as BaseToggle } from "@base-ui-components/react/toggle";
-import { ToggleGroup as BaseToggleGroup } from "@base-ui-components/react/toggle-group";
-import type { ComponentProps } from "react";
+import { cx, focusRing } from '@/lib/utils';
+import { Toggle as BaseToggle } from '@base-ui-components/react/toggle';
+import { ToggleGroup as BaseToggleGroup } from '@base-ui-components/react/toggle-group';
+import type { ComponentProps } from 'react';
 
 function ToggleGroup({
   className,
   ...props
 }: ComponentProps<typeof BaseToggleGroup>) {
-  return <BaseToggleGroup className={cx("flex", className)} {...props} />;
+  return <BaseToggleGroup className={cx('flex', className)} {...props} />;
 }
 
-function Toggle({ className, ...props }: ComponentProps<typeof BaseToggle>) {
+function ToggleGroupItem({
+  className,
+  ...props
+}: ComponentProps<typeof BaseToggle>) {
   return (
     <BaseToggle
       className={cx(
-        "flex size-8 cursor-pointer select-none items-center justify-center rounded-md hover:bg-secondary active:bg-secondary data-pressed:bg-secondary",
         focusRing,
-        className
+        'flex size-8 min-w-0 flex-1 shrink-0 cursor-pointer select-none items-center justify-center first:rounded-l-lg last:rounded-r-lg hover:bg-secondary data-pressed:bg-muted [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+        className,
       )}
       {...props}
     />
   );
 }
 
-export { ToggleGroup, Toggle };
+function Toggle({ className, ...props }: ComponentProps<typeof BaseToggle>) {
+  return (
+    <BaseToggle
+      className={cx(
+        focusRing,
+        'flex size-8 cursor-pointer select-none items-center justify-center rounded-lg hover:bg-secondary data-pressed:bg-muted [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+export { ToggleGroup, ToggleGroupItem, Toggle };

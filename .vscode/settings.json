@@ -5,9 +5,7 @@
     "source.organizeImports.biome": "explicit",
     "quickfix.biome": "explicit"
   },
-  "tailwindCSS.experimental.classRegex": [
-    ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
-  ],
+  "tailwindCSS.classFunctions": ["clsx", "tv", "cx"],
   "css.lint.unknownAtRules": "ignore",
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"

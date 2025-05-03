@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
 import {
   AlertDialog,
   AlertDialogClose,
   AlertDialogDescription,
   AlertDialogFooter,
-  AlertDialogHeader,
+  AlertDialogMain,
   AlertDialogPopup,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { Badge } from "@/components/ui/badge";
-import { buttonStyles } from "@/components/ui/button";
-import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox";
+} from '@/components/ui/alert-dialog';
+import { Badge } from '@/components/ui/badge';
+import { buttonStyles } from '@/components/ui/button';
+import { Checkbox, CheckboxGroup } from '@/components/ui/checkbox';
 import {
   Dialog,
   DialogClose,
@@ -23,7 +23,7 @@ import {
   DialogPopup,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from '@/components/ui/dialog';
 import {
   Drawer,
   DrawerClose,
@@ -33,10 +33,10 @@ import {
   DrawerPopup,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer";
-import { Field, FieldLabel } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from '@/components/ui/drawer';
+import { Field, FieldLabel } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import {
   Menu,
   MenuGroup,
@@ -45,17 +45,17 @@ import {
   MenuPopup,
   MenuSeparator,
   MenuTrigger,
-} from "@/components/ui/menu";
-import { Progress } from "@/components/ui/progress";
-import { Radio, RadioGroup } from "@/components/ui/radio";
-import { Switch } from "@/components/ui/switch";
-import {} from "@/components/ui/tabs";
-import LoginForm from "@/registry/blocks/auth/login-form";
-import { default as AvatarDemo } from "@/registry/examples/avatar/avatar-demo";
-import { default as NoteDemo } from "@/registry/examples/note/note-demo";
-import { default as SelectDemo } from "@/registry/examples/select-demo";
-import { default as TabsDemo } from "@/registry/examples/tabs-demo";
-import { default as ToastDemo } from "@/registry/examples/toast/toast-colors";
+} from '@/components/ui/menu';
+import { Progress } from '@/components/ui/progress';
+import { Radio, RadioGroup } from '@/components/ui/radio';
+import { Switch } from '@/components/ui/switch';
+import {} from '@/components/ui/tabs';
+import LoginForm from '@/registry/blocks/auth/login-form';
+import { default as AvatarDemo } from '@/registry/examples/avatar/avatar-demo';
+import { default as NoteDemo } from '@/registry/examples/note/note-demo';
+import { default as SelectDemo } from '@/registry/examples/select-demo';
+import { default as TabsDemo } from '@/registry/examples/tabs-demo';
+import { default as ToastDemo } from '@/registry/examples/toast/toast-colors';
 import {
   ArrowRightLeft,
   Cloud,
@@ -68,14 +68,14 @@ import {
   Trash2,
   TriangleAlert,
   User,
-} from "lucide-react";
-import Link from "next/link";
-import { useRef, useState } from "react";
+} from 'lucide-react';
+import Link from 'next/link';
+import { useRef, useState } from 'react';
 
 export default function Blocks() {
   const inputDialogRef = useRef<HTMLInputElement>(null);
   const inputDrawerRef = useRef<HTMLInputElement>(null);
-  const [selectedRadio, setSelectedRadio] = useState("high");
+  const [selectedRadio, setSelectedRadio] = useState('high');
   return (
     <section className="bg-bg" id="components">
       <div className="mx-auto grid w-full max-w-screen-xl gap-4 px-6 sm:grid-cols-2 xl:grid-cols-[repeat(15,_minmax(0,_1fr))]">
@@ -86,7 +86,7 @@ export default function Blocks() {
           <Dialog>
             <DialogTrigger
               className={buttonStyles({
-                color: "danger",
+                color: 'danger',
               })}
             >
               <Trash2 />
@@ -98,12 +98,12 @@ export default function Blocks() {
               </DialogHeader>
               <DialogMain>
                 <DialogDescription>
-                  This action will <b>permanently delete your project</b>{" "}
+                  This action will <b>permanently delete your project</b>{' '}
                   including all environments, configurations, and deployment
                   history. This cannot be undone.
                 </DialogDescription>
                 <Field>
-                  <FieldLabel className={"font-normal"}>
+                  <FieldLabel className={'font-normal'}>
                     <span>
                       Enter your project name <strong>project-name</strong> to
                       confirm:
@@ -112,9 +112,9 @@ export default function Blocks() {
                   <Input required ref={inputDialogRef} />
                 </Field>
                 <Field>
-                  <FieldLabel className={"font-normal"}>
+                  <FieldLabel className={'font-normal'}>
                     <span>
-                      To verify, type <strong>delete this project</strong>{" "}
+                      To verify, type <strong>delete this project</strong>{' '}
                       below:
                     </span>
                   </FieldLabel>
@@ -174,25 +174,25 @@ export default function Blocks() {
                 <MenuGroupLabel>Cristhian R.</MenuGroupLabel>
                 <MenuSeparator />
                 <MenuItem>
-                  <User size={16} />
+                  <User />
                   Profile
                 </MenuItem>
                 <MenuItem>
-                  <CreditCard size={16} />
+                  <CreditCard />
                   Billings
                 </MenuItem>
                 <MenuItem>
-                  <Settings size={16} />
+                  <Settings />
                   Preferences
                 </MenuItem>
               </MenuGroup>
               <MenuSeparator />
               <MenuItem>
-                <ArrowRightLeft size={16} />
+                <ArrowRightLeft />
                 Switch account
               </MenuItem>
               <MenuItem className="text-danger">
-                <LogOut size={16} />
+                <LogOut />
                 Sign out
               </MenuItem>
             </MenuPopup>
@@ -297,10 +297,10 @@ export default function Blocks() {
                 </div>
                 <div className="flex flex-col px-5.5 py-6">
                   <p className="text-text-2">
-                    Before proceeding with your payment, please visit the{" "}
+                    Before proceeding with your payment, please visit the{' '}
                     <Link href="#" className="text-primary hover:underline">
                       compliance documents
-                    </Link>{" "}
+                    </Link>{' '}
                     section to review all necessary information.
                   </p>
                 </div>
@@ -330,9 +330,9 @@ export default function Blocks() {
               </span>
               <CheckboxGroup
                 aria-labelledby="features"
-                defaultValue={["encryption"]}
+                defaultValue={['encryption']}
                 className="ml-6 flex flex-col items-start gap-3"
-                disabled={selectedRadio !== "high"}
+                disabled={selectedRadio !== 'high'}
               >
                 <Label>
                   <Checkbox name="encryption" />
@@ -359,20 +359,20 @@ export default function Blocks() {
           <AlertDialog>
             <AlertDialogTrigger
               className={buttonStyles({
-                color: "secondary",
+                color: 'secondary',
               })}
             >
               <TriangleAlert />
               License Expiring
             </AlertDialogTrigger>
             <AlertDialogPopup>
-              <AlertDialogHeader>
+              <AlertDialogMain>
                 <AlertDialogTitle>License expires in 3 days</AlertDialogTitle>
                 <AlertDialogDescription>
                   Your team license will expire on December 21, 2025. Renew now
                   to access to all features.
                 </AlertDialogDescription>
-              </AlertDialogHeader>
+              </AlertDialogMain>
 
               <AlertDialogFooter>
                 <AlertDialogClose color="secondary">

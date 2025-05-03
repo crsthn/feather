@@ -1,7 +1,7 @@
-"use client";
-import { cx } from "@/lib/utils";
-import { PreviewCard as BasePreviewCard } from "@base-ui-components/react";
-import type { ComponentProps } from "react";
+'use client';
+import { cx } from '@/lib/utils';
+import { PreviewCard as BasePreviewCard } from '@base-ui-components/react';
+import type { ComponentProps } from 'react';
 
 const PreviewCard = BasePreviewCard.Root;
 
@@ -16,8 +16,8 @@ function PreviewCardPopup({
       <BasePreviewCard.Positioner sideOffset={8}>
         <BasePreviewCard.Popup
           className={cx(
-            "flex w-60 origin-[var(--transform-origin)] flex-col gap-2 rounded-lg bg-popover p-3 text-text shadow-[0_8px_30px_rgba(0,0,0,0.08),0_4px_15px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-all ease-out data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:duration-150 data-open:duration-200",
-            className
+            'flex w-64 origin-[var(--transform-origin)] flex-col gap-2 rounded-lg border bg-bg p-3 shadow-[0_24px_32px_-8px_rgba(0,0,0,0.06),0_8px_16px_-4px_rgba(0,0,0,0.04)] transition-all ease-out-cubic data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0',
+            className,
           )}
           {...props}
         />

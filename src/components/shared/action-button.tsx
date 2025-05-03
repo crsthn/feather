@@ -1,47 +1,39 @@
-import { cx } from "@/lib/utils";
-import { type ButtonProps, buttonStyles } from "../ui/button";
-import { Spinner } from "../ui/spinner";
+import { Button, type ButtonProps } from '@/components/ui/button';
+import { Spinner } from '@/components/ui/spinner';
+import { cx } from '@/lib/utils';
 
 type ActionButtonProps = ButtonProps & {
-  loading?: boolean;
+  isLoading: boolean;
 };
 
 function ActionButton({
   className,
-  color,
-  size,
-  variant,
-  iconOnly,
-  loading,
+  isLoading,
   disabled,
   children,
-  ref,
   ...props
 }: ActionButtonProps) {
   return (
-    <button
-      className={cx(
-        "relative overflow-hidden",
-        buttonStyles({ color, size, variant, iconOnly, className })
-      )}
-      disabled={disabled || loading}
+    <Button
+      className={cx('relative overflow-hidden', className)}
+      disabled={disabled || isLoading}
       {...props}
     >
       <span
         className={cx(
-          "inline-flex items-center justify-center gap-2 transition-all ease-in-out",
-          loading && "-translate-y-10 opacity-0"
+          'inline-flex items-center justify-center gap-2 transition-all ease-in-out',
+          isLoading && 'translate-y-[200%] opacity-0',
         )}
       >
         {children}
       </span>
       <Spinner
         className={cx(
-          "absolute translate-y-10 opacity-0 transition-all ease-in-out",
-          loading && "translate-y-0 opacity-100"
+          '-translate-y-[200%] absolute opacity-0 transition-all ease-in-out',
+          isLoading && 'translate-y-0 opacity-100',
         )}
       />
-    </button>
+    </Button>
   );
 }
 

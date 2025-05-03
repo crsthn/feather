@@ -1,18 +1,8 @@
-import { cx } from "@/lib/utils";
-import { Collapsible as BaseCollapsible } from "@base-ui-components/react/collapsible";
-import type { ComponentProps } from "react";
+import { cx, focusRing } from '@/lib/utils';
+import { Collapsible as BaseCollapsible } from '@base-ui-components/react/collapsible';
+import type { ComponentProps } from 'react';
 
-function Collapsible({
-  className,
-  ...props
-}: ComponentProps<typeof BaseCollapsible.Root>) {
-  return (
-    <BaseCollapsible.Root
-      className={cx("overflow-hidden", className)}
-      {...props}
-    />
-  );
-}
+const Collapsible = BaseCollapsible.Root;
 
 function CollapsibleTrigger({
   className,
@@ -20,7 +10,7 @@ function CollapsibleTrigger({
 }: ComponentProps<typeof BaseCollapsible.Trigger>) {
   return (
     <BaseCollapsible.Trigger
-      className={cx("group cursor-pointer", className)}
+      className={cx(focusRing, 'group cursor-pointer rounded-lg', className)}
       {...props}
     />
   );
@@ -30,13 +20,13 @@ function CollapsiblePanel({
   className,
   children,
   ...props
-}: ComponentProps<"div">) {
+}: ComponentProps<'div'>) {
   return (
     <BaseCollapsible.Panel
       keepMounted
-      className="h-[var(--collapsible-panel-height)] transition-all duration-200 ease-in-out data-ending-style:h-0 data-starting-style:h-0 data-ending-style:opacity-0 data-starting-style:opacity-0"
+      className="h-[var(--collapsible-panel-height)] overflow-hidden transition-all duration-200 ease-out-cubic data-ending-style:h-0 data-starting-style:h-0 data-ending-style:opacity-0 data-starting-style:opacity-0"
     >
-      <div className={cx("overflow-hidden", className)} {...props}>
+      <div className={className} {...props}>
         {children}
       </div>
     </BaseCollapsible.Panel>

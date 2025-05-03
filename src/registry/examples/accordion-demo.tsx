@@ -3,11 +3,11 @@ import {
   AccordionItem,
   AccordionPanel,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from '@/components/ui/accordion';
 
 export default function Example() {
   return (
-    <Accordion className="w-full max-w-96">
+    <Accordion className="max-w-96">
       <AccordionItem>
         <AccordionTrigger>What is this?</AccordionTrigger>
         <AccordionPanel>

@@ -1,8 +1,7 @@
-"use client";
-import { cx, focusInput } from "@/lib/utils";
-import { OTPInput, OTPInputContext } from "input-otp";
-import { Minus } from "lucide-react";
-import { type ComponentProps, useContext } from "react";
+'use client';
+import { cx } from '@/lib/utils';
+import { OTPInput, OTPInputContext } from 'input-otp';
+import { type ComponentProps, useContext } from 'react';
 
 function InputOTP({
   containerClassName,
@@ -11,17 +10,11 @@ function InputOTP({
   return (
     <OTPInput
       containerClassName={cx(
-        "flex items-center justify-center gap-2 text-text disabled:pointer-events-none has-[:disabled]:opacity-50",
-        containerClassName
+        'flex items-center justify-center gap-2 text-text disabled:pointer-events-none has-[:disabled]:opacity-50',
+        containerClassName,
       )}
       {...props}
     />
-  );
-}
-
-function InputOTPGroup({ className, ...props }: ComponentProps<"div">) {
-  return (
-    <div className={cx("flex items-center gap-2", className)} {...props} />
   );
 }
 
@@ -29,18 +22,16 @@ function InputOTPSlot({
   index,
   className,
   ...props
-}: ComponentProps<"div"> & { index: number }) {
+}: ComponentProps<'div'> & { index: number }) {
   const inputOTPContext = useContext(OTPInputContext);
   const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index];
 
   return (
     <div
       className={cx(
-        "relative flex size-10 items-center justify-center rounded-lg border bg-surface shadow-xs transition-all",
-        focusInput,
-        isActive &&
-          "border-primary ring-3 ring-primary/20 dark:ring-primary/30",
-        className
+        'relative flex size-10 items-center justify-center rounded-lg border border-input bg-surface shadow-xs ring-primary/20 transition-all dark:ring-primary/30',
+        isActive && 'border-primary ring-3',
+        className,
       )}
       {...props}
     >
@@ -53,13 +44,4 @@ function InputOTPSlot({
     </div>
   );
 }
-
-function InputOTPSeparator({ className, ...props }: ComponentProps<"div">) {
-  return (
-    <div className={cx("text-text-2", className)} {...props}>
-      <Minus size={12} />
-    </div>
-  );
-}
-
-export { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot };
+export { InputOTP, InputOTPSlot };

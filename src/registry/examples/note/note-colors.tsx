@@ -1,5 +1,5 @@
-import { Note } from "@/components/ui/note";
-import { AlertTriangle, CheckCircle, InfoIcon } from "lucide-react";
+import { Note } from '@/components/ui/note';
+import { AlertTriangle, CheckCircle, InfoIcon } from 'lucide-react';
 
 export default function Component() {
   return (

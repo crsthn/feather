@@ -3,34 +3,34 @@ import {
   AlertDialogClose,
   AlertDialogDescription,
   AlertDialogFooter,
-  AlertDialogHeader,
+  AlertDialogMain,
   AlertDialogPopup,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { buttonStyles } from "@/components/ui/button";
-import { Trash2 } from "lucide-react";
+} from '@/components/ui/alert-dialog';
+import { buttonStyles } from '@/components/ui/button';
+import { Trash2 } from 'lucide-react';
 
 export default function Component() {
   return (
     <AlertDialog>
       <AlertDialogTrigger
         className={buttonStyles({
-          color: "danger",
-          variant: "subtle",
+          color: 'danger',
+          variant: 'subtle',
         })}
       >
         <Trash2 />
         Delete account
       </AlertDialogTrigger>
       <AlertDialogPopup>
-        <AlertDialogHeader>
+        <AlertDialogMain>
           <AlertDialogTitle>Delete Account Permanently?</AlertDialogTitle>
           <AlertDialogDescription>
             This action cannot be undone. All your data and settings will be
             permanently removed.
           </AlertDialogDescription>
-        </AlertDialogHeader>
+        </AlertDialogMain>
         <AlertDialogFooter>
           <AlertDialogClose color="secondary">Cancel</AlertDialogClose>
           <AlertDialogClose color="danger">Delete Forever</AlertDialogClose>

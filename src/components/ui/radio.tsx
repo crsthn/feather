@@ -1,10 +1,10 @@
-"use client";
-import { cx, focusInteractive } from "@/lib/utils";
+'use client';
+import { cx, focusRing } from '@/lib/utils';
 import {
   Radio as BaseRadio,
   RadioGroup as BaseRadioGroup,
-} from "@base-ui-components/react";
-import type { ComponentProps } from "react";
+} from '@base-ui-components/react';
+import type { ComponentProps } from 'react';
 
 function RadioGroup({
   className,
@@ -12,7 +12,7 @@ function RadioGroup({
 }: ComponentProps<typeof BaseRadioGroup>) {
   return (
     <BaseRadioGroup
-      className={cx("flex flex-col items-start gap-1", className)}
+      className={cx('flex flex-col items-start gap-1', className)}
       {...props}
     />
   );
@@ -22,9 +22,9 @@ function Radio({ className, ...props }: ComponentProps<typeof BaseRadio.Root>) {
   return (
     <BaseRadio.Root
       className={cx(
-        "inline-flex size-4 shrink-0 cursor-pointer appearance-none items-center justify-center rounded-full border bg-surface shadow-xs transition-all duration-150 data-disabled:data-unchecked:bg-muted data-disabled:pointer-events-none data-checked:border-primary data-checked:bg-primary data-disabled:opacity-50",
-        focusInteractive,
-        className
+        focusRing,
+        'inline-flex size-4 shrink-0 cursor-pointer appearance-none items-center justify-center rounded-full border border-input bg-surface shadow-xs data-disabled:data-unchecked:bg-secondary data-disabled:pointer-events-none data-checked:border-primary data-checked:bg-primary data-disabled:opacity-50',
+        className,
       )}
       {...props}
     >
