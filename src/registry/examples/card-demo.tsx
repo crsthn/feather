@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardDescription,
@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardMain,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 
 export default function Component() {
   return (
@@ -17,7 +17,7 @@ export default function Component() {
           <CardDescription>Card description goes here</CardDescription>
         </CardHeader>
         <CardMain>
-          <div className="h-32 w-full bg-primary-muted" />
+          <div className="h-32 w-full border border-primary border-dashed bg-primary-muted" />
         </CardMain>
         <CardFooter>
           <Button className="w-full">Action</Button>

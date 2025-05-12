@@ -1,4 +1,4 @@
-import { buttonStyles } from "@/components/ui/button";
+import { buttonStyles } from '@/components/ui/button';
 import {
   Drawer,
   DrawerClose,
@@ -9,15 +9,15 @@ import {
   DrawerPopup,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer";
-import { ShoppingCart } from "lucide-react";
+} from '@/components/ui/drawer';
+import { ShoppingCart } from 'lucide-react';
 
 export default function Component() {
   return (
     <Drawer>
       <DrawerTrigger
         className={buttonStyles({
-          variant: "subtle",
+          variant: 'subtle',
         })}
       >
         <ShoppingCart />
@@ -28,12 +28,12 @@ export default function Component() {
           <DrawerTitle>Checkout</DrawerTitle>
         </DrawerHeader>
         <DrawerMain>
-          <div className="h-64 w-full bg-primary-muted" />
+          <div className="h-64 w-full border border-primary border-dashed bg-primary-muted" />
           <DrawerDescription>
-            Before proceeding with your payment, please visit the{" "}
+            Before proceeding with your payment, please visit the{' '}
             <span className="cursor-pointer text-primary hover:underline">
               compliance documents
-            </span>{" "}
+            </span>{' '}
             section to review all necessary information.
           </DrawerDescription>
         </DrawerMain>
