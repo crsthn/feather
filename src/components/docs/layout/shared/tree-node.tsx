@@ -36,7 +36,7 @@ function TreePage({ href, className, ...props }: ComponentProps<typeof Link>) {
         "font-medium transition-colors hover:bg-secondary",
         focusRing,
         active &&
-          "bg-primary-muted text-primary hover:bg-primary-muted hover:text-primary",
+          "from-primary-muted bg-gradient-to-r to-secondary text-primary hover:bg-gradient-to-r",
         className
       )}
     />
