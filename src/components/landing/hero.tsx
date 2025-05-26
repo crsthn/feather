@@ -18,7 +18,7 @@ export default function Hero() {
         </span>
         <Link
           href="/docs/ui"
-          className={buttonStyles({ size: 'lg', className: 'group mb-8' })}
+          className={buttonStyles({ size: 'lg', className: 'group mb-8 rounded-full bg-gradient-to-r from-blue-600 to-primary dark:from-blue-300 dark:to-primary' })}
         >
           Get Started
           <svg
