@@ -1,25 +1,25 @@
-import { Accessibility, Code2, Palette, Zap } from "lucide-react";
+import { Accessibility, Code2, Palette, Zap } from 'lucide-react';
 
 const features = [
   {
     icon: Zap,
-    title: "Performance",
-    description: "Fast, lightweight, and optimized for any project.",
+    title: 'Performance',
+    description: 'Fast, lightweight, and optimized for any project.',
   },
   {
     icon: Accessibility,
-    title: "Accessibility",
-    description: "Built with best practices for an accessible UX.",
+    title: 'Accessibility',
+    description: 'Built with best practices for an accessible UX.',
   },
   {
     icon: Palette,
-    title: "Customization",
-    description: "Fully customizable with Tailwind and flexible APIs.",
+    title: 'Customization',
+    description: 'Fully customizable with Tailwind and flexible APIs.',
   },
   {
     icon: Code2,
-    title: "Usability",
-    description: "Type-safe, composable, and easy to integrate.",
+    title: 'Usability',
+    description: 'Type-safe, composable, and easy to integrate.',
   },
 ];
 

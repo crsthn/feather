@@ -1,4 +1,4 @@
-import type { PageTree } from "fumadocs-core/server";
+import type { PageTree } from 'fumadocs-core/server';
 
 export default function AsideFolder({
   node,

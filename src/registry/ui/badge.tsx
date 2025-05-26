@@ -6,7 +6,7 @@ const badgeStyles = tv({
   variants: {
     color: {
       primary: 'bg-primary-muted text-primary',
-      secondary: 'bg-secondary text-text',
+      secondary: 'bg-muted text-text',
       danger: 'bg-danger-muted text-danger',
     },
     size: {

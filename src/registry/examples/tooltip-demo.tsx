@@ -1,11 +1,11 @@
-import { buttonStyles } from "@/components/ui/button";
+import { buttonStyles } from '@/components/ui/button';
 import {
   Tooltip,
   TooltipPopup,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react";
+} from '@/components/ui/tooltip';
+import { BoldIcon, ItalicIcon, UnderlineIcon } from 'lucide-react';
 
 export default function Component() {
   return (
@@ -14,13 +14,13 @@ export default function Component() {
         <Tooltip>
           <TooltipTrigger
             className={buttonStyles({
-              color: "secondary",
+              color: 'secondary',
               iconOnly: true,
-              variant: "subtle",
-              size: "sm",
+              variant: 'subtle',
+              size: 'sm',
             })}
           >
-            <BoldIcon aria-label="Bold" size={16} />
+            <BoldIcon aria-label="Bold" />
           </TooltipTrigger>
           <TooltipPopup>Bold</TooltipPopup>
         </Tooltip>
@@ -28,13 +28,13 @@ export default function Component() {
         <Tooltip>
           <TooltipTrigger
             className={buttonStyles({
-              color: "secondary",
+              color: 'secondary',
               iconOnly: true,
-              variant: "subtle",
-              size: "sm",
+              variant: 'subtle',
+              size: 'sm',
             })}
           >
-            <ItalicIcon aria-label="Italic" size={16} />
+            <ItalicIcon aria-label="Italic" />
           </TooltipTrigger>
           <TooltipPopup>Italic</TooltipPopup>
         </Tooltip>
@@ -42,13 +42,13 @@ export default function Component() {
         <Tooltip>
           <TooltipTrigger
             className={buttonStyles({
-              color: "secondary",
+              color: 'secondary',
               iconOnly: true,
-              variant: "subtle",
-              size: "sm",
+              variant: 'subtle',
+              size: 'sm',
             })}
           >
-            <UnderlineIcon aria-label="Underline" size={16} />
+            <UnderlineIcon aria-label="Underline" />
           </TooltipTrigger>
           <TooltipPopup>Underline</TooltipPopup>
         </Tooltip>

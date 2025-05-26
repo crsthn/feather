@@ -1,11 +1,11 @@
-import MobileNavigation from "@/components/docs/layout/mobile-navigation";
-import Search from "@/components/docs/layout/search";
-import RootLink from "@/components/docs/layout/shared/root-link";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
-import {} from "@/components/ui/tabs";
-import type { PageTree } from "fumadocs-core/server";
-import Image from "next/image";
-import Link from "next/link";
+import MobileNavigation from '@/components/docs/layout/mobile-navigation';
+import Search from '@/components/docs/layout/search';
+import RootLink from '@/components/docs/layout/shared/root-link';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
+import {} from '@/components/ui/tabs';
+import type { PageTree } from 'fumadocs-core/server';
+import Image from 'next/image';
+import Link from 'next/link';
 
 type NavbarProps = {
   items: PageTree.Node[];

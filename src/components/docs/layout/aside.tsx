@@ -1,5 +1,5 @@
-import { AsideContent } from "@/components/docs/layout/aside-content";
-import type { PageTree } from "fumadocs-core/server";
+import { AsideContent } from '@/components/docs/layout/aside-content';
+import type { PageTree } from 'fumadocs-core/server';
 
 type AsideProps = {
   items: PageTree.Node[];

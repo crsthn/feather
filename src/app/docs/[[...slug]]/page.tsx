@@ -1,14 +1,14 @@
-import { Toc } from "@/components/docs/layout/toc";
-import { Mdx } from "@/components/docs/mdx";
-import { constructMetadata } from "@/lib/metadata";
-import { source } from "@/lib/source";
-import { findNeighbour } from "fumadocs-core/server";
-import type { PageTree } from "fumadocs-core/server";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import type { Metadata } from "next";
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import type { ReactElement } from "react";
+import { Toc } from '@/components/docs/layout/toc';
+import { Mdx } from '@/components/docs/mdx';
+import { constructMetadata } from '@/lib/metadata';
+import { source } from '@/lib/source';
+import { findNeighbour } from 'fumadocs-core/server';
+import type { PageTree } from 'fumadocs-core/server';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import type { ReactElement } from 'react';
 
 export interface DocPageProps {
   params: Promise<{
@@ -26,10 +26,10 @@ export default async function Page(props: DocPageProps): Promise<ReactElement> {
 
   const activeRoot = source.pageTree.children.find(
     (item): item is PageTree.Folder =>
-      item.type === "folder" &&
+      item.type === 'folder' &&
       item.root === true &&
-      item.index?.type === "page" &&
-      page.url.startsWith(item.index?.url as string)
+      item.index?.type === 'page' &&
+      page.url.startsWith(item.index?.url as string),
   );
 
   const neighbours = activeRoot
@@ -38,7 +38,7 @@ export default async function Page(props: DocPageProps): Promise<ReactElement> {
           name: activeRoot.name,
           children: activeRoot.children,
         },
-        page.url
+        page.url,
       )
     : findNeighbour(source.pageTree, page.url);
 
@@ -95,7 +95,7 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
 
   const description =
     page.data.description ??
-    "A beautiful, modern and accessible set of components built with Base UI, Tailwind CSS, and TypeScript. Fully customizable, and dark mode ready.";
+    'A beautiful, modern and accessible set of components built with Base UI, Tailwind CSS, and TypeScript. Fully customizable, and dark mode ready.';
 
   return constructMetadata({
     title: `${page?.data.title} | Feather`,

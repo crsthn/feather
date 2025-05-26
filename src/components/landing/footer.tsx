@@ -1,6 +1,6 @@
-import { ThemeToggle } from "@/components/theme/theme-toggle";
-import Image from "next/image";
-import Link from "next/link";
+import { ThemeToggle } from '@/components/theme/theme-toggle';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -17,7 +17,7 @@ export default function Footer() {
           <span className="font-semibold text-lg">Feather</span>
         </div>
         <span className="text-sm text-text-2">
-          Built by{" "}
+          Built by{' '}
           <Link
             target="_blank"
             href="https://github.com/crsthn"

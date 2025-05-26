@@ -6,7 +6,7 @@ export default function Component() {
     <div className="flex flex-col gap-4">
       <Note>
         <h4 className="flex items-center gap-2 font-medium text-sm">
-          <InfoIcon size={16} />
+          <InfoIcon />
           Information
         </h4>
         <p className="text-text-2">
@@ -15,7 +15,7 @@ export default function Component() {
       </Note>
       <Note color="danger">
         <h4 className="flex items-center gap-2 font-medium text-sm">
-          <AlertTriangle size={16} />
+          <AlertTriangle />
           Warning
         </h4>
         <p className="text-text-2">
@@ -24,7 +24,7 @@ export default function Component() {
       </Note>
       <Note color="primary">
         <h4 className="flex items-center gap-2 font-medium text-sm">
-          <CheckCircle size={16} />
+          <CheckCircle />
           Success
         </h4>
         <p className="text-text-2">

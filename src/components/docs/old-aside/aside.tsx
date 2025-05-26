@@ -1,15 +1,15 @@
-import { source } from "@/lib/source";
-import type { PageTree } from "fumadocs-core/server";
-import { Search } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import Github from "../../icons/github";
-import { ThemeToggle } from "../../theme/theme-toggle";
-import { Badge } from "../../ui/badge";
-import { Button } from "../../ui/button";
-import { Separator } from "../../ui/separator";
-import { Folder, FolderContent, FolderTrigger } from "../layout/shared/folder";
-import AsideLink from "./aside-link";
+import { source } from '@/lib/source';
+import type { PageTree } from 'fumadocs-core/server';
+import { Search } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Github from '../../icons/github';
+import { ThemeToggle } from '../../theme/theme-toggle';
+import { Badge } from '../../ui/badge';
+import { Button } from '../../ui/button';
+import { Separator } from '../../ui/separator';
+import { Folder, FolderContent, FolderTrigger } from '../layout/shared/folder';
+import AsideLink from './aside-link';
 
 export default function Aside() {
   const pageTree = source.pageTree;
@@ -66,17 +66,17 @@ function SidebarComposed({
 }: {
   node: PageTree.Node;
 }) {
-  if (node.type === "folder") {
+  if (node.type === 'folder') {
     return (
       <div className="flex flex-col">
         <h3 className="mb-2 flex items-center gap-x-2 font-medium">
           {node.name}
         </h3>
         {node.children.map((child) => {
-          if (child.type === "separator") {
+          if (child.type === 'separator') {
             return <Separator key={child.$id} />;
           }
-          if (child.type === "page") {
+          if (child.type === 'page') {
             return (
               <AsideLink key={child.$id} href={child.url}>
                 {child.icon}
@@ -84,13 +84,13 @@ function SidebarComposed({
               </AsideLink>
             );
           }
-          if (child.type === "folder") {
+          if (child.type === 'folder') {
             return (
               <Folder key={child.$id}>
                 <FolderTrigger>{child.name}</FolderTrigger>
                 <FolderContent>
                   {child.children.map((item) => {
-                    if (item.type === "page") {
+                    if (item.type === 'page') {
                       return (
                         <AsideLink
                           key={item.$id}
@@ -112,11 +112,11 @@ function SidebarComposed({
     );
   }
 
-  if (node.type === "separator") {
+  if (node.type === 'separator') {
     return <Separator />;
   }
 
-  if (node.type === "page") {
+  if (node.type === 'page') {
     return (
       <AsideLink href={node.url}>
         {node.icon}

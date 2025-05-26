@@ -2,19 +2,19 @@ import {
   PreviewCard,
   PreviewCardPopup,
   PreviewCardTrigger,
-} from "@/components/ui/preview-card";
+} from '@/components/ui/preview-card';
 
 export default function Component() {
   return (
     <PreviewCard>
       <p className="max-w-64 text-balance text-sm">
-        The principles of good{" "}
+        The principles of good{' '}
         <PreviewCardTrigger
           href="https://en.wikipedia.org/wiki/Typography"
           className="font-medium text-primary hover:underline"
         >
           typography
-        </PreviewCardTrigger>{" "}
+        </PreviewCardTrigger>{' '}
         remain into the digital age.
       </p>
 

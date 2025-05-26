@@ -1,18 +1,18 @@
-import { buttonStyles } from "@/components/ui/button";
+import { buttonStyles } from '@/components/ui/button';
 import {
   Popover,
   PopoverDescription,
   PopoverPopup,
   PopoverTitle,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { BellIcon } from "lucide-react";
+} from '@/components/ui/popover';
+import { BellIcon } from 'lucide-react';
 
 export default function Component() {
   return (
     <Popover>
       <PopoverTrigger
-        className={buttonStyles({ color: "secondary", iconOnly: true })}
+        className={buttonStyles({ color: 'secondary', iconOnly: true })}
       >
         <BellIcon aria-label="Notifications" />
       </PopoverTrigger>

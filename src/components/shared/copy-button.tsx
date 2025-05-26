@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Check, Copy } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Button, type ButtonProps } from "../ui/button";
+import { Check, Copy } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { Button, type ButtonProps } from '../ui/button';
 
 type CopyButtonProps = ButtonProps & {
   text: string;
@@ -11,9 +11,9 @@ type CopyButtonProps = ButtonProps & {
 export default function CopyButton({
   text,
   iconOnly = true,
-  color = "secondary",
-  variant = "subtle",
-  size = "sm",
+  color = 'secondary',
+  variant = 'subtle',
+  size = 'sm',
   ...props
 }: CopyButtonProps) {
   const [copied, setCopied] = useState<boolean>(false);
@@ -53,12 +53,12 @@ export default function CopyButton({
     >
       <Copy
         className={`text-text-2 transition-all ease-in-out ${
-          copied ? "scale-0 opacity-0" : "scale-100 opacity-100"
+          copied ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
         }`}
       />
       <Check
         className={`absolute transition-all ease-in-out ${
-          copied ? "scale-100 opacity-100" : "scale-0 opacity-0"
+          copied ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
         }`}
       />
     </Button>

@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { cx, focusRing } from "@/lib/utils";
-import type { PageTree } from "fumadocs-core/server";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import type { ComponentProps } from "react";
-import { Folder, FolderContent, FolderTrigger } from "./folder";
+import { cx, focusRing } from '@/lib/utils';
+import type { PageTree } from 'fumadocs-core/server';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import type { ComponentProps } from 'react';
+import { Folder, FolderContent, FolderTrigger } from './folder';
 
-function TreeSeparator({ children, className, ...props }: ComponentProps<"p">) {
+function TreeSeparator({ children, className, ...props }: ComponentProps<'p'>) {
   return (
     <p
       {...props}
       className={cx(
-        "mt-6 mb-2 inline-flex items-center gap-2 font-medium first-of-type:mt-0",
-        "[&_svg]:size-4 [&_svg]:shrink-0",
-        className
+        'mt-6 mb-2 inline-flex items-center gap-2 font-medium first-of-type:mt-0',
+        '[&_svg]:size-4 [&_svg]:shrink-0',
+        className,
       )}
     >
       {children}
@@ -31,13 +31,13 @@ function TreePage({ href, className, ...props }: ComponentProps<typeof Link>) {
       href={href}
       {...props}
       className={cx(
-        "flex h-8 items-center gap-2 rounded-md px-2 text-text-2",
-        "[&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
-        "font-medium transition-colors hover:bg-secondary",
+        'flex h-8 items-center gap-2 rounded-md px-2 text-text-2',
+        '[&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+        'font-medium transition-colors hover:bg-secondary',
         focusRing,
         active &&
-          "from-primary-muted bg-gradient-to-r to-secondary text-primary hover:bg-gradient-to-r",
-        className
+          'bg-gradient-to-r from-primary-muted to-secondary text-primary hover:bg-gradient-to-r',
+        className,
       )}
     />
   );
@@ -47,7 +47,7 @@ export default function TreeNode({
   node,
   onNavigate,
 }: { node: PageTree.Node; onNavigate?: () => void }) {
-  if (node.type === "separator") {
+  if (node.type === 'separator') {
     return (
       <TreeSeparator>
         {node.icon}
@@ -56,7 +56,7 @@ export default function TreeNode({
     );
   }
 
-  if (node.type === "folder") {
+  if (node.type === 'folder') {
     return (
       <Folder>
         <FolderTrigger>
@@ -74,7 +74,7 @@ export default function TreeNode({
     );
   }
 
-  if (node.type === "page") {
+  if (node.type === 'page') {
     return (
       <TreePage href={node.url} onClick={onNavigate}>
         {node.icon}

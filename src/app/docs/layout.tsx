@@ -1,7 +1,7 @@
-import Aside from "@/components/docs/layout/aside";
-import Navbar from "@/components/docs/layout/navbar";
-import { source } from "@/lib/source";
-import type { PageTree } from "fumadocs-core/server";
+import Aside from '@/components/docs/layout/aside';
+import Navbar from '@/components/docs/layout/navbar';
+import { source } from '@/lib/source';
+import type { PageTree } from 'fumadocs-core/server';
 
 export default function Layout({
   children,
@@ -10,9 +10,9 @@ export default function Layout({
 }>) {
   const rootItems = source.pageTree.children.filter(
     (item): item is PageTree.Folder =>
-      item.type === "folder" &&
+      item.type === 'folder' &&
       item.root === true &&
-      item.index?.type === "page"
+      item.index?.type === 'page',
   );
 
   return (

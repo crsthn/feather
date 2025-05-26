@@ -38,7 +38,7 @@ const buttonStyles = tv({
       color: 'secondary',
       variant: 'solid',
       class:
-        'border-black/4 border bg-secondary hover:bg-[color-mix(in_oklab,var(--secondary),var(--color-black)_4%)] active:bg-secondary dark:border-white/5 dark:active:bg-secondary dark:hover:bg-[color-mix(in_oklab,var(--secondary),var(--color-white)_5%)]',
+        'border border-black/4 bg-secondary hover:bg-[color-mix(in_oklab,var(--secondary),var(--color-black)_4%)] active:bg-secondary dark:border-white/5 dark:active:bg-secondary dark:hover:bg-[color-mix(in_oklab,var(--secondary),var(--color-white)_5%)]',
     },
     {
       color: 'danger',

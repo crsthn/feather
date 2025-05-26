@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { ThemeToggle } from "@/components/theme/theme-toggle";
-import { cx } from "@/lib/utils";
-import { Dialog } from "@base-ui-components/react";
-import type { PageTree } from "fumadocs-core/server";
-import { usePathname } from "next/navigation";
-import { type ComponentProps, useState } from "react";
-import MenuAnimatedIcon from "../../icons/menu-animated";
-import RootLink from "./shared/root-link";
-import TreeNode from "./shared/tree-node";
+import { ThemeToggle } from '@/components/theme/theme-toggle';
+import { cx } from '@/lib/utils';
+import { Dialog } from '@base-ui-components/react';
+import type { PageTree } from 'fumadocs-core/server';
+import { usePathname } from 'next/navigation';
+import { type ComponentProps, useState } from 'react';
+import MenuAnimatedIcon from '../../icons/menu-animated';
+import RootLink from './shared/root-link';
+import TreeNode from './shared/tree-node';
 
 type MobileNavigationProps = ComponentProps<typeof Dialog.Trigger> & {
   items: PageTree.Node[];
@@ -25,7 +25,7 @@ export default function MobileNavigation({
   const [isOpen, setIsOpen] = useState(false);
 
   const activeRoot = rootItems.find((item) =>
-    path.startsWith(item.index?.url as string)
+    path.startsWith(item.index?.url as string),
   );
 
   return (
@@ -33,8 +33,8 @@ export default function MobileNavigation({
       <Dialog.Trigger
         {...props}
         className={cx(
-          "group flex size-16 cursor-pointer items-center justify-center text-text-2 hover:text-text lg:hidden",
-          className
+          'group flex size-16 cursor-pointer items-center justify-center text-text-2 hover:text-text lg:hidden',
+          className,
         )}
         aria-expanded={isOpen}
       >

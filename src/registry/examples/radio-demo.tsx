@@ -1,5 +1,5 @@
-import { Label } from "@/components/ui/label";
-import { Radio, RadioGroup } from "@/components/ui/radio";
+import { Label } from '@/components/ui/label';
+import { Radio, RadioGroup } from '@/components/ui/radio';
 
 export default function Component() {
   return (

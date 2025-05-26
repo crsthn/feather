@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import MenuAnimatedIcon from "@/components/icons/menu-animated";
-import { navLinks } from "@/constants/navigation-links";
-import { Dialog } from "@base-ui-components/react";
-import Link from "next/link";
+import MenuAnimatedIcon from '@/components/icons/menu-animated';
+import { navLinks } from '@/constants/navigation-links';
+import { Dialog } from '@base-ui-components/react';
+import Link from 'next/link';
 
 export default function MobileNavigation() {
   return (

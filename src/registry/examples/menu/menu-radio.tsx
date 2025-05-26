@@ -1,5 +1,5 @@
-"use client";
-import { buttonStyles } from "@/components/ui/button";
+'use client';
+import { buttonStyles } from '@/components/ui/button';
 import {
   Menu,
   MenuGroup,
@@ -9,18 +9,18 @@ import {
   MenuRadioItem,
   MenuSeparator,
   MenuTrigger,
-} from "@/components/ui/menu";
-import { Layout } from "lucide-react";
-import { useState } from "react";
+} from '@/components/ui/menu';
+import { Layout } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Component() {
-  const [view, setView] = useState("grid");
-  const [size, setSize] = useState("medium");
+  const [view, setView] = useState('grid');
+  const [size, setSize] = useState('medium');
 
   return (
     <Menu>
-      <MenuTrigger className={buttonStyles({ color: "secondary" })}>
-        <Layout size={16} /> View Options
+      <MenuTrigger className={buttonStyles({ color: 'secondary' })}>
+        <Layout /> View Options
       </MenuTrigger>
       <MenuPopup>
         <MenuGroup>

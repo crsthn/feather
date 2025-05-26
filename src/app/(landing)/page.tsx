@@ -1,8 +1,8 @@
-import Blocks from "@/components/landing/blocks";
-import Features from "@/components/landing/features";
-import Footer from "@/components/landing/footer";
-import Hero from "@/components/landing/hero";
-import Navigation from "@/components/landing/navigation";
+import Blocks from '@/components/landing/blocks';
+import Features from '@/components/landing/features';
+import Footer from '@/components/landing/footer';
+import Hero from '@/components/landing/hero';
+import Navigation from '@/components/landing/navigation';
 
 export default function Home() {
   return (

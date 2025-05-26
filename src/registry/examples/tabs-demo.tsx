@@ -1,5 +1,5 @@
-import { Tabs, TabsList, TabsPanel, TabsTrigger } from "@/components/ui/tabs";
-import { FolderKanban, PanelsTopLeft, User } from "lucide-react";
+import { Tabs, TabsList, TabsPanel, TabsTrigger } from '@/components/ui/tabs';
+import { FolderKanban, PanelsTopLeft, User } from 'lucide-react';
 
 export default function Component() {
   return (

@@ -33,7 +33,7 @@ function MenuItem({
   return (
     <BaseMenu.Item
       className={cx(
-        'flex h-8 cursor-pointer select-none items-center gap-2 rounded-md px-2 outline-none transition-colors data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3 [&_svg]:size-4 [&_svg]:shrink-0',
+        'flex h-8 cursor-pointer select-none items-center gap-2 rounded-md px-2 outline-none transition-colors data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3 [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:pointer-events-none',
         className,
       )}
       {...props}
@@ -126,7 +126,7 @@ function MenuSubmenuTrigger({
     >
       <span
         className={cx(
-          'flex items-center gap-2 [&_svg]:size-4 [&_svg]:shrink-0',
+          'flex items-center gap-2 [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:pointer-events-none',
           className,
         )}
       >

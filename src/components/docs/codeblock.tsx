@@ -1,16 +1,16 @@
-import { cx } from "@/lib/utils";
-import { Code2 } from "lucide-react";
-import type { ComponentProps, ReactElement, ReactNode } from "react";
-import { Children, isValidElement } from "react";
-import CopyButton from "../shared/copy-button";
+import { cx } from '@/lib/utils';
+import { Code2 } from 'lucide-react';
+import type { ComponentProps, ReactElement, ReactNode } from 'react';
+import { Children, isValidElement } from 'react';
+import CopyButton from '../shared/copy-button';
 
 function extractTextContent(children: ReactNode): string {
-  let text = "";
+  let text = '';
 
   Children.forEach(children, (child) => {
-    if (typeof child === "string") {
+    if (typeof child === 'string') {
       text += child;
-    } else if (typeof child === "number") {
+    } else if (typeof child === 'number') {
       text += String(child);
     } else if (isValidElement(child)) {
       const element = child as ReactElement<{ children?: ReactNode }>;
@@ -26,15 +26,15 @@ export function CodeBlock({
   children,
   className,
   ...props
-}: ComponentProps<"pre">) {
+}: ComponentProps<'pre'>) {
   const codeText = extractTextContent(children);
 
   return (
     <figure
       {...props}
       className={cx(
-        "not-prose relative my-6 overflow-hidden rounded-xl bg-surface text-sm first:mt-0 last:mb-0",
-        className
+        'not-prose relative my-6 overflow-hidden rounded-xl bg-surface text-sm first:mt-0 last:mb-0',
+        className,
       )}
     >
       {title ? (
@@ -54,13 +54,13 @@ export function CodeBlock({
   );
 }
 
-export function Pre({ className, ...props }: ComponentProps<"pre">) {
+export function Pre({ className, ...props }: ComponentProps<'pre'>) {
   return (
     <pre
       {...props}
       className={cx(
-        "max-h-[40rem] overflow-auto p-4 focus-visible:outline-none",
-        className
+        'max-h-[40rem] overflow-auto p-4 focus-visible:outline-none',
+        className,
       )}
     />
   );

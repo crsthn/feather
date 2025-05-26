@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Github from "@/components/icons/github";
-import Google from "@/components/icons/google";
-import { Button } from "@/components/ui/button";
-import { Field, FieldError, FieldLabel, Form } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import Image from "next/image";
-import Link from "next/link";
+import Github from '@/components/icons/github';
+import Google from '@/components/icons/google';
+import { Button } from '@/components/ui/button';
+import { Field, FieldError, FieldLabel, Form } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function LoginForm() {
   return (

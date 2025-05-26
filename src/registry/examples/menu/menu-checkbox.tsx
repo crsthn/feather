@@ -1,5 +1,5 @@
-"use client";
-import { buttonStyles } from "@/components/ui/button";
+'use client';
+import { buttonStyles } from '@/components/ui/button';
 import {
   Menu,
   MenuCheckboxItem,
@@ -8,9 +8,9 @@ import {
   MenuPopup,
   MenuSeparator,
   MenuTrigger,
-} from "@/components/ui/menu";
-import { Settings } from "lucide-react";
-import { useState } from "react";
+} from '@/components/ui/menu';
+import { Settings } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Component() {
   const [notifications, setNotifications] = useState(true);
@@ -20,8 +20,8 @@ export default function Component() {
 
   return (
     <Menu>
-      <MenuTrigger className={buttonStyles({ color: "secondary" })}>
-        <Settings size={16} /> Preferences
+      <MenuTrigger className={buttonStyles({ color: 'secondary' })}>
+        <Settings /> Preferences
       </MenuTrigger>
       <MenuPopup>
         <MenuGroup>

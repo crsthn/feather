@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { cx } from "@/lib/utils";
-import { ArrowUpRight } from "lucide-react";
-import { motion } from "motion/react";
-import Link from "next/link";
-import type { ComponentProps } from "react";
-import { useState } from "react";
+import { cx } from '@/lib/utils';
+import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'motion/react';
+import Link from 'next/link';
+import type { ComponentProps } from 'react';
+import { useState } from 'react';
 
 type ArrowLinkProps = ComponentProps<typeof Link> & {
   external?: boolean;
@@ -50,11 +50,11 @@ function ArrowLink({
   };
 
   return (
-    <Link href={href} target={external ? "_blank" : undefined} {...props}>
+    <Link href={href} target={external ? '_blank' : undefined} {...props}>
       <motion.span
         className={cx(
-          "inline-flex overflow-hidden py-2 font-medium leading-none",
-          className
+          'inline-flex overflow-hidden py-2 font-medium leading-none',
+          className,
         )}
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
@@ -66,7 +66,7 @@ function ArrowLink({
         <motion.span
           className="self-end"
           initial="hidden"
-          animate={isHovered ? "visible" : "hidden"}
+          animate={isHovered ? 'visible' : 'hidden'}
           variants={leftArrowVariants}
           transition={customTransition}
           aria-hidden="true"
@@ -77,7 +77,7 @@ function ArrowLink({
         <motion.span
           className="self-start"
           initial="visible"
-          animate={isHovered ? "hidden" : "visible"}
+          animate={isHovered ? 'hidden' : 'visible'}
           variants={rightArrowVariants}
           transition={customTransition}
           aria-hidden="true"
@@ -89,6 +89,6 @@ function ArrowLink({
   );
 }
 
-ArrowLink.displayName = "ArrowLink";
+ArrowLink.displayName = 'ArrowLink';
 
 export { ArrowLink, type ArrowLinkProps };

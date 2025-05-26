@@ -19,7 +19,7 @@ const buttonStyles = tv({
       lg: 'h-12 text-base [&_svg]:size-5',
     },
     variant: {
-      solid: 'border',
+      solid: '',
       subtle: 'bg-transparent hover:bg-secondary',
     },
     iconOnly: {
@@ -32,19 +32,19 @@ const buttonStyles = tv({
       color: 'primary',
       variant: 'solid',
       class:
-        'border border-input bg-primary text-on-primary hover:bg-[color-mix(in_oklab,var(--primary),var(--text)_10%)] active:bg-primary',
+        'bg-primary text-on-primary hover:bg-[color-mix(in_oklab,var(--primary),var(--text)_10%)] active:bg-primary',
     },
     {
       color: 'secondary',
       variant: 'solid',
       class:
-        'border-black/4 bg-secondary hover:bg-[color-mix(in_oklab,var(--secondary),var(--color-black)_4%)] active:bg-secondary dark:border-white/5 dark:active:bg-secondary dark:hover:bg-[color-mix(in_oklab,var(--secondary),var(--color-white)_5%)]',
+        'border border-black/4 bg-secondary hover:bg-[color-mix(in_oklab,var(--secondary),var(--color-black)_4%)] active:bg-secondary dark:border-white/5 dark:active:bg-secondary dark:hover:bg-[color-mix(in_oklab,var(--secondary),var(--color-white)_5%)]',
     },
     {
       color: 'danger',
       variant: 'solid',
       class:
-        'border border-input bg-danger text-on-danger hover:bg-[color-mix(in_oklab,var(--danger),var(--text)_10%)] active:bg-danger',
+        'bg-danger text-on-danger hover:bg-[color-mix(in_oklab,var(--danger),var(--text)_10%)] active:bg-danger',
     },
     {
       color: 'primary',

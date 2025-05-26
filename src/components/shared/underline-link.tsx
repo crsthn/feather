@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { cx } from "@/lib/utils";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import type { ComponentProps } from "react";
-import { useState } from "react";
+import { cx } from '@/lib/utils';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import type { ComponentProps } from 'react';
+import { useState } from 'react';
 
 type UnderlineLinkProps = ComponentProps<typeof Link> & {
   external?: boolean;
@@ -20,9 +20,9 @@ function UnderlineLink({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Link href={href} target={external ? "_blank" : undefined} {...props}>
+    <Link href={href} target={external ? '_blank' : undefined} {...props}>
       <motion.span
-        className={cx("relative font-medium text-primary", className)}
+        className={cx('relative font-medium text-primary', className)}
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
       >
@@ -32,7 +32,7 @@ function UnderlineLink({
           initial={{ scaleX: 0 }}
           animate={{
             scaleX: isHovered ? 1 : 0,
-            transformOrigin: isHovered ? "left center" : "right center",
+            transformOrigin: isHovered ? 'left center' : 'right center',
           }}
           transition={{
             duration: 0.4,
@@ -44,6 +44,6 @@ function UnderlineLink({
   );
 }
 
-UnderlineLink.displayName = "UnderlineLink";
+UnderlineLink.displayName = 'UnderlineLink';
 
 export { UnderlineLink, type UnderlineLinkProps };

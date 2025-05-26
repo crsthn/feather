@@ -1,4 +1,4 @@
-import type { SVGProps } from "react";
+import type { SVGProps } from 'react';
 const React = (props: SVGProps<SVGSVGElement>) => (
   <svg
     fill="#58C4DC"

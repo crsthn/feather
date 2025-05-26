@@ -1,9 +1,9 @@
-import BaseUI from "@/components/icons/base-ui.";
-import Motion from "@/components/icons/motion";
-import React from "@/components/icons/react";
-import TailwindCSS from "@/components/icons/tailwind";
-import { buttonStyles } from "@/components/ui/button";
-import Link from "next/link";
+import BaseUI from '@/components/icons/base-ui.';
+import Motion from '@/components/icons/motion';
+import React from '@/components/icons/react';
+import TailwindCSS from '@/components/icons/tailwind';
+import { buttonStyles } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -18,7 +18,7 @@ export default function Hero() {
         </span>
         <Link
           href="/docs/ui"
-          className={buttonStyles({ size: "lg", className: "group mb-8" })}
+          className={buttonStyles({ size: 'lg', className: 'group mb-8' })}
         >
           Get Started
           <svg

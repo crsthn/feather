@@ -1,6 +1,6 @@
-import type { TableOfContents } from "fumadocs-core/server";
-import { Text } from "lucide-react";
-import TocContent from "./toc-content";
+import type { TableOfContents } from 'fumadocs-core/server';
+import { Text } from 'lucide-react';
+import TocContent from './toc-content';
 
 export function Toc({ toc }: { toc: TableOfContents }) {
   if (toc.length <= 0) return null;

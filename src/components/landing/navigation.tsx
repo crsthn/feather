@@ -1,9 +1,9 @@
-import Github from "@/components/icons/github";
-import MobileNavigation from "@/components/landing/mobile-navigation";
-import { buttonStyles } from "@/components/ui/button";
-import { navLinks } from "@/constants/navigation-links";
-import Image from "next/image";
-import Link from "next/link";
+import Github from '@/components/icons/github';
+import MobileNavigation from '@/components/landing/mobile-navigation';
+import { buttonStyles } from '@/components/ui/button';
+import { navLinks } from '@/constants/navigation-links';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Navigation() {
   return (
@@ -34,8 +34,8 @@ export default function Navigation() {
           <Link
             target="_blank"
             className={buttonStyles({
-              color: "secondary",
-              size: "sm",
+              color: 'secondary',
+              size: 'sm',
             })}
             href="https://github.com/crsthn/feather"
           >

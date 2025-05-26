@@ -1,11 +1,11 @@
-import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
+import { Checkbox, CheckboxGroup } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
 
 export default function Component() {
   return (
     <CheckboxGroup
       aria-labelledby="apples-caption"
-      defaultValue={["fuji-apple"]}
+      defaultValue={['fuji-apple']}
     >
       <div className="font-medium" id="apples-caption">
         Apples

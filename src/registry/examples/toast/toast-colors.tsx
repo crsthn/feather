@@ -17,7 +17,7 @@ export default function Component() {
           })
         }
       >
-        <CircleX size={16} />
+        <CircleX />
       </Button>
       <Button
         iconOnly
@@ -30,7 +30,7 @@ export default function Component() {
           })
         }
       >
-        <CheckCircle2 size={16} />
+        <CheckCircle2 />
       </Button>
       <Button
         iconOnly
@@ -44,7 +44,7 @@ export default function Component() {
           })
         }
       >
-        <Info size={16} />
+        <Info />
       </Button>
     </div>
   );

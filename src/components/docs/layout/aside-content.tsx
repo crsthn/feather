@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import type { PageTree } from "fumadocs-core/server";
-import { usePathname } from "next/navigation";
-import TreeNode from "./shared/tree-node";
+import type { PageTree } from 'fumadocs-core/server';
+import { usePathname } from 'next/navigation';
+import TreeNode from './shared/tree-node';
 
 type AsideContentProps = {
   items: PageTree.Node[];
@@ -13,7 +13,7 @@ export function AsideContent({ items, rootItems }: AsideContentProps) {
   const path = usePathname();
 
   const activeRoot = rootItems.find((item) =>
-    path.startsWith(item.index?.url as string)
+    path.startsWith(item.index?.url as string),
   );
 
   return (

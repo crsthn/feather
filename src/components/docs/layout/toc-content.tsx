@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { cx } from "@/lib/utils";
-import type { TableOfContents } from "fumadocs-core/server";
-import * as Primitive from "fumadocs-core/toc";
-import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { cx } from '@/lib/utils';
+import type { TableOfContents } from 'fumadocs-core/server';
+import * as Primitive from 'fumadocs-core/toc';
+import { motion } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function TocContent({ toc }: { toc: TableOfContents }) {
   const containerRef = useRef<HTMLUListElement>(null);
@@ -21,7 +21,7 @@ export default function TocContent({ toc }: { toc: TableOfContents }) {
     // Function to update thumb position based on active element
     const updateThumbPosition = () => {
       const activeElement = containerRef.current?.querySelector(
-        '[data-active="true"]'
+        '[data-active="true"]',
       ) as HTMLElement;
 
       if (activeElement) {
@@ -48,7 +48,7 @@ export default function TocContent({ toc }: { toc: TableOfContents }) {
     observer.observe(containerRef.current, {
       subtree: true,
       attributes: true,
-      attributeFilter: ["data-active"],
+      attributeFilter: ['data-active'],
     });
 
     return () => {
@@ -83,10 +83,10 @@ export default function TocContent({ toc }: { toc: TableOfContents }) {
               key={item.url}
               href={item.url}
               className={cx(
-                "block border-l-2 py-1 font-medium text-text-2 transition-colors hover:text-text data-[active=true]:text-text",
-                item.depth <= 2 && "pl-3",
-                item.depth === 3 && "pl-6",
-                item.depth >= 4 && "pl-9"
+                'block border-l-2 py-1 font-medium text-text-2 transition-colors hover:text-text data-[active=true]:text-text',
+                item.depth <= 2 && 'pl-3',
+                item.depth === 3 && 'pl-6',
+                item.depth >= 4 && 'pl-9',
               )}
             >
               {item.title}
