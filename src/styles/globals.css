@@ -10,14 +10,14 @@
 
   --overlay: --alpha(var(--color-black) / 20%);
 
-  --primary: var(--color-blue-600);
-  --primary-muted: --alpha(var(--color-blue-600) / 10%);
+  --primary: var(--color-blue-700);
+  --primary-muted: --alpha(var(--color-blue-500) / 16%);
 
   --secondary: --alpha(var(--color-neutral-500) / 8%);
   --muted: --alpha(var(--color-neutral-500) / 12%);
 
   --danger: var(--color-red-600);
-  --danger-muted: --alpha(var(--color-red-600) / 10%);
+  --danger-muted: --alpha(var(--color-red-500) / 16%);
 
   --text: var(--color-black);
   --text-2: --alpha(var(--color-black) / 50%);
@@ -101,14 +101,14 @@
 
   --overlay: --alpha(var(--color-black) / 50%);
 
-  --primary: var(--color-blue-500);
-  --primary-muted: --alpha(var(--color-blue-500) / 15%);
+  --primary: var(--color-blue-400);
+  --primary-muted: --alpha(var(--color-blue-600) / 20%);
 
   --secondary: --alpha(var(--color-neutral-500) / 16%);
   --muted: --alpha(var(--color-neutral-500) / 24%);
 
   --danger: var(--color-red-500);
-  --danger-muted: --alpha(var(--color-red-500) / 15%);
+  --danger-muted: --alpha(var(--color-red-600) / 20%);
 
   --text: var(--color-white);
   --text-2: --alpha(var(--color-white) / 60%);
@@ -117,7 +117,7 @@
   --input: --alpha(var(--color-white) / 12%);
   --border: --alpha(var(--color-white) / 8%);
 
-  --on-primary: var(--color-white);
+  --on-primary: var(--color-black);
   --on-danger: var(--color-white);
 
   --scrollbar: #262626;

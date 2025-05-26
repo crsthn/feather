@@ -6,7 +6,7 @@ const noteStyles = tv({
   variants: {
     color: {
       primary: 'bg-primary-muted [&_svg]:text-primary',
-      secondary: 'bg-secondary',
+      secondary: 'bg-muted',
       danger: 'bg-danger-muted [&_svg]:text-danger',
     },
   },
