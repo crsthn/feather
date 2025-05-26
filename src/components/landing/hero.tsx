@@ -23,18 +23,18 @@ export default function Hero() {
           Get Started
           <svg
             viewBox="0 0 24 24"
-            className="size-5 shrink-0 fill-none stroke-2 stroke-current transition-opacity duration-200 ease-in-out"
+            className="size-5 shrink-0 fill-none stroke-2 stroke-current"
           >
             <line
               x1="5"
               y1="12"
               x2="19"
               y2="12"
-              className="translate-x-3.5 scale-x-0 transition-transform duration-200 ease-in-out group-hover:translate-x-0 group-hover:scale-x-100"
+              className="translate-x-3.5 scale-x-0 transition-transform ease-in-out duration-200 group-hover:translate-x-0 group-hover:scale-x-100 pointer-coarse:translate-x-0 pointer-coarse:scale-x-100"
             />
             <polyline
               points="12 5 19 12 12 19"
-              className="-translate-x-1 transition-transform duration-200 ease-in-out group-hover:translate-x-0"
+              className="-translate-x-1 transition-transform ease-in-out duration-200 group-hover:translate-x-0 pointer-coarse:translate-x-0"
             />
           </svg>
         </Link>
