@@ -1,7 +1,4 @@
 'use client';
-import { Command as CommandPrimitive } from 'cmdk';
-import { SearchIcon } from 'lucide-react';
-
 import {
   Dialog,
   DialogDescription,
@@ -10,11 +7,13 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { cx } from '@/lib/utils';
+import { Command as CommandPrimitive } from 'cmdk';
+import { SearchIcon } from 'lucide-react';
 import type { ComponentProps } from 'react';
 
-const Command = CommandPrimitive;
+export const Command = CommandPrimitive;
 
-function CommandDialog({
+export function CommandDialog({
   title = 'Command Palette',
   description = 'Search for a command to run...',
   children,
@@ -38,7 +37,7 @@ function CommandDialog({
   );
 }
 
-function CommandInput({
+export function CommandInput({
   className,
   ...props
 }: ComponentProps<typeof CommandPrimitive.Input>) {
@@ -56,7 +55,7 @@ function CommandInput({
   );
 }
 
-function CommandList({
+export function CommandList({
   className,
   ...props
 }: ComponentProps<typeof CommandPrimitive.List>) {
@@ -71,19 +70,19 @@ function CommandList({
   );
 }
 
-function CommandEmpty({
+export function CommandEmpty({
   ...props
 }: ComponentProps<typeof CommandPrimitive.Empty>) {
   return <CommandPrimitive.Empty className="py-6 text-center" {...props} />;
 }
 
-function CommandGroup({
+export function CommandGroup({
   ...props
 }: ComponentProps<typeof CommandPrimitive.Group>) {
   return <CommandPrimitive.Group {...props} />;
 }
 
-function CommandSeparator({
+export function CommandSeparator({
   className,
   ...props
 }: ComponentProps<typeof CommandPrimitive.Separator>) {
@@ -95,14 +94,14 @@ function CommandSeparator({
   );
 }
 
-function CommandItem({
+export function CommandItem({
   className,
   ...props
 }: ComponentProps<typeof CommandPrimitive.Item>) {
   return (
     <CommandPrimitive.Item
       className={cx(
-        'flex h-10 cursor-pointer select-none items-center gap-2 rounded-lg px-2 outline-hidden data-[disabled=true]:pointer-events-none data-[selected=true]:bg-secondary data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0',
+        'flex h-9 cursor-pointer select-none items-center gap-2 rounded-lg px-2 outline-hidden data-[disabled=true]:pointer-events-none data-[selected=true]:bg-secondary data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0',
         className,
       )}
       {...props}
@@ -110,7 +109,10 @@ function CommandItem({
   );
 }
 
-function CommandShortcut({ className, ...props }: ComponentProps<'span'>) {
+export function CommandShortcut({
+  className,
+  ...props
+}: ComponentProps<'span'>) {
   return (
     <span
       className={cx(
@@ -121,15 +123,3 @@ function CommandShortcut({ className, ...props }: ComponentProps<'span'>) {
     />
   );
 }
-
-export {
-  Command,
-  CommandDialog,
-  CommandInput,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandShortcut,
-  CommandSeparator,
-};

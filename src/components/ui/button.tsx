@@ -1,108 +1,104 @@
-import { focusRing } from '@/lib/utils';
+import { Spinner } from '@/components/ui/spinner';
+import { cx, focusRing } from '@/lib/utils';
+import { type VariantProps, cva } from 'class-variance-authority';
 import type { ComponentProps } from 'react';
-import { type VariantProps, tv } from 'tailwind-variants';
 
-const buttonStyles = tv({
-  base: [
+export const buttonStyles = cva(
+  [
     focusRing,
-    'inline-flex cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-lg font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0',
+    "inline-flex shrink-0 cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-lg font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   ],
-  variants: {
-    color: {
-      primary: 'ring-primary/50',
-      secondary: 'ring-muted',
-      danger: 'ring-danger/50',
+  {
+    variants: {
+      variant: {
+        primary:
+          'bg-primary text-on-primary hover:bg-[color-mix(in_oklab,var(--primary),var(--text)_10%)]',
+        secondary:
+          'border border-black/4 bg-secondary hover:bg-[color-mix(in_oklab,var(--secondary),var(--color-black)_4%)] dark:border-white/5 dark:hover:bg-[color-mix(in_oklab,var(--secondary),var(--color-white)_5%)]',
+        danger:
+          'bg-danger text-on-danger ring-danger/50 hover:bg-[color-mix(in_oklab,var(--danger),var(--text)_10%)]',
+        subtle: 'hover:bg-secondary',
+      },
+      size: {
+        sm: 'h-8',
+        md: 'h-9',
+        lg: 'h-10',
+      },
+      iconOnly: {
+        true: 'aspect-square',
+        false: null,
+      },
     },
-    size: {
-      sm: 'h-8 text-sm [&_svg]:size-4',
-      md: 'h-10 text-sm [&_svg]:size-4',
-      lg: 'h-12 text-base [&_svg]:size-5',
-    },
-    variant: {
-      solid: '',
-      subtle: 'bg-transparent hover:bg-secondary',
-    },
-    iconOnly: {
-      true: 'aspect-square',
-      false: '',
-    },
-  },
-  compoundVariants: [
-    {
-      color: 'primary',
-      variant: 'solid',
-      class:
-        'bg-primary text-on-primary hover:bg-[color-mix(in_oklab,var(--primary),var(--text)_10%)] active:bg-primary',
-    },
-    {
-      color: 'secondary',
-      variant: 'solid',
-      class:
-        'border border-black/4 bg-secondary hover:bg-[color-mix(in_oklab,var(--secondary),var(--color-black)_4%)] active:bg-secondary dark:border-white/5 dark:active:bg-secondary dark:hover:bg-[color-mix(in_oklab,var(--secondary),var(--color-white)_5%)]',
-    },
-    {
-      color: 'danger',
-      variant: 'solid',
-      class:
-        'bg-danger text-on-danger hover:bg-[color-mix(in_oklab,var(--danger),var(--text)_10%)] active:bg-danger',
-    },
-    {
-      color: 'primary',
-      variant: 'subtle',
-      class: 'text-primary',
-    },
-    {
-      color: 'danger',
-      variant: 'subtle',
-      class: 'text-danger',
-    },
-    {
-      iconOnly: false,
-      size: 'sm',
-      class: 'gap-1 px-3',
-    },
-    {
-      iconOnly: false,
+    compoundVariants: [
+      {
+        size: 'sm',
+        iconOnly: false,
+        className: 'gap-1.5 px-3',
+      },
+      {
+        size: 'md',
+        iconOnly: false,
+        className: 'gap-2 px-4',
+      },
+      {
+        size: 'lg',
+        iconOnly: false,
+        className: 'gap-2.5 px-5',
+      },
+    ],
+    defaultVariants: {
+      variant: 'primary',
       size: 'md',
-      class: 'gap-2 px-4',
-    },
-    {
       iconOnly: false,
-      size: 'lg',
-      class: 'gap-2 px-6',
     },
-  ],
-  defaultVariants: {
-    color: 'primary',
-    size: 'md',
-    variant: 'solid',
-    iconOnly: false,
   },
-});
+);
 
-type ButtonProps = Omit<
-  ComponentProps<'button'>,
-  keyof VariantProps<typeof buttonStyles>
-> &
-  VariantProps<typeof buttonStyles> & {
-    iconOnly?: boolean;
-  };
-
-function Button({
+export function Button({
   className,
-  color,
   size,
   variant,
   iconOnly,
-  ref,
   ...props
-}: ButtonProps) {
+}: ComponentProps<'button'> & VariantProps<typeof buttonStyles>) {
   return (
     <button
-      className={buttonStyles({ color, size, variant, iconOnly, className })}
+      className={cx(buttonStyles({ variant, size, iconOnly }), className)}
       {...props}
     />
   );
 }
 
-export { Button, buttonStyles, type ButtonProps };
+export function ActionButton({
+  className,
+  loading,
+  disabled,
+  children,
+  ...props
+}: ComponentProps<'button'> &
+  VariantProps<typeof buttonStyles> & {
+    loading: boolean;
+  }) {
+  return (
+    <Button
+      className={cx('relative overflow-hidden', className)}
+      disabled={disabled || loading}
+      {...props}
+    >
+      <span
+        className={cx(
+          "inline-flex items-center justify-center gap-2 transition-all duration-200 ease-out-quint [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+          loading && 'translate-y-[200%] opacity-0',
+        )}
+      >
+        {children}
+      </span>
+      <Spinner
+        className={cx(
+          '-translate-y-[200%] absolute opacity-0 transition-all duration-200 ease-out-quint',
+          loading && 'translate-y-0 opacity-100',
+        )}
+      />
+    </Button>
+  );
+}

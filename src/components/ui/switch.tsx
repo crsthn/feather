@@ -2,7 +2,7 @@ import { cx, focusRing } from '@/lib/utils';
 import { Switch as BaseSwitch } from '@base-ui-components/react/switch';
 import type { ComponentProps } from 'react';
 
-function Switch({
+export function Switch({
   className,
   ...props
 }: ComponentProps<typeof BaseSwitch.Root>) {
@@ -19,5 +19,3 @@ function Switch({
     </BaseSwitch.Root>
   );
 }
-
-export { Switch };

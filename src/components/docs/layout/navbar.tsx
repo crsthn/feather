@@ -14,7 +14,7 @@ type NavbarProps = {
 
 export default function Navbar({ items, rootItems }: NavbarProps) {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between bg-surface/80 pl-6 backdrop-blur-xl lg:pr-6">
+    <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between border-b bg-surface/80 pl-6 backdrop-blur-xl lg:pr-6">
       <nav className="flex items-center gap-6">
         <Link href="/" className="flex items-center gap-2">
           <Image

@@ -2,7 +2,7 @@ import { cx, focusRing } from '@/lib/utils';
 import { Slider as BaseSlider } from '@base-ui-components/react/slider';
 import type { ComponentProps } from 'react';
 
-function Slider({
+export function Slider({
   className,
   ...props
 }: ComponentProps<typeof BaseSlider.Root>) {
@@ -22,5 +22,3 @@ function Slider({
     </BaseSlider.Root>
   );
 }
-
-export { Slider };

@@ -1,36 +1,38 @@
 import { cx } from '@/lib/utils';
 import { Avatar as BaseAvatar } from '@base-ui-components/react/avatar';
+import { type VariantProps, cva } from 'class-variance-authority';
 import type { ComponentProps } from 'react';
-import { type VariantProps, tv } from 'tailwind-variants';
 
-const avatarStyles = tv({
-  base: 'relative inline-flex shrink-0 select-none items-center justify-center overflow-hidden rounded-full align-middle',
-  variants: {
-    size: {
-      sm: 'size-8 text-sm',
-      md: 'size-10 text-base',
-      lg: 'size-12 text-lg',
+const avatarStyles = cva(
+  'relative inline-flex shrink-0 select-none items-center justify-center overflow-hidden rounded-full align-middle',
+  {
+    variants: {
+      size: {
+        sm: 'size-8 text-sm',
+        md: 'size-10 text-base',
+        lg: 'size-12 text-lg',
+      },
+    },
+    defaultVariants: {
+      size: 'md',
     },
   },
-  defaultVariants: {
-    size: 'md',
-  },
-});
+);
 
-function Avatar({
+export function Avatar({
   className,
   size,
   ...props
 }: ComponentProps<typeof BaseAvatar.Root> & VariantProps<typeof avatarStyles>) {
   return (
     <BaseAvatar.Root
-      className={avatarStyles({ size, className: className as string })}
+      className={cx(avatarStyles({ size }), className)}
       {...props}
     />
   );
 }
 
-function AvatarImage({
+export function AvatarImage({
   className,
   ...props
 }: ComponentProps<typeof BaseAvatar.Image>) {
@@ -42,7 +44,7 @@ function AvatarImage({
   );
 }
 
-function AvatarFallback({
+export function AvatarFallback({
   className,
   ...props
 }: ComponentProps<typeof BaseAvatar.Fallback>) {
@@ -56,5 +58,3 @@ function AvatarFallback({
     />
   );
 }
-
-export { Avatar, AvatarImage, AvatarFallback };

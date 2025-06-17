@@ -12,7 +12,7 @@ import { Copy, FileText, Mail, MessageSquare, Plus, Send } from 'lucide-react';
 export default function Component() {
   return (
     <Menu>
-      <MenuTrigger className={buttonStyles({ color: 'secondary' })}>
+      <MenuTrigger className={buttonStyles({ variant: 'secondary' })}>
         Actions
       </MenuTrigger>
       <MenuPopup>

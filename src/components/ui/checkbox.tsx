@@ -1,11 +1,13 @@
 'use client';
 import { cx, focusInteractive } from '@/lib/utils';
-import { Checkbox as BaseCheckbox } from '@base-ui-components/react';
-import { CheckboxGroup as BaseCheckboxGroup } from '@base-ui-components/react';
+import {
+  Checkbox as BaseCheckbox,
+  CheckboxGroup as BaseCheckboxGroup,
+} from '@base-ui-components/react';
 import { Check } from 'lucide-react';
 import type { ComponentProps } from 'react';
 
-function CheckboxGroup({
+export function CheckboxGroup({
   className,
   ...props
 }: ComponentProps<typeof BaseCheckboxGroup>) {
@@ -17,7 +19,7 @@ function CheckboxGroup({
   );
 }
 
-function Checkbox({
+export function Checkbox({
   className,
   ...props
 }: ComponentProps<typeof BaseCheckbox.Root>) {
@@ -36,5 +38,3 @@ function Checkbox({
     </BaseCheckbox.Root>
   );
 }
-
-export { Checkbox, CheckboxGroup };

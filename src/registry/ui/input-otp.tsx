@@ -3,7 +3,7 @@ import { cx } from '@/lib/utils';
 import { OTPInput, OTPInputContext } from 'input-otp';
 import { type ComponentProps, useContext } from 'react';
 
-function InputOTP({
+export function InputOTP({
   containerClassName,
   ...props
 }: ComponentProps<typeof OTPInput>) {
@@ -18,7 +18,7 @@ function InputOTP({
   );
 }
 
-function InputOTPSlot({
+export function InputOTPSlot({
   index,
   className,
   ...props
@@ -29,7 +29,7 @@ function InputOTPSlot({
   return (
     <div
       className={cx(
-        'relative flex size-10 items-center justify-center rounded-lg border border-input bg-surface shadow-xs ring-primary/20 transition-all dark:ring-primary/30',
+        'relative flex size-9 items-center justify-center rounded-lg border border-input bg-surface shadow-xs ring-primary/20 transition-all dark:ring-primary/30',
         isActive && 'border-primary ring-3',
         className,
       )}
@@ -44,4 +44,3 @@ function InputOTPSlot({
     </div>
   );
 }
-export { InputOTP, InputOTPSlot };

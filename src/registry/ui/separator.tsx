@@ -1,9 +1,9 @@
+import { cx } from '@/lib/utils';
 import { Separator as BaseSeparator } from '@base-ui-components/react/separator';
+import { cva } from 'class-variance-authority';
 import type { ComponentProps } from 'react';
-import { tv } from 'tailwind-variants';
 
-const separatorStyles = tv({
-  base: 'bg-border',
+const separatorStyles = cva('bg-border', {
   variants: {
     orientation: {
       horizontal: 'h-px w-full',
@@ -15,20 +15,20 @@ const separatorStyles = tv({
   },
 });
 
-function Separator({
+export function Separator({
   className,
   orientation,
   ...props
 }: ComponentProps<typeof BaseSeparator>) {
   return (
     <BaseSeparator
-      className={separatorStyles({
-        orientation,
-        className: className as string,
-      })}
+      className={cx(
+        separatorStyles({
+          orientation,
+        }),
+        className,
+      )}
       {...props}
     />
   );
 }
-
-export { Separator };

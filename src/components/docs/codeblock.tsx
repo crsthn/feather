@@ -33,7 +33,7 @@ export function CodeBlock({
     <figure
       {...props}
       className={cx(
-        'not-prose relative my-6 overflow-hidden rounded-xl bg-surface text-sm first:mt-0 last:mb-0',
+        'not-prose relative my-6 overflow-hidden rounded-xl border bg-surface text-sm first:mt-0 last:mb-0',
         className,
       )}
     >

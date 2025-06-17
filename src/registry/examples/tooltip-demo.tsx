@@ -14,7 +14,6 @@ export default function Component() {
         <Tooltip>
           <TooltipTrigger
             className={buttonStyles({
-              color: 'secondary',
               iconOnly: true,
               variant: 'subtle',
               size: 'sm',
@@ -28,7 +27,6 @@ export default function Component() {
         <Tooltip>
           <TooltipTrigger
             className={buttonStyles({
-              color: 'secondary',
               iconOnly: true,
               variant: 'subtle',
               size: 'sm',
@@ -42,7 +40,6 @@ export default function Component() {
         <Tooltip>
           <TooltipTrigger
             className={buttonStyles({
-              color: 'secondary',
               iconOnly: true,
               variant: 'subtle',
               size: 'sm',

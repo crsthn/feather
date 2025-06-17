@@ -19,7 +19,7 @@ import {
 export default function Component() {
   return (
     <Menu>
-      <MenuTrigger className={buttonStyles({ color: 'secondary' })}>
+      <MenuTrigger className={buttonStyles({ variant: 'secondary' })}>
         Open Menu
       </MenuTrigger>
       <MenuPopup>

@@ -52,11 +52,11 @@ export default function Search({ items, rootItems }: NavbarProps) {
           <SearchIcon size={16} />
           <span className="hidden lg:inline">Search docs</span>
         </div>
-        <Badge color="secondary" className="hidden lg:inline-flex">
+        <Badge variant="secondary" className="hidden lg:inline-flex">
           Ctrl K
         </Badge>
       </DialogTrigger>
-      <DialogPopup className="top-1/10 w-xl translate-y-0">
+      <DialogPopup>
         <Command>
           <CommandInput placeholder="Search docs..." />
           <CommandList>

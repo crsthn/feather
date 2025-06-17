@@ -43,7 +43,7 @@ export default function MobileNavigation({
       <Dialog.Portal>
         <Dialog.Popup className="fixed inset-x-0 top-16 z-50 flex h-[calc(100vh-4rem)] flex-col overflow-y-auto bg-surface/80 text-text backdrop-blur-xl transition-all duration-200 ease-ease data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 lg:hidden">
           {rootItems.length > 0 && (
-            <nav className="flex h-16 items-center gap-2 border-t px-6 sm:hidden">
+            <nav className="flex h-16 items-center gap-2 px-6 sm:hidden">
               {rootItems.map((item) => (
                 <RootLink
                   key={item.$id}

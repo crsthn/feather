@@ -11,7 +11,7 @@ import {
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
 import { Badge } from '@/components/ui/badge';
-import { buttonStyles } from '@/components/ui/button';
+import { Button, buttonStyles } from '@/components/ui/button';
 import { Checkbox, CheckboxGroup } from '@/components/ui/checkbox';
 import {
   Dialog,
@@ -79,14 +79,14 @@ export default function Blocks() {
   return (
     <section className="bg-bg" id="components">
       <div className="mx-auto grid w-full max-w-screen-xl gap-4 px-6 sm:grid-cols-2 xl:grid-cols-[repeat(15,_minmax(0,_1fr))]">
-        <div className="flex h-52 items-center justify-center rounded-3xl bg-surface p-8 xl:col-span-5">
+        <div className="flex h-52 items-center justify-center rounded-3xl border bg-surface p-8 xl:col-span-5">
           <SelectDemo />
         </div>
-        <div className="flex h-52 items-center justify-center rounded-3xl bg-surface p-8 xl:col-span-5">
+        <div className="flex h-52 items-center justify-center rounded-3xl border bg-surface p-8 xl:col-span-5">
           <Dialog>
             <DialogTrigger
               className={buttonStyles({
-                color: 'danger',
+                variant: 'danger',
               })}
             >
               <Trash2 />
@@ -123,13 +123,15 @@ export default function Blocks() {
               </DialogMain>
 
               <DialogFooter>
-                <DialogClose color="secondary">Cancel</DialogClose>
-                <DialogClose color="danger">Delete project</DialogClose>
+                <DialogClose>Cancel</DialogClose>
+                <Button variant="danger" className="sm:flex-1">
+                  Delete project
+                </Button>
               </DialogFooter>
             </DialogPopup>
           </Dialog>
         </div>
-        <div className="flex h-52 items-center justify-center gap-6 rounded-3xl bg-surface p-8 sm:col-span-2 md:col-span-1 xl:col-span-5">
+        <div className="flex h-52 items-center justify-center gap-6 rounded-3xl border bg-surface p-8 sm:col-span-2 md:col-span-1 xl:col-span-5">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
               <Switch id="notifications" />
@@ -141,10 +143,10 @@ export default function Blocks() {
             </div>
           </div>
         </div>
-        <div className="row-span-3 flex items-center justify-center rounded-3xl bg-surface p-8 sm:col-span-2 md:col-span-1 xl:col-span-6">
+        <div className="row-span-3 flex items-center justify-center rounded-3xl border bg-surface p-8 sm:col-span-2 md:col-span-1 xl:col-span-6">
           <LoginForm />
         </div>
-        <div className="flex h-52 flex-col justify-center rounded-3xl bg-surface p-8 sm:col-span-2 md:col-span-1 xl:col-span-5">
+        <div className="flex h-52 flex-col justify-center rounded-3xl border bg-surface p-8 sm:col-span-2 md:col-span-1 xl:col-span-5">
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-sm">Uploading files...</span>
@@ -156,14 +158,14 @@ export default function Blocks() {
               aria-label="Progress of file upload"
             />
             <div className="flex gap-2">
-              <Badge color="secondary" className="w-fit">
+              <Badge variant="secondary" className="w-fit">
                 3 files
               </Badge>
               <Badge className="w-fit">1.2 MB</Badge>
             </div>
           </div>
         </div>
-        <div className="flex h-52 flex-col items-center justify-center rounded-3xl bg-surface p-8 xl:col-span-4">
+        <div className="flex h-52 flex-col items-center justify-center rounded-3xl border bg-surface p-8 xl:col-span-4">
           <Menu>
             <MenuTrigger className="cursor-pointer">
               <AvatarDemo />
@@ -198,7 +200,7 @@ export default function Blocks() {
             </MenuPopup>
           </Menu>
         </div>
-        <div className="flex h-52 items-center justify-center rounded-3xl bg-surface p-8 xl:col-span-4">
+        <div className="flex h-52 items-center justify-center rounded-3xl border bg-surface p-8 xl:col-span-4">
           <Drawer>
             <DrawerTrigger className={buttonStyles()}>
               <ShoppingCart />
@@ -286,7 +288,7 @@ export default function Blocks() {
                   <div className="flex justify-between">
                     <span className="text-text-2">Discount</span>
                     <div className="flex items-center gap-2">
-                      <Badge color="secondary">EARLY ACCESS 20% OFF</Badge>
+                      <Badge variant="secondary">EARLY ACCESS 20% OFF</Badge>
                       <span>-$43.2</span>
                     </div>
                   </div>
@@ -307,13 +309,13 @@ export default function Blocks() {
               </DrawerMain>
 
               <DrawerFooter>
-                <DrawerClose>Pay now</DrawerClose>
-                <DrawerClose color="secondary">Cancel</DrawerClose>
+                <Button>Pay now</Button>
+                <DrawerClose>Cancel</DrawerClose>
               </DrawerFooter>
             </DrawerPopup>
           </Drawer>
         </div>
-        <div className="row-span-2 flex flex-col items-center justify-center rounded-3xl bg-surface p-8 sm:col-span-2 md:col-span-1 xl:col-span-5">
+        <div className="row-span-2 flex flex-col items-center justify-center rounded-3xl border bg-surface p-8 sm:col-span-2 md:col-span-1 xl:col-span-5">
           <RadioGroup
             aria-labelledby="security"
             value={selectedRadio}
@@ -355,11 +357,11 @@ export default function Blocks() {
             </div>
           </RadioGroup>
         </div>
-        <div className="flex h-52 items-center justify-center rounded-3xl bg-surface p-8 xl:col-span-4">
+        <div className="flex h-52 items-center justify-center rounded-3xl border bg-surface p-8 xl:col-span-4">
           <AlertDialog>
             <AlertDialogTrigger
               className={buttonStyles({
-                color: 'secondary',
+                variant: 'secondary',
               })}
             >
               <TriangleAlert />
@@ -375,21 +377,19 @@ export default function Blocks() {
               </AlertDialogMain>
 
               <AlertDialogFooter>
-                <AlertDialogClose color="secondary">
-                  Remind me later
-                </AlertDialogClose>
-                <AlertDialogClose>Renew License</AlertDialogClose>
+                <AlertDialogClose>Remind me later</AlertDialogClose>
+                <Button className="flex-1">Renew License</Button>
               </AlertDialogFooter>
             </AlertDialogPopup>
           </AlertDialog>
         </div>
-        <div className="flex h-52 items-center justify-center gap-6 rounded-3xl bg-surface p-8 xl:col-span-5">
+        <div className="flex h-52 items-center justify-center gap-6 rounded-3xl border bg-surface p-8 xl:col-span-5">
           <ToastDemo />
         </div>
-        <div className="flex h-52 items-center justify-center rounded-3xl bg-surface p-8 sm:col-span-2 md:col-span-1 xl:col-span-5">
+        <div className="flex h-52 items-center justify-center rounded-3xl border bg-surface p-8 sm:col-span-2 md:col-span-1 xl:col-span-5">
           <TabsDemo />
         </div>
-        <div className="flex h-52 flex-col items-center justify-center gap-3 rounded-3xl bg-surface p-8 sm:col-span-2 xl:col-span-5">
+        <div className="flex h-52 flex-col items-center justify-center gap-3 rounded-3xl border bg-surface p-8 sm:col-span-2 xl:col-span-5">
           <NoteDemo />
         </div>
       </div>

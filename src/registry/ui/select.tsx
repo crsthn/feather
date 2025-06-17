@@ -4,13 +4,11 @@ import { Select as BaseSelect } from '@base-ui-components/react';
 import { ChevronsUpDown } from 'lucide-react';
 import type { ComponentProps } from 'react';
 
-function Select(props: ComponentProps<typeof BaseSelect.Root>) {
-  return <BaseSelect.Root alignItemToTrigger={false} {...props} />;
-}
-const SelectValue = BaseSelect.Value;
-const SelectGroup = BaseSelect.Group;
+export const Select = BaseSelect.Root;
+export const SelectValue = BaseSelect.Value;
+export const SelectGroup = BaseSelect.Group;
 
-function SelectTrigger({
+export function SelectTrigger({
   className,
   children,
   ...props
@@ -19,7 +17,7 @@ function SelectTrigger({
     <BaseSelect.Trigger
       className={cx(
         focusInteractive,
-        'group flex h-10 w-full cursor-pointer select-none items-center justify-between gap-2 rounded-lg border border-input bg-surface px-3 shadow-xs placeholder:text-text-3 data-disabled:pointer-events-none data-disabled:bg-secondary data-disabled:opacity-50',
+        'group flex h-9 w-full cursor-pointer select-none items-center justify-between gap-2 rounded-lg border border-input bg-surface px-3 shadow-xs placeholder:text-text-3 data-disabled:pointer-events-none data-disabled:bg-secondary data-disabled:opacity-50',
         className,
       )}
       {...props}
@@ -32,16 +30,20 @@ function SelectTrigger({
   );
 }
 
-function SelectPopup({
+export function SelectPopup({
   className,
   ...props
 }: ComponentProps<typeof BaseSelect.Popup>) {
   return (
     <BaseSelect.Portal>
-      <BaseSelect.Positioner className="z-50" sideOffset={8}>
+      <BaseSelect.Positioner
+        className="z-50"
+        sideOffset={8}
+        alignItemWithTrigger={false}
+      >
         <BaseSelect.Popup
           className={cx(
-            'group origin-[var(--transform-origin)] rounded-lg border bg-bg p-1 shadow-[0_24px_32px_-8px_rgba(0,0,0,0.06),0_8px_16px_-4px_rgba(0,0,0,0.04)] outline-none transition-all ease-out-cubic data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0',
+            'group max-h-[var(--available-height)] origin-[var(--transform-origin)] rounded-lg border bg-bg p-1 shadow-[0_24px_32px_-8px_rgba(0,0,0,0.06),0_8px_16px_-4px_rgba(0,0,0,0.04)] outline-none transition-all ease-out-cubic data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0',
             className,
           )}
           {...props}
@@ -51,7 +53,7 @@ function SelectPopup({
   );
 }
 
-function SelectItem({
+export function SelectItem({
   className,
   children,
   ...props
@@ -59,7 +61,7 @@ function SelectItem({
   return (
     <BaseSelect.Item
       className={cx(
-        'grid h-8 min-w-[calc(var(--anchor-width)-1rem)] cursor-pointer select-none grid-cols-[1fr_1rem] items-center gap-2 rounded-md px-2 outline-none transition-colors data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3',
+        'grid h-8 min-w-[calc(var(--anchor-width)-0.625rem)] cursor-pointer select-none grid-cols-[1fr_1rem] items-center gap-2 rounded-md px-2 outline-none transition-colors data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3',
         className,
       )}
       {...props}
@@ -72,7 +74,7 @@ function SelectItem({
   );
 }
 
-function SelectSeparator({
+export function SelectSeparator({
   className,
   ...props
 }: ComponentProps<typeof BaseSelect.Separator>) {
@@ -84,7 +86,7 @@ function SelectSeparator({
   );
 }
 
-function SelectGroupLabel({
+export function SelectGroupLabel({
   className,
   ...props
 }: ComponentProps<typeof BaseSelect.GroupLabel>) {
@@ -98,14 +100,3 @@ function SelectGroupLabel({
     />
   );
 }
-
-export {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectPopup,
-  SelectItem,
-  SelectSeparator,
-  SelectGroup,
-  SelectGroupLabel,
-};

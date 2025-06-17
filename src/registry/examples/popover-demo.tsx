@@ -12,7 +12,7 @@ export default function Component() {
   return (
     <Popover>
       <PopoverTrigger
-        className={buttonStyles({ color: 'secondary', iconOnly: true })}
+        className={buttonStyles({ variant: 'secondary', iconOnly: true })}
       >
         <BellIcon aria-label="Notifications" />
       </PopoverTrigger>

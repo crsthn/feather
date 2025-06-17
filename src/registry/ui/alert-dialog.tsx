@@ -2,22 +2,21 @@
 import { cx } from '@/lib/utils';
 import { AlertDialog as BaseAlertDialog } from '@base-ui-components/react';
 import type { ComponentProps } from 'react';
-import type { VariantProps } from 'tailwind-variants';
 import { buttonStyles } from './button';
 
-const AlertDialog = BaseAlertDialog.Root;
-const AlertDialogTrigger = BaseAlertDialog.Trigger;
+export const AlertDialog = BaseAlertDialog.Root;
+export const AlertDialogTrigger = BaseAlertDialog.Trigger;
 
-function AlertDialogPopup({
+export function AlertDialogPopup({
   className,
   ...props
 }: ComponentProps<typeof BaseAlertDialog.Popup>) {
   return (
     <BaseAlertDialog.Portal>
-      <BaseAlertDialog.Backdrop className="fixed inset-0 z-50 bg-overlay backdrop-blur-xs transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:ease-in-out-quint data-open:ease-out-quint" />
+      <BaseAlertDialog.Backdrop className="fixed inset-0 z-50 bg-overlay backdrop-blur-xs transition-opacity duration-200 ease-out-quint data-ending-style:opacity-0 data-starting-style:opacity-0" />
       <BaseAlertDialog.Popup
         className={cx(
-          '-translate-x-1/2 -translate-y-1/2 fixed top-[calc(50%-1.25rem*var(--nested-dialogs))] left-1/2 z-50 w-md max-w-[calc(100vw-3rem)] scale-[calc(1-0.1*var(--nested-dialogs))] overflow-hidden rounded-xl border bg-bg outline-none transition-all duration-200 data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:ease-in-out-quint data-open:ease-out-quint',
+          '-translate-x-1/2 -translate-y-1/2 fixed top-[calc(50%-1.25rem*var(--nested-dialogs))] left-1/2 z-50 w-md max-w-[calc(100vw-2rem)] scale-[calc(1-0.1*var(--nested-dialogs))] overflow-hidden rounded-xl border bg-bg outline-none transition-all duration-200 ease-out-quint data-ending-style:scale-95 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0',
           className,
         )}
         {...props}
@@ -26,37 +25,43 @@ function AlertDialogPopup({
   );
 }
 
-function AlertDialogMain({ className, ...props }: ComponentProps<'div'>) {
+export function AlertDialogMain({
+  className,
+  ...props
+}: ComponentProps<'div'>) {
+  return (
+    <div className={cx('flex flex-col gap-1 p-6', className)} {...props} />
+  );
+}
+
+export function AlertDialogFooter({
+  className,
+  ...props
+}: ComponentProps<'div'>) {
   return (
     <div
-      className={cx('flex flex-col gap-1 border-b bg-surface p-6', className)}
+      className={cx(
+        'flex justify-between gap-4 border-y border-b-transparent bg-surface px-6 py-4',
+        className,
+      )}
       {...props}
     />
   );
 }
 
-function AlertDialogFooter({ className, ...props }: ComponentProps<'div'>) {
-  return (
-    <div
-      className={cx('flex justify-between gap-4 px-6 py-4', className)}
-      {...props}
-    />
-  );
-}
-
-function AlertDialogTitle({
+export function AlertDialogTitle({
   className,
   ...props
 }: ComponentProps<typeof BaseAlertDialog.Title>) {
   return (
     <BaseAlertDialog.Title
-      className={cx('font-semibold text-xl', className)}
+      className={cx('font-semibold text-lg', className)}
       {...props}
     />
   );
 }
 
-function AlertDialogDescription({
+export function AlertDialogDescription({
   className,
   ...props
 }: ComponentProps<typeof BaseAlertDialog.Description>) {
@@ -68,37 +73,20 @@ function AlertDialogDescription({
   );
 }
 
-type AlertDialogActionProps = Omit<
-  ComponentProps<typeof BaseAlertDialog.Close>,
-  keyof VariantProps<typeof buttonStyles>
-> &
-  VariantProps<typeof buttonStyles>;
-
-function AlertDialogClose({
+export function AlertDialogClose({
   className,
-  color,
-  variant,
   ...props
-}: AlertDialogActionProps) {
+}: ComponentProps<typeof BaseAlertDialog.Close>) {
   return (
     <BaseAlertDialog.Close
-      className={buttonStyles({
-        color,
-        variant,
-        className: cx('w-full', className),
-      })}
+      className={cx(
+        buttonStyles({
+          variant: 'secondary',
+        }),
+        'flex-1',
+        className,
+      )}
       {...props}
     />
   );
 }
-
-export {
-  AlertDialog,
-  AlertDialogTrigger,
-  AlertDialogPopup,
-  AlertDialogTitle,
-  AlertDialogDescription,
-  AlertDialogClose,
-  AlertDialogMain,
-  AlertDialogFooter,
-};

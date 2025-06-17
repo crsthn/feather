@@ -4,10 +4,10 @@ import { Menu as BaseMenu } from '@base-ui-components/react/menu';
 import { Check, ChevronRight } from 'lucide-react';
 import type { ComponentProps } from 'react';
 
-const Menu = BaseMenu.Root;
-const MenuTrigger = BaseMenu.Trigger;
+export const Menu = BaseMenu.Root;
+export const MenuTrigger = BaseMenu.Trigger;
 
-function MenuPopup({
+export function MenuPopup({
   className,
   ...props
 }: ComponentProps<typeof BaseMenu.Popup>) {
@@ -26,14 +26,14 @@ function MenuPopup({
   );
 }
 
-function MenuItem({
+export function MenuItem({
   className,
   ...props
 }: ComponentProps<typeof BaseMenu.Item>) {
   return (
     <BaseMenu.Item
       className={cx(
-        'flex h-8 cursor-pointer select-none items-center gap-2 rounded-md px-2 outline-none transition-colors data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3 [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:pointer-events-none',
+        "flex h-8 cursor-pointer select-none items-center gap-2 rounded-md px-2 outline-none transition-colors data-disabled:data-highlighted:bg-transparent data-disabled:pointer-events-none data-highlighted:bg-secondary data-disabled:text-text-3 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         className,
       )}
       {...props}
@@ -41,7 +41,7 @@ function MenuItem({
   );
 }
 
-function MenuSeparator({
+export function MenuSeparator({
   className,
   ...props
 }: ComponentProps<typeof BaseMenu.Separator>) {
@@ -53,7 +53,7 @@ function MenuSeparator({
   );
 }
 
-function MenuCheckboxItem({
+export function MenuCheckboxItem({
   className,
   children,
   ...props
@@ -74,9 +74,9 @@ function MenuCheckboxItem({
   );
 }
 
-const MenuRadioGroup = BaseMenu.RadioGroup;
+export const MenuRadioGroup = BaseMenu.RadioGroup;
 
-function MenuRadioItem({
+export function MenuRadioItem({
   className,
   children,
   ...props
@@ -97,9 +97,9 @@ function MenuRadioItem({
   );
 }
 
-const MenuGroup = BaseMenu.Group;
+export const MenuGroup = BaseMenu.Group;
 
-function MenuGroupLabel({
+export function MenuGroupLabel({
   className,
   ...props
 }: ComponentProps<typeof BaseMenu.GroupLabel>) {
@@ -114,7 +114,7 @@ function MenuGroupLabel({
   );
 }
 
-function MenuSubmenuTrigger({
+export function MenuSubmenuTrigger({
   className,
   children,
   ...props
@@ -126,7 +126,7 @@ function MenuSubmenuTrigger({
     >
       <span
         className={cx(
-          'flex items-center gap-2 [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:pointer-events-none',
+          "flex items-center gap-2 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
           className,
         )}
       >
@@ -136,17 +136,3 @@ function MenuSubmenuTrigger({
     </BaseMenu.SubmenuTrigger>
   );
 }
-
-export {
-  Menu,
-  MenuTrigger,
-  MenuPopup,
-  MenuItem,
-  MenuSeparator,
-  MenuCheckboxItem,
-  MenuRadioGroup,
-  MenuRadioItem,
-  MenuGroup,
-  MenuGroupLabel,
-  MenuSubmenuTrigger,
-};

@@ -8,7 +8,7 @@ export default function Component() {
     <div className="flex items-center gap-4">
       <Button
         iconOnly
-        color="danger"
+        variant="danger"
         aria-label="Show error toast"
         onClick={() =>
           toast.add({
@@ -21,7 +21,7 @@ export default function Component() {
       </Button>
       <Button
         iconOnly
-        color="primary"
+        variant="primary"
         aria-label="Show success toast"
         onClick={() =>
           toast.add({
@@ -34,7 +34,7 @@ export default function Component() {
       </Button>
       <Button
         iconOnly
-        color="secondary"
+        variant="secondary"
         aria-label="Show info toast"
         onClick={() =>
           toast.add({

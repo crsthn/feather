@@ -6,7 +6,7 @@ import {
 } from '@base-ui-components/react';
 import type { ComponentProps } from 'react';
 
-function RadioGroup({
+export function RadioGroup({
   className,
   ...props
 }: ComponentProps<typeof BaseRadioGroup>) {
@@ -18,7 +18,10 @@ function RadioGroup({
   );
 }
 
-function Radio({ className, ...props }: ComponentProps<typeof BaseRadio.Root>) {
+export function Radio({
+  className,
+  ...props
+}: ComponentProps<typeof BaseRadio.Root>) {
   return (
     <BaseRadio.Root
       className={cx(
@@ -32,5 +35,3 @@ function Radio({ className, ...props }: ComponentProps<typeof BaseRadio.Root>) {
     </BaseRadio.Root>
   );
 }
-
-export { Radio, RadioGroup };

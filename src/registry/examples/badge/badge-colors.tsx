@@ -3,9 +3,9 @@ import { Badge } from '@/components/ui/badge';
 export default function Component() {
   return (
     <div className="flex gap-4">
-      <Badge color="primary">Primary</Badge>
-      <Badge color="secondary">Secondary</Badge>
-      <Badge color="danger">Danger</Badge>
+      <Badge variant="primary">Primary</Badge>
+      <Badge variant="secondary">Secondary</Badge>
+      <Badge variant="danger">Danger</Badge>
     </div>
   );
 }

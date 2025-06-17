@@ -19,7 +19,7 @@ export default function Layout({
     <>
       <Navbar items={source.pageTree.children} rootItems={rootItems} />
       <Aside items={source.pageTree.children} rootItems={rootItems} />
-      <main className="mt-16 flex min-h-[calc(100vh-4rem)] gap-6 bg-bg px-6 lg:ml-70 lg:rounded-tl-2xl lg:pl-12 xl:pr-0">
+      <main className="mt-16 flex min-h-[calc(100vh-4rem)] gap-6 bg-bg px-6 lg:ml-70 lg:pl-12 xl:pr-0">
         {children}
       </main>
     </>

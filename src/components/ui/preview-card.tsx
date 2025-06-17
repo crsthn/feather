@@ -3,11 +3,10 @@ import { cx } from '@/lib/utils';
 import { PreviewCard as BasePreviewCard } from '@base-ui-components/react';
 import type { ComponentProps } from 'react';
 
-const PreviewCard = BasePreviewCard.Root;
+export const PreviewCard = BasePreviewCard.Root;
+export const PreviewCardTrigger = BasePreviewCard.Trigger;
 
-const PreviewCardTrigger = BasePreviewCard.Trigger;
-
-function PreviewCardPopup({
+export function PreviewCardPopup({
   className,
   ...props
 }: ComponentProps<typeof BasePreviewCard.Popup>) {
@@ -25,5 +24,3 @@ function PreviewCardPopup({
     </BasePreviewCard.Portal>
   );
 }
-
-export { PreviewCard, PreviewCardTrigger, PreviewCardPopup };

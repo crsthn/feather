@@ -13,7 +13,7 @@ export default function Component() {
           This note provides additional context for users.
         </p>
       </Note>
-      <Note color="danger">
+      <Note variant="danger">
         <h4 className="flex items-center gap-2 font-medium text-sm">
           <AlertTriangle />
           Warning
@@ -22,7 +22,7 @@ export default function Component() {
           This action cannot be undone. Please proceed with caution.
         </p>
       </Note>
-      <Note color="primary">
+      <Note variant="primary">
         <h4 className="flex items-center gap-2 font-medium text-sm">
           <CheckCircle />
           Success

@@ -32,19 +32,26 @@ export default function LoginForm() {
       <Form>
         <Field name="email">
           <FieldLabel>Email address</FieldLabel>
-          <Input type="email" placeholder="name@email.com" required />
+          <Input
+            type="email"
+            placeholder="name@email.com"
+            required
+            className="h-10"
+          />
           <FieldError />
         </Field>
-        <Button type="submit">Continue</Button>
+        <Button type="submit" size="lg">
+          Continue
+        </Button>
       </Form>
       <p className="text-text-3 text-xs">OR</p>
 
       <div className="flex w-full flex-col gap-4">
-        <Button color="secondary">
+        <Button variant="secondary" size="lg">
           <Google />
           Continue with Google
         </Button>
-        <Button color="secondary">
+        <Button variant="secondary" size="lg">
           <Github className="fill-text" />
           Continue with Github
         </Button>

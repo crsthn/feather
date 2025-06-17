@@ -1,7 +1,6 @@
-import { buttonStyles } from '@/components/ui/button';
+import { Button, buttonStyles } from '@/components/ui/button';
 import {
   Dialog,
-  DialogClose,
   DialogDescription,
   DialogFooter,
   DialogHeader,
@@ -32,7 +31,7 @@ export default function Component() {
         </DialogMain>
 
         <DialogFooter>
-          <DialogClose color="primary">Confirm payment</DialogClose>
+          <Button className="sm:flex-1">Confirm payment</Button>
         </DialogFooter>
       </DialogPopup>
     </Dialog>

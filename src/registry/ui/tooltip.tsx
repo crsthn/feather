@@ -2,19 +2,19 @@ import { cx } from '@/lib/utils';
 import { Tooltip as BaseTooltip } from '@base-ui-components/react/tooltip';
 import type { ComponentProps } from 'react';
 
-function TooltipProvider({
+export function TooltipProvider({
   ...props
 }: ComponentProps<typeof BaseTooltip.Provider>) {
   return <BaseTooltip.Provider timeout={0} {...props} />;
 }
 
-function Tooltip({ ...props }: ComponentProps<typeof BaseTooltip.Root>) {
+export function Tooltip({ ...props }: ComponentProps<typeof BaseTooltip.Root>) {
   return <BaseTooltip.Root delay={0} {...props} />;
 }
 
-const TooltipTrigger = BaseTooltip.Trigger;
+export const TooltipTrigger = BaseTooltip.Trigger;
 
-function TooltipPopup({
+export function TooltipPopup({
   className,
   children,
   ...props
@@ -43,5 +43,3 @@ function TooltipPopup({
     </BaseTooltip.Portal>
   );
 }
-
-export { Tooltip, TooltipTrigger, TooltipPopup, TooltipProvider };

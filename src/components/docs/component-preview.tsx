@@ -3,8 +3,9 @@ import path from 'node:path';
 import { Pre } from '@/components/docs/codeblock';
 import CopyButton from '@/components/shared/copy-button';
 import { Spinner } from '@/components/ui/spinner';
-import { Tabs, TabsList, TabsPanel, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsPanel, TabsTrigger } from '@/components/ui/tabs';
 import { tryCatch } from '@/lib/try-catch';
+import { Tabs as BaseTabs } from '@base-ui-components/react/tabs';
 import { highlight } from 'fumadocs-core/highlight';
 import { Code2, Eye } from 'lucide-react';
 import dynamic from 'next/dynamic';
@@ -46,14 +47,11 @@ export default async function ComponentPreview({
 
   return (
     <Tabs
-      className="not-prose my-6 overflow-hidden rounded-xl bg-surface text-sm first:mt-0 last:mb-0"
+      className="not-prose my-6 overflow-hidden rounded-xl border bg-surface text-sm first:mt-0 last:mb-0"
       defaultValue="preview"
       {...props}
     >
-      <TabsList
-        className="w-full rounded-b-none border-b bg-transparent py-1.5 pr-2.5 pl-1.5"
-        indicatorClassName="rounded-lg bg-secondary"
-      >
+      <BaseTabs.List className="relative z-0 flex w-full rounded-lg rounded-b-none border-b bg-transparent py-1.5 pr-2.5 pl-1.5">
         <TabsTrigger value="preview">
           <Eye size={16} />
           Preview
@@ -63,7 +61,8 @@ export default async function ComponentPreview({
           Code
         </TabsTrigger>
         <CopyButton text={data} className="ml-auto" />
-      </TabsList>
+        <BaseTabs.Indicator className="absolute left-0 z-[-1] h-8 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-lg bg-secondary transition-all duration-300 ease-out-quint" />
+      </BaseTabs.List>
 
       <TabsPanel
         className="flex items-center justify-center p-6 text-text"

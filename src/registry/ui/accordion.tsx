@@ -3,14 +3,14 @@ import { Accordion as BaseAccordion } from '@base-ui-components/react/accordion'
 import { ChevronDown } from 'lucide-react';
 import type { ComponentProps } from 'react';
 
-function Accordion({
+export function Accordion({
   className,
   ...props
 }: ComponentProps<typeof BaseAccordion.Root>) {
   return <BaseAccordion.Root className={cx('w-full', className)} {...props} />;
 }
 
-function AccordionItem({
+export function AccordionItem({
   className,
   ...props
 }: ComponentProps<typeof BaseAccordion.Item>) {
@@ -22,7 +22,7 @@ function AccordionItem({
   );
 }
 
-function AccordionTrigger({
+export function AccordionTrigger({
   className,
   children,
   ...props
@@ -40,7 +40,7 @@ function AccordionTrigger({
         {children}
         <ChevronDown
           size={16}
-          className="shrink-0 text-text-2 transition-transform duration-200 ease-out-cubic group-data-panel-open:rotate-180 group-data-disabled:text-text-3"
+          className="shrink-0 text-text-2 transition-transform duration-300 ease-out-quint group-data-panel-open:rotate-180 group-data-disabled:text-text-3"
           aria-hidden="true"
         />
       </BaseAccordion.Trigger>
@@ -48,12 +48,10 @@ function AccordionTrigger({
   );
 }
 
-function AccordionPanel({ className, ...props }: ComponentProps<'div'>) {
+export function AccordionPanel({ className, ...props }: ComponentProps<'div'>) {
   return (
-    <BaseAccordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden transition-all duration-200 ease-out-cubic data-ending-style:h-0 data-starting-style:h-0 data-ending-style:opacity-0 data-starting-style:opacity-0">
+    <BaseAccordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden transition-all duration-300 ease-out-quint data-ending-style:h-0 data-starting-style:h-0 data-ending-style:opacity-0 data-starting-style:opacity-0">
       <div className={cx('pb-3 text-text-2', className)} {...props} />
     </BaseAccordion.Panel>
   );
 }
-
-export { Accordion, AccordionItem, AccordionTrigger, AccordionPanel };

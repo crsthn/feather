@@ -1,36 +1,39 @@
+import { cx } from '@/lib/utils';
+import { type VariantProps, cva } from 'class-variance-authority';
 import type { ComponentProps } from 'react';
-import { type VariantProps, tv } from 'tailwind-variants';
 
-const badgeStyles = tv({
-  base: 'inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-full font-medium',
-  variants: {
-    color: {
-      primary: 'bg-primary-muted text-primary',
-      secondary: 'bg-muted text-text',
-      danger: 'bg-danger-muted text-danger',
+const badgeStyles = cva(
+  'inline-flex shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-full font-medium',
+  {
+    variants: {
+      variant: {
+        primary: 'bg-primary-muted text-primary',
+        secondary: 'bg-muted text-text',
+        danger: 'bg-danger-muted text-danger',
+      },
+      size: {
+        sm: 'h-4 px-1.5 text-xs',
+        md: 'h-5 px-2 text-xs',
+        lg: 'h-6 px-2.5 text-sm',
+      },
     },
-    size: {
-      sm: 'h-5 px-2 text-xs',
-      md: 'h-6 px-2 text-xs',
-      lg: 'h-7 px-3 text-sm',
+    defaultVariants: {
+      variant: 'primary',
+      size: 'md',
     },
   },
-  defaultVariants: {
-    color: 'primary',
-    size: 'md',
-  },
-});
+);
 
-type BadgeProps = Omit<
-  ComponentProps<'span'>,
-  keyof VariantProps<typeof badgeStyles>
-> &
-  VariantProps<typeof badgeStyles>;
-
-function Badge({ className, color, size, ...props }: BadgeProps) {
+export function Badge({
+  className,
+  variant,
+  size,
+  ...props
+}: ComponentProps<'span'> & VariantProps<typeof badgeStyles>) {
   return (
-    <span className={badgeStyles({ color, size, className })} {...props} />
+    <span
+      className={cx(badgeStyles({ variant, size }), className)}
+      {...props}
+    />
   );
 }
-
-export { Badge };

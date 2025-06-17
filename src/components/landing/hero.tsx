@@ -3,6 +3,7 @@ import Motion from '@/components/icons/motion';
 import React from '@/components/icons/react';
 import TailwindCSS from '@/components/icons/tailwind';
 import { buttonStyles } from '@/components/ui/button';
+import { cx } from '@/lib/utils';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -18,23 +19,29 @@ export default function Hero() {
         </span>
         <Link
           href="/docs/ui"
-          className={buttonStyles({ size: 'lg', className: 'group mb-8 rounded-full bg-gradient-to-r from-blue-600 to-primary dark:from-blue-300 dark:to-primary' })}
+          className={cx(
+            buttonStyles({
+              size: 'lg',
+              className:
+                'group mb-8 rounded-full bg-gradient-to-r from-blue-600 to-primary dark:from-blue-300 dark:to-primary',
+            }),
+          )}
         >
           Get Started
           <svg
             viewBox="0 0 24 24"
-            className="size-5 shrink-0 fill-none stroke-2 stroke-current"
+            className="size-4 shrink-0 fill-none stroke-2 stroke-current"
           >
             <line
               x1="5"
               y1="12"
               x2="19"
               y2="12"
-              className="translate-x-3.5 scale-x-0 transition-transform ease-in-out duration-200 group-hover:translate-x-0 group-hover:scale-x-100 pointer-coarse:translate-x-0 pointer-coarse:scale-x-100"
+              className="pointer-coarse:translate-x-0 translate-x-3.5 pointer-coarse:scale-x-100 scale-x-0 transition-transform duration-200 ease-in-out group-hover:translate-x-0 group-hover:scale-x-100"
             />
             <polyline
               points="12 5 19 12 12 19"
-              className="-translate-x-1 transition-transform ease-in-out duration-200 group-hover:translate-x-0 pointer-coarse:translate-x-0"
+              className="-translate-x-1 pointer-coarse:translate-x-0 transition-transform duration-200 ease-in-out group-hover:translate-x-0"
             />
           </svg>
         </Link>

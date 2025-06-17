@@ -3,10 +3,10 @@ import { cx } from '@/lib/utils';
 import { Popover as BasePopover } from '@base-ui-components/react';
 import type { ComponentProps } from 'react';
 
-const Popover = BasePopover.Root;
-const PopoverTrigger = BasePopover.Trigger;
+export const Popover = BasePopover.Root;
+export const PopoverTrigger = BasePopover.Trigger;
 
-function PopoverPopup({
+export function PopoverPopup({
   className,
   ...props
 }: ComponentProps<typeof BasePopover.Popup>) {
@@ -25,7 +25,7 @@ function PopoverPopup({
   );
 }
 
-function PopoverTitle({
+export function PopoverTitle({
   className,
   ...props
 }: ComponentProps<typeof BasePopover.Title>) {
@@ -34,7 +34,7 @@ function PopoverTitle({
   );
 }
 
-function PopoverDescription({
+export function PopoverDescription({
   className,
   ...props
 }: ComponentProps<typeof BasePopover.Description>) {
@@ -45,11 +45,3 @@ function PopoverDescription({
     />
   );
 }
-
-export {
-  Popover,
-  PopoverTrigger,
-  PopoverPopup,
-  PopoverTitle,
-  PopoverDescription,
-};

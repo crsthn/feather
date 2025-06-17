@@ -1,4 +1,4 @@
-import { buttonStyles } from '@/components/ui/button';
+import { Button, buttonStyles } from '@/components/ui/button';
 import {
   Drawer,
   DrawerClose,
@@ -39,8 +39,8 @@ export default function Component() {
         </DrawerMain>
 
         <DrawerFooter>
-          <DrawerClose>Pay now</DrawerClose>
-          <DrawerClose color="secondary">Cancel</DrawerClose>
+          <Button>Pay now</Button>
+          <DrawerClose>Cancel</DrawerClose>
         </DrawerFooter>
       </DrawerPopup>
     </Drawer>

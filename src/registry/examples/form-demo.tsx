@@ -1,6 +1,6 @@
 'use client';
 
-import { ActionButton } from '@/components/shared/action-button';
+import { ActionButton } from '@/components/ui/button';
 import { Field, FieldError, FieldLabel, Form } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
@@ -42,7 +42,7 @@ export default function Component() {
         />
         <FieldError />
       </Field>
-      <ActionButton type="submit" isLoading={isLoading}>
+      <ActionButton type="submit" loading={isLoading}>
         Submit
       </ActionButton>
     </Form>

@@ -30,12 +30,15 @@ export default function Aside() {
           </div>
           <ThemeToggle />
         </div>
-        <Button color="secondary" className="justify-between px-3 text-text-2">
+        <Button
+          variant="secondary"
+          className="justify-between px-3 text-text-2"
+        >
           <span className="flex items-center gap-2">
             <Search />
             Search docs
           </span>
-          <Badge color="secondary">Ctrl K</Badge>
+          <Badge variant="secondary">Ctrl K</Badge>
         </Button>
       </header>
       <main className="relative h-full overflow-y-auto px-6">

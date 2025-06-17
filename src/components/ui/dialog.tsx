@@ -1,24 +1,24 @@
 'use client';
+import { buttonStyles } from '@/components/ui/button';
 import { cx } from '@/lib/utils';
 import { Dialog as BaseDialog } from '@base-ui-components/react';
+import type { VariantProps } from 'class-variance-authority';
 import { X } from 'lucide-react';
 import type { ComponentProps } from 'react';
-import type { VariantProps } from 'tailwind-variants';
-import { buttonStyles } from './button';
 
-const Dialog = BaseDialog.Root;
-const DialogTrigger = BaseDialog.Trigger;
+export const Dialog = BaseDialog.Root;
+export const DialogTrigger = BaseDialog.Trigger;
 
-function DialogPopup({
+export function DialogPopup({
   className,
   ...props
 }: ComponentProps<typeof BaseDialog.Popup>) {
   return (
     <BaseDialog.Portal>
-      <BaseDialog.Backdrop className="fixed inset-0 z-50 bg-overlay backdrop-blur-xs transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:ease-in-out-quint data-open:ease-out-quint" />
+      <BaseDialog.Backdrop className="fixed inset-0 z-50 bg-overlay backdrop-blur-xs transition-opacity data-ending-style:opacity-0 data-starting-style:opacity-0 max-sm:duration-500 max-sm:ease-[cubic-bezier(0.32,0.72,0,1)] sm:duration-200 sm:ease-out-quint" />
       <BaseDialog.Popup
         className={cx(
-          '-translate-x-1/2 -translate-y-1/2 fixed top-[calc(50%-1.25rem*var(--nested-dialogs))] left-1/2 z-50 w-lg max-w-[calc(100vw-3rem)] scale-[calc(1-0.1*var(--nested-dialogs))] rounded-xl border bg-bg outline-none transition-all duration-200 data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0 data-closed:ease-in-out-quint data-open:ease-out-quint',
+          'sm:-translate-x-1/2 sm:-translate-y-1/2 fixed z-50 overflow-hidden rounded-xl border bg-bg outline-none transition-all max-sm:inset-x-2 max-sm:bottom-2 max-sm:max-h-4/5 max-sm:duration-500 max-sm:ease-[cubic-bezier(0.32,0.72,0,1)] max-sm:data-ending-style:translate-y-full max-sm:data-starting-style:translate-y-full sm:top-[calc(50%-1.25rem*var(--nested-dialogs))] sm:left-1/2 sm:w-lg sm:scale-[calc(1-0.1*var(--nested-dialogs))] sm:duration-200 sm:ease-out-quint sm:data-ending-style:scale-95 sm:data-starting-style:scale-90 sm:data-ending-style:opacity-0 sm:data-starting-style:opacity-0',
           className,
         )}
         {...props}
@@ -27,24 +27,29 @@ function DialogPopup({
   );
 }
 
-function DialogHeader({
+export function DialogHeader({
   className,
   children,
   ...props
 }: ComponentProps<'div'>) {
   return (
     <div
-      className={cx('flex justify-between gap-4 py-4 pr-4 pl-6', className)}
+      className={cx(
+        'flex justify-between gap-4 border-b bg-surface py-4 pr-4 pl-6',
+        className,
+      )}
       {...props}
     >
       {children}
       <BaseDialog.Close
-        className={buttonStyles({
-          color: 'secondary',
-          variant: 'subtle',
-          className: 'size-7',
-          iconOnly: true,
-        })}
+        className={cx(
+          buttonStyles({
+            variant: 'subtle',
+            iconOnly: true,
+          }),
+          'size-7',
+          className,
+        )}
       >
         <X className="text-text-2" />
       </BaseDialog.Close>
@@ -52,37 +57,37 @@ function DialogHeader({
   );
 }
 
-function DialogMain({ className, ...props }: ComponentProps<'div'>) {
+export function DialogMain({ className, ...props }: ComponentProps<'div'>) {
+  return (
+    <div className={cx('flex flex-col gap-6 p-6', className)} {...props} />
+  );
+}
+
+export function DialogFooter({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
-      className={cx('flex flex-col gap-6 border-y bg-surface p-6', className)}
+      className={cx(
+        'flex gap-4 border-t bg-surface px-6 py-4 max-sm:flex-col-reverse sm:justify-between',
+        className,
+      )}
       {...props}
     />
   );
 }
 
-function DialogFooter({ className, ...props }: ComponentProps<'div'>) {
-  return (
-    <div
-      className={cx('flex justify-between gap-4 px-6 py-4', className)}
-      {...props}
-    />
-  );
-}
-
-function DialogTitle({
+export function DialogTitle({
   className,
   ...props
 }: ComponentProps<typeof BaseDialog.Title>) {
   return (
     <BaseDialog.Title
-      className={cx('font-semibold text-xl', className)}
+      className={cx('font-semibold text-lg', className)}
       {...props}
     />
   );
 }
 
-function DialogDescription({
+export function DialogDescription({
   className,
   ...props
 }: ComponentProps<typeof BaseDialog.Description>) {
@@ -94,33 +99,21 @@ function DialogDescription({
   );
 }
 
-function DialogClose({
+export function DialogClose({
   className,
-  color,
-  variant,
   ...props
 }: ComponentProps<typeof BaseDialog.Close> &
   VariantProps<typeof buttonStyles>) {
   return (
     <BaseDialog.Close
-      className={buttonStyles({
-        color,
-        variant,
-        className: cx('w-full', className),
-      })}
+      className={cx(
+        buttonStyles({
+          variant: 'secondary',
+        }),
+        'sm:flex-1',
+        className,
+      )}
       {...props}
     />
   );
 }
-
-export {
-  Dialog,
-  DialogTrigger,
-  DialogPopup,
-  DialogTitle,
-  DialogDescription,
-  DialogClose,
-  DialogHeader,
-  DialogMain,
-  DialogFooter,
-};

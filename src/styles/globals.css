@@ -11,20 +11,20 @@
   --overlay: --alpha(var(--color-black) / 20%);
 
   --primary: var(--color-blue-700);
-  --primary-muted: --alpha(var(--color-blue-500) / 16%);
+  --primary-muted: --alpha(var(--color-blue-500) / 22%);
 
-  --secondary: --alpha(var(--color-neutral-500) / 8%);
-  --muted: --alpha(var(--color-neutral-500) / 12%);
+  --secondary: --alpha(var(--color-neutral-500) / 7%);
+  --muted: --alpha(var(--color-neutral-500) / 14%);
 
   --danger: var(--color-red-600);
-  --danger-muted: --alpha(var(--color-red-500) / 16%);
+  --danger-muted: --alpha(var(--color-red-500) / 22%);
 
   --text: var(--color-black);
   --text-2: --alpha(var(--color-black) / 50%);
   --text-3: --alpha(var(--color-black) / 30%);
 
   --input: --alpha(var(--color-black) / 10%);
-  --border: --alpha(var(--color-black) / 7%);
+  --border: --alpha(var(--color-black) / 6%);
 
   --on-primary: var(--color-white);
   --on-danger: var(--color-white);
@@ -102,20 +102,20 @@
   --overlay: --alpha(var(--color-black) / 50%);
 
   --primary: var(--color-blue-400);
-  --primary-muted: --alpha(var(--color-blue-600) / 20%);
+  --primary-muted: --alpha(var(--color-blue-500) / 20%);
 
-  --secondary: --alpha(var(--color-neutral-500) / 16%);
-  --muted: --alpha(var(--color-neutral-500) / 24%);
+  --secondary: --alpha(var(--color-neutral-500) / 19%);
+  --muted: --alpha(var(--color-neutral-500) / 28%);
 
   --danger: var(--color-red-500);
-  --danger-muted: --alpha(var(--color-red-600) / 20%);
+  --danger-muted: --alpha(var(--color-red-500) / 20%);
 
   --text: var(--color-white);
   --text-2: --alpha(var(--color-white) / 60%);
   --text-3: --alpha(var(--color-white) / 40%);
 
-  --input: --alpha(var(--color-white) / 12%);
-  --border: --alpha(var(--color-white) / 8%);
+  --input: --alpha(var(--color-white) / 15%);
+  --border: --alpha(var(--color-white) / 11%);
 
   --on-primary: var(--color-black);
   --on-danger: var(--color-white);
@@ -136,7 +136,7 @@
   }
 
   body {
-    background-color: var(--color-surface);
+    background-color: var(--color-bg);
     color: var(--color-text);
     font-size: var(--text-sm);
     line-height: var(--text-sm--line-height);

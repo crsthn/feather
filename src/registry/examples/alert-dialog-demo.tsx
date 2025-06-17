@@ -8,7 +8,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { buttonStyles } from '@/components/ui/button';
+import { Button, buttonStyles } from '@/components/ui/button';
 import { Trash2 } from 'lucide-react';
 
 export default function Component() {
@@ -16,8 +16,8 @@ export default function Component() {
     <AlertDialog>
       <AlertDialogTrigger
         className={buttonStyles({
-          color: 'danger',
           variant: 'subtle',
+          className: 'text-danger',
         })}
       >
         <Trash2 />
@@ -32,8 +32,10 @@ export default function Component() {
           </AlertDialogDescription>
         </AlertDialogMain>
         <AlertDialogFooter>
-          <AlertDialogClose color="secondary">Cancel</AlertDialogClose>
-          <AlertDialogClose color="danger">Delete Forever</AlertDialogClose>
+          <AlertDialogClose>Cancel</AlertDialogClose>
+          <Button variant="danger" className="flex-1">
+            Delete Forever
+          </Button>
         </AlertDialogFooter>
       </AlertDialogPopup>
     </AlertDialog>

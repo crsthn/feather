@@ -1,17 +1,24 @@
 'use client';
 
+import { Button, type buttonStyles } from '@/components/ui/button';
+import type { VariantProps } from 'class-variance-authority';
 import { Check, Copy } from 'lucide-react';
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { Button, type ButtonProps } from '../ui/button';
+import {
+  type ComponentProps,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
-type CopyButtonProps = ButtonProps & {
-  text: string;
-};
+type CopyButtonProps = ComponentProps<'button'> &
+  VariantProps<typeof buttonStyles> & {
+    text: string;
+  };
 
 export default function CopyButton({
   text,
   iconOnly = true,
-  color = 'secondary',
   variant = 'subtle',
   size = 'sm',
   ...props
@@ -46,7 +53,6 @@ export default function CopyButton({
     <Button
       onClick={handleCopy}
       iconOnly={iconOnly}
-      color={color}
       variant={variant}
       size={size}
       {...props}

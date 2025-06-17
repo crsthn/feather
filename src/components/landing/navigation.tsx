@@ -34,7 +34,7 @@ export default function Navigation() {
           <Link
             target="_blank"
             className={buttonStyles({
-              color: 'secondary',
+              variant: 'secondary',
               size: 'sm',
             })}
             href="https://github.com/crsthn/feather"
